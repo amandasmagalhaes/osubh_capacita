@@ -1,0 +1,92 @@
+---
+title: "Apresentação"
+---
+
+
+# Objetivo
+
+Promover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.
+
+
+# Público-alvo
+
+Comunidade interna do OSUBH.
+
+
+# Carga horária
+
+Encontros quinzenais de 1 hora.
+
+* Segundo semestre de 2026: Segundas-feiras, às 10h.
+
+
+# Formato
+
+Híbrido (Aquário e Zoom).
+
+* Link do Zoom: ?
+
+
+# Responsáveis
+Coordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.
+
+* Segundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.
+
+
+# Cronograma
+
+```{r}
+#| echo: false
+
+library(readr)
+library(gt)
+
+url <- "https://docs.google.com/spreadsheets/d/11bN1hYJA0B33v7UljKMJryy7I7KnS4bIuXxCiHD-BBw/export?format=csv&gid=0"
+
+cronograma <- read_csv(
+  url,
+  show_col_types = FALSE
+)
+
+cronograma |>
+  gt() |>
+  fmt_markdown(
+    columns = c(`Tema / Título`, Descrição, Observações)
+  ) |>
+  cols_align(
+    align = "left",
+    columns = everything()
+  ) |>
+  tab_style(
+    style = cell_text(
+      align = "center",
+      weight = "bold"
+    ),
+    locations = cells_column_labels(everything())
+  ) |>
+  cols_width(
+    Data ~ px(90),
+    Atividade ~ px(100),
+    `Tema / Título` ~ px(200),
+    Descrição ~ px(300),
+    Responsável ~ px(100),
+    Observações ~ px(300)
+  ) |>
+  opt_table_font(
+    size = px(12)
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    container.width = pct(100),
+    data_row.padding = px(12),
+    heading.align = "center",
+    table.font.size = px(12)
+  )
+```
+
+
+# Links
+
+- [Google Drive](https://drive.google.com/drive/folders/1jLRcQ0hC7HYuVq41OOcvnYejVXcEgdSF?usp=sharing){target="_blank"}
+
+- [GitHub](){target="_blank"}
