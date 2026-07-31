@@ -118,5 +118,25 @@
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
     ]
+  },
+  {
+    "objectID": "03 - Introdução em R.html",
+    "href": "03 - Introdução em R.html",
+    "title": "Primeiro script em R",
+    "section": "",
+    "text": "Neste capítulo, trabalharemos com um script em R para conhecer a estrutura básica da linguagem e executar os primeiros comandos.\n\nArquivo utilizado: 03.1 - Script.R\n\nAbra esse arquivo no Positron e acompanhe os exemplos apresentados ao longo desta seção.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Primeiro script em R</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html",
+    "href": "04 - GitHub.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
   }
 ]

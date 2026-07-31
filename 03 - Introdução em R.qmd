@@ -1,0 +1,7 @@
+## Primeiro script em R
+
+Neste capítulo, trabalharemos com um script em R para conhecer a estrutura básica da linguagem e executar os primeiros comandos.
+
+> **Arquivo utilizado:** [03.1 - Script.R](03.1 - Script.R)
+
+Abra esse arquivo no Positron e acompanhe os exemplos apresentados ao longo desta seção.
