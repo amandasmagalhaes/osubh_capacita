@@ -1,39 +1,40 @@
 ---
 title: "Apresentação"
+date: today
 ---
 
 
-# Objetivo
+## Objetivo
 
 Promover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.
 
 
-# Público-alvo
+## Público-alvo
 
 Comunidade interna do OSUBH.
 
 
-# Carga horária
+## Carga horária
 
 Encontros quinzenais de 1 hora.
 
 * Segundo semestre de 2026: Segundas-feiras, às 10h.
 
 
-# Formato
+## Formato
 
 Híbrido (Aquário e Zoom).
 
 * Link do Zoom: ?
 
 
-# Responsáveis
+## Responsáveis
 Coordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.
 
 * Segundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.
 
 
-# Cronograma
+## Cronograma
 
 ```{r}
 #| echo: false
@@ -85,8 +86,8 @@ cronograma |>
 ```
 
 
-# Links
+## Links
 
 - [Google Drive](https://drive.google.com/drive/folders/1jLRcQ0hC7HYuVq41OOcvnYejVXcEgdSF?usp=sharing){target="_blank"}
 
-- [GitHub](){target="_blank"}
+- [GitHub](https://github.com/amandasmagalhaes/osubh_capacita){target="_blank"}

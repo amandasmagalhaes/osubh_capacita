@@ -2,20 +2,22 @@ project:
   type: book
   output-dir: docs
 
+lang: pt-BR
+
 book:
   title: "OSUBH Capacita"
   subtitle: "Grupo de Estudos e Capacitação do Observatório de Saúde Urbana de Belo Horizonte (OSUBH)"
   chapters:
     - index.qmd
-
-bibliography: references.bib
+    - 01 - R.qmd
+    - 02 - Positron.qmd
 
 format:
   html:
     theme: cosmo
     page-layout: full
     toc: true
-    number-sections: true
+    number-sections: false
     code-fold: false
   pdf:
     documentclass: scrreprt
