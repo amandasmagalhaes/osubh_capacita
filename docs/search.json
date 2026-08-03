@@ -68,5 +68,335 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
     ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html",
+    "href": "05 - Boas práticas de programação.html",
+    "title": "Boas práticas de programação",
+    "section": "",
+    "text": "O que são boas práticas?\nBoas práticas de programação são formas de escrever, organizar e documentar códigos para que eles sejam fáceis de entender, revisar, reutilizar e corrigir.\nUm código de qualidade não é necessariamente o código mais curto ou o que executa mais rapidamente. Em análises de dados, o mais importante é que outra pessoa — ou você mesmo no futuro — consiga compreender o que foi feito e reproduzir os resultados.\nEsses cuidados são úteis tanto para um pequeno exercício quanto para uma pesquisa que será atualizada durante vários anos.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#por-que-isso-é-importante",
+    "href": "05 - Boas práticas de programação.html#por-que-isso-é-importante",
+    "title": "Boas práticas de programação",
+    "section": "Por que isso é importante?",
+    "text": "Por que isso é importante?\nUma análise geralmente envolve várias decisões: quais dados foram usados, como eles foram organizados, quais filtros foram aplicados e como os resultados foram calculados. Quando essas decisões ficam registradas no código, torna-se mais fácil:\n\nentender o próprio trabalho depois de algum tempo;\nidentificar e corrigir erros;\natualizar a análise quando novos dados chegam;\ncompartilhar o trabalho com colegas;\nreproduzir tabelas, gráficos e resultados;\nadaptar o código para outra pergunta ou conjunto de dados.\n\nOrganizar o código exige algum tempo no início, mas costuma economizar muito tempo ao longo do projeto.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#cinco-princípios-para-começar",
+    "href": "05 - Boas práticas de programação.html#cinco-princípios-para-começar",
+    "title": "Boas práticas de programação",
+    "section": "Cinco princípios para começar",
+    "text": "Cinco princípios para começar\nUm bom ponto de partida é pensar que o código deve ser:\n\nConsistente: seguir o mesmo padrão de nomes, formatação e organização.\nOrganizado: manter arquivos e pastas em locais previsíveis.\nDocumentado: registrar o objetivo do projeto e as decisões importantes.\nClaro: priorizar comandos que sejam fáceis de ler e compreender.\nReutilizável: permitir que o código seja adaptado sem copiar e colar grandes blocos.\n\nNão é necessário aplicar tudo de uma vez. O mais importante é criar o hábito de escrever o código pensando também em quem precisará lê-lo depois.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#organize-as-pastas-do-projeto",
+    "href": "05 - Boas práticas de programação.html#organize-as-pastas-do-projeto",
+    "title": "Boas práticas de programação",
+    "section": "1. Organize as pastas do projeto",
+    "text": "1. Organize as pastas do projeto\nUma estrutura simples pode ser suficiente para começar:\nmeu-projeto/\n├── README.md\n├── scripts/\n├── data/\n│   ├── raw/\n│   └── processed/\n├── results/\n│   ├── tables/\n│   └── figures/\n└── docs/\nUma sugestão para cada pasta:\n\nREADME.md: apresenta o projeto e explica como executá-lo;\nscripts/: contém os scripts e documentos da análise;\ndata/raw/: guarda os dados originais, sem alterações;\ndata/processed/: guarda os dados preparados para a análise;\nresults/: guarda tabelas, gráficos e outros resultados finais;\ndocs/: guarda documentos de apoio e explicações adicionais.\n\nOs nomes das pastas podem variar. O mais importante é que a organização seja intuitiva e seja mantida durante todo o projeto.\n\nAtenção: dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#use-nomes-consistentes",
+    "href": "05 - Boas práticas de programação.html#use-nomes-consistentes",
+    "title": "Boas práticas de programação",
+    "section": "2. Use nomes consistentes",
+    "text": "2. Use nomes consistentes\nNomes claros ajudam a entender o código sem precisar consultar cada linha.\n# Nomes claros\nidade_media &lt;- mean(alunos$idade)\ndados_processados &lt;- alunos[!is.na(alunos$nota), ]\n\n# Nomes pouco informativos\nx &lt;- mean(a$b)\ndf2 &lt;- df[df$c &gt; 0, ]\nAlgumas recomendações simples:\n\nuse nomes que indiquem o conteúdo do objeto;\nescolha um padrão e mantenha-o em todo o projeto;\nprefira letras minúsculas e _ para separar palavras;\nevite nomes como x, objeto_final_final e teste2;\nevite espaços e acentos em nomes de arquivos e objetos.\n\nTambém é importante escolher um padrão para nomes de arquivos. Por exemplo:\n00_importar_dados.R\n01_preparar_dados.R\n02_analisar_dados.R\n03_criar_tabelas.R\n04_criar_graficos.R\nA numeração ajuda a indicar a ordem esperada de execução.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#divida-o-trabalho-em-etapas",
+    "href": "05 - Boas práticas de programação.html#divida-o-trabalho-em-etapas",
+    "title": "Boas práticas de programação",
+    "section": "3. Divida o trabalho em etapas",
+    "text": "3. Divida o trabalho em etapas\nUm script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.\n# Configuração --------------------------------------------------------\n\n# Importação dos dados ------------------------------------------------\n\n# Organização dos dados ------------------------------------------------\n\n# Análise ----------------------------------------------------------------\n\n# Tabelas e gráficos ----------------------------------------------------\n\n# Exportação dos resultados ---------------------------------------------\nEm projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#documente-o-projeto",
+    "href": "05 - Boas práticas de programação.html#documente-o-projeto",
+    "title": "Boas práticas de programação",
+    "section": "4. Documente o projeto",
+    "text": "4. Documente o projeto\n\nO arquivo README\nO README.md é a porta de entrada do projeto. Ele deve explicar, de forma breve:\n\nqual é o objetivo da análise;\nquem desenvolveu o projeto;\nquais dados são utilizados;\ncomo as pastas estão organizadas;\nqual é a ordem de execução dos scripts;\nquais pacotes precisam ser instalados;\nonde encontrar os principais resultados.\n\nUm exemplo de início de README.md:\n# Análise de exemplo\n\nEste projeto analisa as notas de uma turma.\n\n## Como executar\n\n1. Abra o projeto no Positron.\n2. Execute `scripts/00_importar_dados.R`.\n3. Execute `scripts/01_analisar_dados.R`.\n4. Consulte os resultados na pasta `results/`.\n\n\nComentários no código\nComentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:\n# Calcular a média apenas entre as observações com nota informada.\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\nComentários que apenas repetem o código ajudam pouco:\n# Calcular a média\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\nUse comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#priorize-clareza",
+    "href": "05 - Boas práticas de programação.html#priorize-clareza",
+    "title": "Boas práticas de programação",
+    "section": "5. Priorize clareza",
+    "text": "5. Priorize clareza\nPrefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.\n# Separar o filtro em uma etapa que pode ser conferida.\ndados_validos &lt;- alunos[!is.na(alunos$nota), ]\n\nmedia_nota &lt;- mean(dados_validos$nota)\nmedia_nota\nAo criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#evite-repetir-código-sem-necessidade",
+    "href": "05 - Boas práticas de programação.html#evite-repetir-código-sem-necessidade",
+    "title": "Boas práticas de programação",
+    "section": "6. Evite repetir código sem necessidade",
+    "text": "6. Evite repetir código sem necessidade\nCopiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma tarefa for realizada para diferentes valores, considere usar uma função ou uma repetição.\ncalcular_media &lt;- function(valores) {\n  mean(valores, na.rm = TRUE)\n}\n\ncalcular_media(alunos$nota)\ncalcular_media(alunos$idade)\nPor outro lado, não é necessário criar uma função para cada linha. A função deve esconder uma tarefa repetida sem esconder o significado da análise.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#evite-caminhos-fixos-e-valores-desnecessariamente-codificados",
+    "href": "05 - Boas práticas de programação.html#evite-caminhos-fixos-e-valores-desnecessariamente-codificados",
+    "title": "Boas práticas de programação",
+    "section": "7. Evite caminhos fixos e valores desnecessariamente codificados",
+    "text": "7. Evite caminhos fixos e valores desnecessariamente codificados\nUm caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:\n# Evite compartilhar caminhos específicos do seu computador.\n# read.csv(\"/Users/nome/Documentos/meu-projeto/data/dados.csv\")\nPrefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:\ncaminho_dados &lt;- file.path(\"data\", \"raw\", \"dados.csv\")\ndados &lt;- read.csv(caminho_dados)\nTambém evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:\nnota_minima &lt;- 7\nalunos_aprovados &lt;- alunos[alunos$nota &gt;= nota_minima, ]\nIsso facilita atualizar a análise e deixa a decisão mais visível.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#pense-na-reprodução-da-análise",
+    "href": "05 - Boas práticas de programação.html#pense-na-reprodução-da-análise",
+    "title": "Boas práticas de programação",
+    "section": "8. Pense na reprodução da análise",
+    "text": "8. Pense na reprodução da análise\nUma análise reproduzível é aquela que pode ser executada novamente e produzir resultados equivalentes, seguindo as mesmas condições.\nAlguns cuidados ajudam nesse processo:\n\nnão altere manualmente o arquivo de dados original;\nregistre a origem e a data dos dados;\nsalve os resultados intermediários importantes;\nregistre os pacotes utilizados;\nmantenha a ordem de execução dos scripts clara;\nsalve o código e as decisões junto com o projeto;\nuse set.seed() quando houver sorteio ou simulação aleatória.\n\nPor exemplo:\n# Torna o sorteio reproduzível.\nset.seed(123)\namostra &lt;- sample(1:100, size = 5)\namostra",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#revise-o-código-em-etapas",
+    "href": "05 - Boas práticas de programação.html#revise-o-código-em-etapas",
+    "title": "Boas práticas de programação",
+    "section": "9. Revise o código em etapas",
+    "text": "9. Revise o código em etapas\nO primeiro objetivo é fazer o código funcionar. Depois, revise o resultado com calma:\n\nconfira se os dados foram importados corretamente;\nexamine os objetos criados em cada etapa;\nverifique se os filtros e cálculos fazem sentido;\nmelhore os nomes e comentários;\nelimine repetições e comandos desnecessários;\nexecute novamente o projeto do início ao fim.\n\nProgramar é um processo iterativo. Um código pode funcionar e ainda precisar ser reorganizado para ficar mais claro e fácil de manter.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#use-o-git-e-o-github",
+    "href": "05 - Boas práticas de programação.html#use-o-git-e-o-github",
+    "title": "Boas práticas de programação",
+    "section": "10. Use o Git e o GitHub",
+    "text": "10. Use o Git e o GitHub\nO Git registra as versões do projeto no computador. O GitHub guarda uma cópia online e facilita o compartilhamento e a colaboração.\nO fluxo básico é:\nalterar arquivo → salvar → conferir alterações → commit → push\n\ncommit: registra uma versão do trabalho localmente;\npush: envia os commits para o GitHub;\npull: traz alterações que estão no GitHub para o computador.\n\nNo capítulo GitHub, vimos como fazer esse fluxo pelo Positron. Para projetos maiores, também é possível trabalhar com branches, pull requests e revisão por outras pessoas.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
+    "href": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
+    "title": "Boas práticas de programação",
+    "section": "Checklist antes de compartilhar um projeto",
+    "text": "Checklist antes de compartilhar um projeto\nAntes de fazer o primeiro push ou enviar o projeto para outra pessoa, confira:\n\nO projeto tem um README.md?\nAs pastas e os scripts estão organizados?\nOs nomes dos arquivos e objetos são claros?\nOs comentários explicam as decisões importantes?\nO código foi executado do início ao fim?\nOs resultados foram conferidos?\nDados sensíveis, senhas e chaves foram removidos?\nA análise pode ser entendida por outra pessoa?\n\nBoas práticas não são regras para complicar a programação. Elas são hábitos que tornam o trabalho mais claro, confiável e fácil de continuar.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html",
+    "href": "04 - GitHub.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub\nO GitHub é um serviço online para guardar projetos, acompanhar suas alterações e compartilhar arquivos com outras pessoas. Neste encontro, vamos usar o GitHub junto com o Git e o Positron.\nAo final, você deverá conseguir:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#github",
+    "href": "04 - GitHub.html#github",
+    "title": "GitHub",
+    "section": "",
+    "text": "criar uma conta no GitHub;\ncriar um repositório para um projeto;\nabrir o projeto no Positron e ativar o Git;\nregistrar uma alteração com um commit;\nenviar essa alteração para o GitHub com um push.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#git-github-e-positron",
+    "href": "04 - GitHub.html#git-github-e-positron",
+    "title": "GitHub",
+    "section": "Git, GitHub e Positron",
+    "text": "Git, GitHub e Positron\nÉ importante diferenciar três coisas:\n\n\n\n\n\n\n\nFerramenta\nPara que serve\n\n\n\n\nGit\nRegistra o histórico de alterações no computador.\n\n\nGitHub\nGuarda uma cópia online do repositório e facilita o compartilhamento.\n\n\nPositron\nAmbiente onde editamos os arquivos e acessamos os comandos do Git.\n\n\n\nUma forma simples de entender o fluxo é:\narquivo no Positron\n        ↓\ncommit local (Git)\n        ↓\npush\n        ↓\nrepositório no GitHub\nO GitHub recomenda não enviar senhas, chaves de acesso ou outros dados sensíveis para um repositório. Antes de fazer um commit, confira os arquivos que serão enviados.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#criar-uma-conta-no-github",
+    "href": "04 - GitHub.html#criar-uma-conta-no-github",
+    "title": "GitHub",
+    "section": "1. Criar uma conta no GitHub",
+    "text": "1. Criar uma conta no GitHub\n\nAcesse github.com.\nClique em Sign up.\nInforme um e-mail, crie um nome de usuário e uma senha.\nConfirme o e-mail recebido.\nFaça login na conta.\n\nO e-mail precisa ser confirmado para que algumas funções básicas, como criar um repositório, fiquem disponíveis. Para aumentar a segurança, é recomendado ativar a autenticação em dois fatores (2FA) depois que a conta estiver criada.\n\nDica: anote seu nome de usuário do GitHub. Ele fará parte do endereço do repositório, por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão na documentação oficial sobre criação de contas no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#instalar-o-git",
+    "href": "04 - GitHub.html#instalar-o-git",
+    "title": "GitHub",
+    "section": "2. Instalar o Git",
+    "text": "2. Instalar o Git\nO Positron usa o Git instalado no computador. Antes de continuar, instale o Git de acordo com seu sistema operacional:\n\nWindows — Git for Windows;\nmacOS — Git;\nLinux — Git.\n\nDepois da instalação, abra o terminal integrado do Positron e execute:\ngit --version\nSe aparecer um número de versão, como git version 2.x.x, o Git está disponível.\n\nConfigurar seu nome e e-mail\nEssa configuração é feita uma vez por computador. Use o nome que deseja ver no histórico do projeto e o mesmo e-mail confirmado no GitHub:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara conferir a configuração:\ngit config --global --list\nO e-mail usado no Git identifica a autoria dos commits. Ele não é usado como senha. Nunca coloque sua senha do GitHub em um script ou em um arquivo do projeto.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#criar-um-repositório-no-github",
+    "href": "04 - GitHub.html#criar-um-repositório-no-github",
+    "title": "GitHub",
+    "section": "3. Criar um repositório no GitHub",
+    "text": "3. Criar um repositório no GitHub\nUm repositório (repository ou repo) é o espaço onde o projeto, seus arquivos e o histórico de alterações ficam organizados.\n\nAcesse github.com/new.\nEm Repository name, informe um nome, por exemplo meu-primeiro-projeto.\nEscreva uma descrição curta, se desejar.\nEscolha Private para manter o projeto restrito ou Public para torná-lo visível para qualquer pessoa.\nComo vamos enviar um projeto que já existe no computador, deixe Add a README file, .gitignore e license desmarcados nesta primeira configuração.\nClique em Create repository.\n\nO repositório estará vazio. Isso é esperado: os arquivos serão enviados a partir do Positron.\n\nAtenção: se você criar um README no site e também já tiver arquivos locais, poderá precisar juntar dois históricos diferentes. Para o primeiro envio, manter o repositório vazio simplifica o processo.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#abrir-o-projeto-no-positron",
+    "href": "04 - GitHub.html#abrir-o-projeto-no-positron",
+    "title": "GitHub",
+    "section": "4. Abrir o projeto no Positron",
+    "text": "4. Abrir o projeto no Positron\n\nAbra o Positron.\nSelecione Open Folder e escolha a pasta do seu projeto.\nConfirme que os arquivos do projeto aparecem no explorador de arquivos.\n\nO ideal é trabalhar com uma pasta específica para cada projeto. Não escolha uma pasta muito ampla, como a pasta inteira de documentos, se ela contiver arquivos que não fazem parte do projeto.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#inicializar-o-git-no-positron",
+    "href": "04 - GitHub.html#inicializar-o-git-no-positron",
+    "title": "GitHub",
+    "section": "5. Inicializar o Git no Positron",
+    "text": "5. Inicializar o Git no Positron\nSe o projeto ainda não usa Git:\n\nClique no ícone Source Control na barra lateral esquerda.\nSelecione Initialize Repository.\n\nO Positron criará uma pasta oculta chamada .git. Ela guarda o histórico local do projeto. Não apague, renomeie ou envie essa pasta manualmente.\nDepois de inicializar, os arquivos da pasta aparecerão na área de alterações do Source Control. Isso significa que o Git encontrou arquivos que ainda não foram registrados.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#fazer-o-primeiro-commit",
+    "href": "04 - GitHub.html#fazer-o-primeiro-commit",
+    "title": "GitHub",
+    "section": "6. Fazer o primeiro commit",
+    "text": "6. Fazer o primeiro commit\nUm commit é um registro das alterações no histórico local. Ele ainda não envia nada para o GitHub.\nNa aba Source Control:\n\nConfira a lista de arquivos em Changes.\nClique no sinal + ao lado dos arquivos que deseja incluir. Para incluir todos, use o + ao lado de Changes.\nEscreva uma mensagem curta, por exemplo:\nAdiciona arquivos iniciais do projeto\nClique em Commit.\n\nUma boa mensagem descreve o que foi feito, como Adiciona script inicial ou Atualiza análise dos dados. Evite mensagens vagas como mudanças ou teste.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#conectar-o-projeto-ao-github-e-fazer-o-primeiro-push",
+    "href": "04 - GitHub.html#conectar-o-projeto-ao-github-e-fazer-o-primeiro-push",
+    "title": "GitHub",
+    "section": "7. Conectar o projeto ao GitHub e fazer o primeiro push",
+    "text": "7. Conectar o projeto ao GitHub e fazer o primeiro push\nAgora precisamos informar ao Git qual é o endereço online do repositório. Esse endereço é chamado de remote. No GitHub, abra a página do repositório vazio, clique em Code, selecione HTTPS e copie o endereço que termina com .git.\nNo terminal integrado do Positron, execute os comandos abaixo. Substitua SEU_USUARIO e NOME_DO_REPOSITORIO pelos seus dados:\ngit branch -M main\ngit remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git\ngit remote -v\ngit push -u origin main\nO que cada comando faz:\n\ngit branch -M main chama a branch principal de main;\ngit remote add origin ... conecta o projeto local ao repositório do GitHub;\ngit remote -v confere o endereço configurado;\ngit push -u origin main envia o primeiro commit para o GitHub.\n\nDurante o primeiro push, o Git pode abrir uma janela do navegador para autorizar o acesso ao GitHub. Siga as instruções de autenticação. O GitHub não usa a senha da conta diretamente no terminal para esse tipo de operação.\nQuando o comando terminar, atualize a página do repositório no navegador. Os arquivos do projeto deverão aparecer no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#fluxo-de-trabalho-depois-do-primeiro-push",
+    "href": "04 - GitHub.html#fluxo-de-trabalho-depois-do-primeiro-push",
+    "title": "GitHub",
+    "section": "8. Fluxo de trabalho depois do primeiro push",
+    "text": "8. Fluxo de trabalho depois do primeiro push\nDepois que o repositório estiver conectado, o fluxo será sempre parecido:\n\nAbra o projeto no Positron.\nEdite ou crie um arquivo.\nSalve o arquivo.\nAbra Source Control e confira as alterações.\nClique em + para preparar os arquivos.\nEscreva a mensagem e clique em Commit.\nClique em Sync Changes ou em Push para enviar o commit ao GitHub.\n\nEm resumo:\nalterar arquivo → salvar → preparar (+) → commit → push\nO commit salva uma versão no computador. O push publica essa versão no GitHub. Para trazer alterações que já estão no GitHub para o computador, use Pull ou Sync Changes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#fazendo-o-mesmo-pelo-terminal",
+    "href": "04 - GitHub.html#fazendo-o-mesmo-pelo-terminal",
+    "title": "GitHub",
+    "section": "9. Fazendo o mesmo pelo terminal",
+    "text": "9. Fazendo o mesmo pelo terminal\nÉ útil reconhecer os comandos equivalentes às ações do Positron:\n# Ver o estado do projeto\ngit status\n\n# Preparar todos os arquivos alterados\ngit add .\n\n# Criar um registro local\ngit commit -m \"Descreve a alteração\"\n\n# Enviar os commits para o GitHub\ngit push\nO comando git status é especialmente útil: ele mostra se há arquivos alterados, quais estão preparados e em qual branch você está trabalhando.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#problemas-comuns",
+    "href": "04 - GitHub.html#problemas-comuns",
+    "title": "GitHub",
+    "section": "10. Problemas comuns",
+    "text": "10. Problemas comuns\n\nO Source Control não aparece\nConfira se o Git está instalado com git --version e se você abriu a pasta correta no Positron. Em seguida, tente Initialize Repository novamente.\n\n\nAparece not a git repository\nO terminal provavelmente está em outra pasta. Abra o terminal integrado dentro do projeto ou use o explorador do Positron para abrir a pasta correta.\n\n\nAparece remote origin already exists\nO projeto já possui um endereço remoto. Confira qual é o endereço configurado:\ngit remote -v\nSe estiver errado, substitua-o pelo endereço correto:\ngit remote set-url origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git\n\n\nO push pede autenticação\nSiga a janela de login/autorização que aparecer. Confirme também se você está usando a conta que é dona do repositório ou se recebeu permissão para escrever nele.\n\n\nO GitHub não mostra um arquivo\nVerifique se o arquivo foi salvo, se foi incluído no commit e se o push terminou sem erro. O comando git status ajuda a encontrar em qual etapa o arquivo ficou.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#para-praticar",
+    "href": "04 - GitHub.html#para-praticar",
+    "title": "GitHub",
+    "section": "Para praticar",
+    "text": "Para praticar\nFaça este pequeno exercício:\n\nCrie um arquivo chamado anotacoes.R no projeto.\nEscreva uma linha de código R e salve o arquivo.\nUse o Source Control para preparar o arquivo.\nFaça um commit com a mensagem Adiciona anotações iniciais.\nFaça o push e confira o arquivo no GitHub.\n\nDepois, altere o arquivo, faça um segundo commit e envie novamente. Esse ciclo é a habilidade principal que será usada nos próximos projetos.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#referências",
+    "href": "04 - GitHub.html#referências",
+    "title": "GitHub",
+    "section": "Referências",
+    "text": "Referências\n\nCriar uma conta no GitHub\nCriar um repositório no GitHub\nAdicionar um projeto local ao GitHub\nGit Version Control no Positron",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "02 - Positron.html",
+    "href": "02 - Positron.html",
+    "title": "Software Positron",
+    "section": "",
+    "text": "Positron\nO Positron é um ambiente de desenvolvimento integrado (IDE) gratuito, desenvolvido pela Posit (empresa criadora do RStudio), para programação em R e Python. Entre seus principais recursos estão:\nEm comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.\nPara utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador, como o R ou o Python.\nNeste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
+    ]
+  },
+  {
+    "objectID": "02 - Positron.html#positron",
+    "href": "02 - Positron.html#positron",
+    "title": "Software Positron",
+    "section": "",
+    "text": "Editor de código moderno;\nConsole interativo para execução de comandos;\nGerenciamento de arquivos e projetos;\nVisualização de gráficos e exploração de dados;\nCriação de documentos em Quarto;\nSuporte a extensões e integração com ferramentas de inteligência artificial.\n\n\n\n\n\n\n\n\n\n\nInstalação\n\nAcesse a página oficial de download do Positron.\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão correspondente ao seu sistema.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
+    ]
+  },
+  {
+    "objectID": "03 - Introdução em R.html",
+    "href": "03 - Introdução em R.html",
+    "title": "Introdução em R",
+    "section": "",
+    "text": "Primeiro script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script utilizado nos exemplos está disponível para download:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
+    ]
+  },
+  {
+    "objectID": "03 - Introdução em R.html#primeiro-script-em-r",
+    "href": "03 - Introdução em R.html#primeiro-script-em-r",
+    "title": "Introdução em R",
+    "section": "",
+    "text": "03.1 - Primeiro script em R",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
+    ]
   }
 ]

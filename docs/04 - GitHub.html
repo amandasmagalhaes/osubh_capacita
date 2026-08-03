@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./05 - Boas práticas de programação.html" rel="next">
 <link href="./03 - Introdução em R.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -126,12 +162,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03 - Introdução em R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primeiro script em R</span></a>
+  <a href="./03 - Introdução em R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introdução em R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04 - GitHub.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">GitHub</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05 - Boas práticas de programação.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Boas práticas de programação</span></a>
   </div>
 </li>
     </ul>
@@ -145,6 +186,29 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#github" id="toc-github" class="nav-link active" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#git-github-e-positron" id="toc-git-github-e-positron" class="nav-link" data-scroll-target="#git-github-e-positron">Git, GitHub e Positron</a></li>
+  <li><a href="#criar-uma-conta-no-github" id="toc-criar-uma-conta-no-github" class="nav-link" data-scroll-target="#criar-uma-conta-no-github">1. Criar uma conta no GitHub</a></li>
+  <li><a href="#instalar-o-git" id="toc-instalar-o-git" class="nav-link" data-scroll-target="#instalar-o-git">2. Instalar o Git</a>
+  <ul class="collapse">
+  <li><a href="#configurar-seu-nome-e-e-mail" id="toc-configurar-seu-nome-e-e-mail" class="nav-link" data-scroll-target="#configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</a></li>
+  </ul></li>
+  <li><a href="#criar-um-repositório-no-github" id="toc-criar-um-repositório-no-github" class="nav-link" data-scroll-target="#criar-um-repositório-no-github">3. Criar um repositório no GitHub</a></li>
+  <li><a href="#abrir-o-projeto-no-positron" id="toc-abrir-o-projeto-no-positron" class="nav-link" data-scroll-target="#abrir-o-projeto-no-positron">4. Abrir o projeto no Positron</a></li>
+  <li><a href="#inicializar-o-git-no-positron" id="toc-inicializar-o-git-no-positron" class="nav-link" data-scroll-target="#inicializar-o-git-no-positron">5. Inicializar o Git no Positron</a></li>
+  <li><a href="#fazer-o-primeiro-commit" id="toc-fazer-o-primeiro-commit" class="nav-link" data-scroll-target="#fazer-o-primeiro-commit">6. Fazer o primeiro commit</a></li>
+  <li><a href="#conectar-o-projeto-ao-github-e-fazer-o-primeiro-push" id="toc-conectar-o-projeto-ao-github-e-fazer-o-primeiro-push" class="nav-link" data-scroll-target="#conectar-o-projeto-ao-github-e-fazer-o-primeiro-push">7. Conectar o projeto ao GitHub e fazer o primeiro push</a></li>
+  <li><a href="#fluxo-de-trabalho-depois-do-primeiro-push" id="toc-fluxo-de-trabalho-depois-do-primeiro-push" class="nav-link" data-scroll-target="#fluxo-de-trabalho-depois-do-primeiro-push">8. Fluxo de trabalho depois do primeiro push</a></li>
+  <li><a href="#fazendo-o-mesmo-pelo-terminal" id="toc-fazendo-o-mesmo-pelo-terminal" class="nav-link" data-scroll-target="#fazendo-o-mesmo-pelo-terminal">9. Fazendo o mesmo pelo terminal</a></li>
+  <li><a href="#problemas-comuns" id="toc-problemas-comuns" class="nav-link" data-scroll-target="#problemas-comuns">10. Problemas comuns</a>
+  <ul class="collapse">
+  <li><a href="#o-source-control-não-aparece" id="toc-o-source-control-não-aparece" class="nav-link" data-scroll-target="#o-source-control-não-aparece">O Source Control não aparece</a></li>
+  <li><a href="#aparece-not-a-git-repository" id="toc-aparece-not-a-git-repository" class="nav-link" data-scroll-target="#aparece-not-a-git-repository">Aparece <code>not a git repository</code></a></li>
+  <li><a href="#aparece-remote-origin-already-exists" id="toc-aparece-remote-origin-already-exists" class="nav-link" data-scroll-target="#aparece-remote-origin-already-exists">Aparece <code>remote origin already exists</code></a></li>
+  <li><a href="#o-push-pede-autenticação" id="toc-o-push-pede-autenticação" class="nav-link" data-scroll-target="#o-push-pede-autenticação">O <code>push</code> pede autenticação</a></li>
+  <li><a href="#o-github-não-mostra-um-arquivo" id="toc-o-github-não-mostra-um-arquivo" class="nav-link" data-scroll-target="#o-github-não-mostra-um-arquivo">O GitHub não mostra um arquivo</a></li>
+  </ul></li>
+  <li><a href="#para-praticar" id="toc-para-praticar" class="nav-link" data-scroll-target="#para-praticar">Para praticar</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">31 de julho de 2026</p>
+      <p class="date">3 de agosto de 2026</p>
     </div>
   </div>
   
@@ -178,6 +242,235 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="github" class="level2">
 <h2 class="anchored" data-anchor-id="github">GitHub</h2>
+<p>O GitHub é um serviço online para guardar projetos, acompanhar suas alterações e compartilhar arquivos com outras pessoas. Neste encontro, vamos usar o GitHub junto com o Git e o Positron.</p>
+<p>Ao final, você deverá conseguir:</p>
+<ul>
+<li>criar uma conta no GitHub;</li>
+<li>criar um repositório para um projeto;</li>
+<li>abrir o projeto no Positron e ativar o Git;</li>
+<li>registrar uma alteração com um <em>commit</em>;</li>
+<li>enviar essa alteração para o GitHub com um <em>push</em>.</li>
+</ul>
+</section>
+<section id="git-github-e-positron" class="level2">
+<h2 class="anchored" data-anchor-id="git-github-e-positron">Git, GitHub e Positron</h2>
+<p>É importante diferenciar três coisas:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ferramenta</th>
+<th>Para que serve</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Git</strong></td>
+<td>Registra o histórico de alterações no computador.</td>
+</tr>
+<tr class="even">
+<td><strong>GitHub</strong></td>
+<td>Guarda uma cópia online do repositório e facilita o compartilhamento.</td>
+</tr>
+<tr class="odd">
+<td><strong>Positron</strong></td>
+<td>Ambiente onde editamos os arquivos e acessamos os comandos do Git.</td>
+</tr>
+</tbody>
+</table>
+<p>Uma forma simples de entender o fluxo é:</p>
+<pre class="text"><code>arquivo no Positron
+        ↓
+commit local (Git)
+        ↓
+push
+        ↓
+repositório no GitHub</code></pre>
+<p>O GitHub recomenda não enviar senhas, chaves de acesso ou outros dados sensíveis para um repositório. Antes de fazer um <code>commit</code>, confira os arquivos que serão enviados.</p>
+</section>
+<section id="criar-uma-conta-no-github" class="level2">
+<h2 class="anchored" data-anchor-id="criar-uma-conta-no-github">1. Criar uma conta no GitHub</h2>
+<ol type="1">
+<li>Acesse <a href="https://github.com/">github.com</a>.</li>
+<li>Clique em <strong>Sign up</strong>.</li>
+<li>Informe um e-mail, crie um nome de usuário e uma senha.</li>
+<li>Confirme o e-mail recebido.</li>
+<li>Faça login na conta.</li>
+</ol>
+<p>O e-mail precisa ser confirmado para que algumas funções básicas, como criar um repositório, fiquem disponíveis. Para aumentar a segurança, é recomendado ativar a autenticação em dois fatores (2FA) depois que a conta estiver criada.</p>
+<blockquote class="blockquote">
+<p><strong>Dica:</strong> anote seu nome de usuário do GitHub. Ele fará parte do endereço do repositório, por exemplo: <code>https://github.com/seu-usuario/meu-projeto</code>.</p>
+</blockquote>
+<p>Mais informações estão na documentação oficial sobre <a href="https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github">criação de contas no GitHub</a>.</p>
+</section>
+<section id="instalar-o-git" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-o-git">2. Instalar o Git</h2>
+<p>O Positron usa o Git instalado no computador. Antes de continuar, instale o Git de acordo com seu sistema operacional:</p>
+<ul>
+<li><a href="https://git-scm.com/install/windows">Windows — Git for Windows</a>;</li>
+<li><a href="https://git-scm.com/install/mac">macOS — Git</a>;</li>
+<li><a href="https://git-scm.com/install/linux">Linux — Git</a>.</li>
+</ul>
+<p>Depois da instalação, abra o terminal integrado do Positron e execute:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Se aparecer um número de versão, como <code>git version 2.x.x</code>, o Git está disponível.</p>
+<section id="configurar-seu-nome-e-e-mail" class="level3">
+<h3 class="anchored" data-anchor-id="configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</h3>
+<p>Essa configuração é feita uma vez por computador. Use o nome que deseja ver no histórico do projeto e o mesmo e-mail confirmado no GitHub:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"seu-email@exemplo.com"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Para conferir a configuração:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O e-mail usado no Git identifica a autoria dos <em>commits</em>. Ele não é usado como senha. Nunca coloque sua senha do GitHub em um script ou em um arquivo do projeto.</p>
+</section>
+</section>
+<section id="criar-um-repositório-no-github" class="level2">
+<h2 class="anchored" data-anchor-id="criar-um-repositório-no-github">3. Criar um repositório no GitHub</h2>
+<p>Um repositório (<em>repository</em> ou <em>repo</em>) é o espaço onde o projeto, seus arquivos e o histórico de alterações ficam organizados.</p>
+<ol type="1">
+<li>Acesse <a href="https://github.com/new">github.com/new</a>.</li>
+<li>Em <strong>Repository name</strong>, informe um nome, por exemplo <code>meu-primeiro-projeto</code>.</li>
+<li>Escreva uma descrição curta, se desejar.</li>
+<li>Escolha <strong>Private</strong> para manter o projeto restrito ou <strong>Public</strong> para torná-lo visível para qualquer pessoa.</li>
+<li>Como vamos enviar um projeto que já existe no computador, deixe <strong>Add a README file</strong>, <code>.gitignore</code> e <strong>license</strong> desmarcados nesta primeira configuração.</li>
+<li>Clique em <strong>Create repository</strong>.</li>
+</ol>
+<p>O repositório estará vazio. Isso é esperado: os arquivos serão enviados a partir do Positron.</p>
+<blockquote class="blockquote">
+<p><strong>Atenção:</strong> se você criar um README no site e também já tiver arquivos locais, poderá precisar juntar dois históricos diferentes. Para o primeiro envio, manter o repositório vazio simplifica o processo.</p>
+</blockquote>
+</section>
+<section id="abrir-o-projeto-no-positron" class="level2">
+<h2 class="anchored" data-anchor-id="abrir-o-projeto-no-positron">4. Abrir o projeto no Positron</h2>
+<ol type="1">
+<li>Abra o Positron.</li>
+<li>Selecione <strong>Open Folder</strong> e escolha a pasta do seu projeto.</li>
+<li>Confirme que os arquivos do projeto aparecem no explorador de arquivos.</li>
+</ol>
+<p>O ideal é trabalhar com uma pasta específica para cada projeto. Não escolha uma pasta muito ampla, como a pasta inteira de documentos, se ela contiver arquivos que não fazem parte do projeto.</p>
+</section>
+<section id="inicializar-o-git-no-positron" class="level2">
+<h2 class="anchored" data-anchor-id="inicializar-o-git-no-positron">5. Inicializar o Git no Positron</h2>
+<p>Se o projeto ainda não usa Git:</p>
+<ol type="1">
+<li>Clique no ícone <strong>Source Control</strong> na barra lateral esquerda.</li>
+<li>Selecione <strong>Initialize Repository</strong>.</li>
+</ol>
+<p>O Positron criará uma pasta oculta chamada <code>.git</code>. Ela guarda o histórico local do projeto. Não apague, renomeie ou envie essa pasta manualmente.</p>
+<p>Depois de inicializar, os arquivos da pasta aparecerão na área de alterações do Source Control. Isso significa que o Git encontrou arquivos que ainda não foram registrados.</p>
+</section>
+<section id="fazer-o-primeiro-commit" class="level2">
+<h2 class="anchored" data-anchor-id="fazer-o-primeiro-commit">6. Fazer o primeiro commit</h2>
+<p>Um <em>commit</em> é um registro das alterações no histórico local. Ele ainda não envia nada para o GitHub.</p>
+<p>Na aba <strong>Source Control</strong>:</p>
+<ol type="1">
+<li><p>Confira a lista de arquivos em <strong>Changes</strong>.</p></li>
+<li><p>Clique no sinal <code>+</code> ao lado dos arquivos que deseja incluir. Para incluir todos, use o <code>+</code> ao lado de <strong>Changes</strong>.</p></li>
+<li><p>Escreva uma mensagem curta, por exemplo:</p>
+<pre class="text"><code>Adiciona arquivos iniciais do projeto</code></pre></li>
+<li><p>Clique em <strong>Commit</strong>.</p></li>
+</ol>
+<p>Uma boa mensagem descreve o que foi feito, como <code>Adiciona script inicial</code> ou <code>Atualiza análise dos dados</code>. Evite mensagens vagas como <code>mudanças</code> ou <code>teste</code>.</p>
+</section>
+<section id="conectar-o-projeto-ao-github-e-fazer-o-primeiro-push" class="level2">
+<h2 class="anchored" data-anchor-id="conectar-o-projeto-ao-github-e-fazer-o-primeiro-push">7. Conectar o projeto ao GitHub e fazer o primeiro push</h2>
+<p>Agora precisamos informar ao Git qual é o endereço online do repositório. Esse endereço é chamado de <strong>remote</strong>. No GitHub, abra a página do repositório vazio, clique em <strong>Code</strong>, selecione <strong>HTTPS</strong> e copie o endereço que termina com <code>.git</code>.</p>
+<p>No terminal integrado do Positron, execute os comandos abaixo. Substitua <code>SEU_USUARIO</code> e <code>NOME_DO_REPOSITORIO</code> pelos seus dados:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O que cada comando faz:</p>
+<ul>
+<li><code>git branch -M main</code> chama a branch principal de <code>main</code>;</li>
+<li><code>git remote add origin ...</code> conecta o projeto local ao repositório do GitHub;</li>
+<li><code>git remote -v</code> confere o endereço configurado;</li>
+<li><code>git push -u origin main</code> envia o primeiro commit para o GitHub.</li>
+</ul>
+<p>Durante o primeiro <code>push</code>, o Git pode abrir uma janela do navegador para autorizar o acesso ao GitHub. Siga as instruções de autenticação. O GitHub não usa a senha da conta diretamente no terminal para esse tipo de operação.</p>
+<p>Quando o comando terminar, atualize a página do repositório no navegador. Os arquivos do projeto deverão aparecer no GitHub.</p>
+</section>
+<section id="fluxo-de-trabalho-depois-do-primeiro-push" class="level2">
+<h2 class="anchored" data-anchor-id="fluxo-de-trabalho-depois-do-primeiro-push">8. Fluxo de trabalho depois do primeiro push</h2>
+<p>Depois que o repositório estiver conectado, o fluxo será sempre parecido:</p>
+<ol type="1">
+<li>Abra o projeto no Positron.</li>
+<li>Edite ou crie um arquivo.</li>
+<li>Salve o arquivo.</li>
+<li>Abra <strong>Source Control</strong> e confira as alterações.</li>
+<li>Clique em <code>+</code> para preparar os arquivos.</li>
+<li>Escreva a mensagem e clique em <strong>Commit</strong>.</li>
+<li>Clique em <strong>Sync Changes</strong> ou em <strong>Push</strong> para enviar o commit ao GitHub.</li>
+</ol>
+<p>Em resumo:</p>
+<pre class="text"><code>alterar arquivo → salvar → preparar (+) → commit → push</code></pre>
+<p>O <code>commit</code> salva uma versão no computador. O <code>push</code> publica essa versão no GitHub. Para trazer alterações que já estão no GitHub para o computador, use <strong>Pull</strong> ou <strong>Sync Changes</strong>.</p>
+</section>
+<section id="fazendo-o-mesmo-pelo-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="fazendo-o-mesmo-pelo-terminal">9. Fazendo o mesmo pelo terminal</h2>
+<p>É útil reconhecer os comandos equivalentes às ações do Positron:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver o estado do projeto</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar todos os arquivos alterados</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar um registro local</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Descreve a alteração"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Enviar os commits para o GitHub</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O comando <code>git status</code> é especialmente útil: ele mostra se há arquivos alterados, quais estão preparados e em qual branch você está trabalhando.</p>
+</section>
+<section id="problemas-comuns" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-comuns">10. Problemas comuns</h2>
+<section id="o-source-control-não-aparece" class="level3">
+<h3 class="anchored" data-anchor-id="o-source-control-não-aparece">O Source Control não aparece</h3>
+<p>Confira se o Git está instalado com <code>git --version</code> e se você abriu a pasta correta no Positron. Em seguida, tente <strong>Initialize Repository</strong> novamente.</p>
+</section>
+<section id="aparece-not-a-git-repository" class="level3">
+<h3 class="anchored" data-anchor-id="aparece-not-a-git-repository">Aparece <code>not a git repository</code></h3>
+<p>O terminal provavelmente está em outra pasta. Abra o terminal integrado dentro do projeto ou use o explorador do Positron para abrir a pasta correta.</p>
+</section>
+<section id="aparece-remote-origin-already-exists" class="level3">
+<h3 class="anchored" data-anchor-id="aparece-remote-origin-already-exists">Aparece <code>remote origin already exists</code></h3>
+<p>O projeto já possui um endereço remoto. Confira qual é o endereço configurado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Se estiver errado, substitua-o pelo endereço correto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="o-push-pede-autenticação" class="level3">
+<h3 class="anchored" data-anchor-id="o-push-pede-autenticação">O <code>push</code> pede autenticação</h3>
+<p>Siga a janela de login/autorização que aparecer. Confirme também se você está usando a conta que é dona do repositório ou se recebeu permissão para escrever nele.</p>
+</section>
+<section id="o-github-não-mostra-um-arquivo" class="level3">
+<h3 class="anchored" data-anchor-id="o-github-não-mostra-um-arquivo">O GitHub não mostra um arquivo</h3>
+<p>Verifique se o arquivo foi salvo, se foi incluído no <code>commit</code> e se o <code>push</code> terminou sem erro. O comando <code>git status</code> ajuda a encontrar em qual etapa o arquivo ficou.</p>
+</section>
+</section>
+<section id="para-praticar" class="level2">
+<h2 class="anchored" data-anchor-id="para-praticar">Para praticar</h2>
+<p>Faça este pequeno exercício:</p>
+<ol type="1">
+<li>Crie um arquivo chamado <code>anotacoes.R</code> no projeto.</li>
+<li>Escreva uma linha de código R e salve o arquivo.</li>
+<li>Use o Source Control para preparar o arquivo.</li>
+<li>Faça um commit com a mensagem <code>Adiciona anotações iniciais</code>.</li>
+<li>Faça o push e confira o arquivo no GitHub.</li>
+</ol>
+<p>Depois, altere o arquivo, faça um segundo commit e envie novamente. Esse ciclo é a habilidade principal que será usada nos próximos projetos.</p>
+</section>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<ul>
+<li><a href="https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github">Criar uma conta no GitHub</a></li>
+<li><a href="https://docs.github.com/pt/repositories/creating-and-managing-repositories/creating-a-new-repository">Criar um repositório no GitHub</a></li>
+<li><a href="https://docs.github.com/pt/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github">Adicionar um projeto local ao GitHub</a></li>
+<li><a href="https://positron.posit.co/git.html">Git Version Control no Positron</a></li>
+</ul>
 
 
 </section>
@@ -585,11 +878,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./03 - Introdução em R.html" class="pagination-link" aria-label="Primeiro script em R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Primeiro script em R</span></span>
+      <a href="./03 - Introdução em R.html" class="pagination-link" aria-label="Introdução em R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Introdução em R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./05 - Boas práticas de programação.html" class="pagination-link" aria-label="Boas práticas de programação">
+        <span class="nav-page-text"><span class="chapter-title">Boas práticas de programação</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
