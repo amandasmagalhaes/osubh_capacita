@@ -4,133 +4,182 @@ date: today
 ---
 
 
-## GitHub
-
-O GitHub é um serviço online para guardar projetos, acompanhar suas
-alterações e compartilhar arquivos com outras pessoas. Neste encontro,
-vamos usar o GitHub junto com o Git e o Positron.
-
-Ao final, você deverá conseguir:
-
-- criar uma conta no GitHub;
-- criar um repositório para um projeto;
-- abrir o projeto no Positron e ativar o Git;
-- registrar uma alteração com um *commit*;
-- enviar essa alteração para o GitHub com um *push*.
-
 ## Git, GitHub e Positron
 
-É importante diferenciar três coisas:
+O [GitHub](https://github.com/){target="_blank"} é uma plataforma online utilizada para armazenar e compartilhar código-fonte, acompanhar alterações nos arquivos e colaborar com outras pessoas. Além do código, também pode armazenar documentos, dados e outros arquivos relacionados ao projeto.
+
+Antes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:
 
 | Ferramenta | Para que serve |
 |---|---|
-| **Git** | Registra o histórico de alterações no computador. |
-| **GitHub** | Guarda uma cópia online do repositório e facilita o compartilhamento. |
-| **Positron** | Ambiente onde editamos os arquivos e acessamos os comandos do Git. |
+| **Git** | Sistema de controle de versão que registra o histórico das alterações realizadas nos arquivos, incluindo quem fez cada alteração e quando ela ocorreu. |
+| **GitHub** | Plataforma online que hospeda repositórios Git e facilita o compartilhamento, a colaboração e o armazenamento remoto dos projetos. |
+| **Positron** | Ambiente de desenvolvimento (IDE) onde criamos e editamos arquivos, além de acessar os recursos do Git por meio de uma interface gráfica. |
 
-Uma forma simples de entender o fluxo é:
+De forma simplificada, o fluxo de trabalho é:
 
 ```text
-arquivo no Positron
-        ↓
-commit local (Git)
-        ↓
-push
-        ↓
-repositório no GitHub
+Editar arquivos no Positron
+          ↓
+Registrar as alterações (commit)
+          ↓
+Enviar para o GitHub (push)
+          ↓
+Repositório no GitHub
 ```
 
-O GitHub recomenda não enviar senhas, chaves de acesso ou outros dados
-sensíveis para um repositório. Antes de fazer um `commit`, confira os
-arquivos que serão enviados.
+Ao trabalhar com Git e GitHub, evite enviar senhas, chaves de acesso, dados ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
 
-## 1. Criar uma conta no GitHub
 
-1. Acesse [github.com](https://github.com/).
-2. Clique em **Sign up**.
-3. Informe um e-mail, crie um nome de usuário e uma senha.
-4. Confirme o e-mail recebido.
-5. Faça login na conta.
+### Criar uma conta no GitHub
 
-O e-mail precisa ser confirmado para que algumas funções básicas, como criar
-um repositório, fiquem disponíveis. Para aumentar a segurança, é recomendado
-ativar a autenticação em dois fatores (2FA) depois que a conta estiver criada.
+1. Acesse [github.com](https://github.com/){target="_blank"}.
+2. Digite seu endereço de e-mail e clique em **"Cadastrar-se no GitHub"**.
+3. Preencha as informações solicitadas e siga as etapas de criação da conta.
+4. Confirme o endereço de e-mail cadastrado.
+5. Faça login na sua conta.
 
-> **Dica:** anote seu nome de usuário do GitHub. Ele fará parte do endereço do
-> repositório, por exemplo: `https://github.com/seu-usuario/meu-projeto`.
+A confirmação do e-mail é necessária para utilizar algumas funcionalidades do GitHub, como a criação de repositórios. Após criar a conta, também é recomendado ativar a autenticação em dois fatores (2FA) para aumentar a segurança.
 
-Mais informações estão na documentação oficial sobre
-[criação de contas no GitHub](https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github).
+> **Dica:** escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: `https://github.com/seu-usuario/meu-projeto`.
 
-## 2. Instalar o Git
+Mais informações estão disponíveis na documentação oficial sobre a [criação de contas no GitHub](https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github){target="_blank"}.
 
-O Positron usa o Git instalado no computador. Antes de continuar, instale o
-Git de acordo com seu sistema operacional:
 
-- [Windows — Git for Windows](https://git-scm.com/install/windows);
-- [macOS — Git](https://git-scm.com/install/mac);
-- [Linux — Git](https://git-scm.com/install/linux).
+## Instalar o Git
 
-Depois da instalação, abra o terminal integrado do Positron e execute:
+O Positron utiliza o Git instalado no computador para gerenciar o histórico de alterações dos arquivos e sincronizar projetos com o GitHub.
+
+> **Observação:** No Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, o Git pode já estar disponível ou ser instalado automaticamente junto às ferramentas de desenvolvimento do sistema. Caso o Git já esteja instalado, esta etapa pode ser ignorada.
+
+Acesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:
+
+- [Windows](https://git-scm.com/install/windows){target="_blank"}
+- [macOS](https://git-scm.com/install/mac){target="_blank"}
+- [Linux](https://git-scm.com/install/linux){target="_blank"}
+
+Após a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:
 
 ```bash
 git --version
 ```
 
-Se aparecer um número de versão, como `git version 2.x.x`, o Git está
-disponível.
+Se uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.
+
 
 ### Configurar seu nome e e-mail
 
-Essa configuração é feita uma vez por computador. Use o nome que deseja ver
-no histórico do projeto e o mesmo e-mail confirmado no GitHub:
+Essa configuração é realizada apenas uma vez em cada computador.
+
+Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.
+
+Abra o **terminal integrado do Positron** e execute os comandos abaixo:
 
 ```bash
 git config --global user.name "Seu Nome"
 git config --global user.email "seu-email@exemplo.com"
 ```
 
-Para conferir a configuração:
+Para verificar se a configuração foi realizada corretamente, execute:
 
 ```bash
 git config --global --list
 ```
 
-O e-mail usado no Git identifica a autoria dos *commits*. Ele não é usado como
-senha. Nunca coloque sua senha do GitHub em um script ou em um arquivo do
-projeto.
+Se tudo estiver correto, serão exibidas informações semelhantes a:  
+- user.name=Seu Nome  
+- user.email=seu-email@exemplo.com  
 
-## 3. Criar um repositório no GitHub
 
-Um repositório (*repository* ou *repo*) é o espaço onde o projeto, seus
-arquivos e o histórico de alterações ficam organizados.
+## Criar um repositório no GitHub
 
-1. Acesse [github.com/new](https://github.com/new).
-2. Em **Repository name**, informe um nome, por exemplo `meu-primeiro-projeto`.
-3. Escreva uma descrição curta, se desejar.
-4. Escolha **Private** para manter o projeto restrito ou **Public** para
-   torná-lo visível para qualquer pessoa.
-5. Como vamos enviar um projeto que já existe no computador, deixe
-   **Add a README file**, `.gitignore` e **license** desmarcados nesta primeira
-   configuração.
-6. Clique em **Create repository**.
+Um repositório (*repository* ou *repo*) é o espaço onde ficam armazenados os arquivos de um projeto, seu histórico de alterações e todas as informações relacionadas ao desenvolvimento.
 
-O repositório estará vazio. Isso é esperado: os arquivos serão enviados a
-partir do Positron.
+1. Acesse [github.com/new](https://github.com/new){target="_blank"}.
+2. Em **Repository name**, informe um nome para o repositório, por exemplo `primeiro_projeto`.
+3. Em **Description**, escreva uma breve descrição, se desejar.
+4. Em **Choose visibility**, escolha **Public** para tornar o repositório visível para qualquer pessoa ou **Private** para restringir o acesso apenas às pessoas autorizadas.
+5. Em **Start with a template**, mantenha **No template**.
+6. Marque a opção **Add a README file**.
+7. Em **Add .gitignore**, selecione **R**.
+8. Em **Add license**, mantenha **No license**.
+9. Clique em **Create repository**.
 
-> **Atenção:** se você criar um README no site e também já tiver arquivos
-> locais, poderá precisar juntar dois históricos diferentes. Para o primeiro
-> envio, manter o repositório vazio simplifica o processo.
+### Arquivos criados automaticamente
 
-## 4. Abrir o projeto no Positron
+Ao criar o repositório, dois arquivos serão adicionados automaticamente.
 
-1. Abra o Positron.
-2. Selecione **Open Folder** e escolha a pasta do seu projeto.
-3. Confirme que os arquivos do projeto aparecem no explorador de arquivos.
+#### README.md
 
-O ideal é trabalhar com uma pasta específica para cada projeto. Não escolha
-uma pasta muito ampla, como a pasta inteira de documentos, se ela contiver
-arquivos que não fazem parte do projeto.
+O arquivo **README.md** é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou colaborar com seu desenvolvimento.
+
+É recomendado incluir informações como:
+
+- objetivo do projeto;
+- descrição dos principais arquivos e pastas;
+- ordem sugerida para execução dos scripts ou documentos;
+- instruções para reprodução das análises;
+- informações sobre autoria e contato, quando necessário.
+
+Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.
+
+#### .gitignore
+
+O arquivo **.gitignore** informa ao Git quais arquivos e pastas não devem ser versionados. Ao selecionar o modelo **R**, o GitHub cria automaticamente um arquivo contendo regras apropriadas para projetos desenvolvidos nessa linguagem.
+
+Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser enviados ao repositório.
+
+Um exemplo simplificado é apresentado abaixo:
+
+```text
+# Arquivos temporários do R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Configurações locais do Positron / VS Code
+.vscode/
+
+# Arquivos temporários do Quarto
+.quarto/
+*_cache/
+**/*.quarto_ipynb
+
+# Arquivos de log
+*.log
+
+# Dados
+# *.csv
+# *.xlsx
+# *.dta
+# *.rds
+# *.rda
+# *.sav
+```
+
+O arquivo `.gitignore` pode ser editado posteriormente para incluir ou remover regras conforme as necessidades do projeto.
+
+
+## Abrir um repositório no Positron
+
+Agora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.
+
+1. No GitHub, acesse o repositório criado.
+2. Clique em **Code** e copie a URL do repositório.
+3. Abra o Positron.
+4. Selecione **New** > **New Folder from Git**.
+5. Cole a URL do repositório no campo **Git repository URL**.
+6. Em **Create folder as subfolder of**, escolha a pasta onde deseja salvar o projeto.
+7. Clique em **OK**.
+8. Aguarde a clonagem do repositório. O Positron abrirá automaticamente a pasta do projeto.
+
+Após a clonagem, todos os arquivos do repositório estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada posteriormente com o GitHub por meio do Git.
+
 
 ## 5. Inicializar o Git no Positron
 

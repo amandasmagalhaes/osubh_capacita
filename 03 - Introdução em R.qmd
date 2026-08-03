@@ -10,4 +10,4 @@ Executaremos os primeiros comandos em R para conhecer a estrutura básica da lin
 
 O script está disponível para download:
 
-- [03.1 - Primeiro script em R](03.1%20-%20Primeiro%20script%20em%20R.R){download=""}
+> [03.1 - Primeiro script em R](03.1%20-%20Primeiro%20script%20em%20R.R){download=""}
