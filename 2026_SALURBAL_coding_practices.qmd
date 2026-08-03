@@ -1,0 +1,477 @@
+---
+title: Coding for Reproducible Analyses
+subtitle: Best Practices for Research
+format:
+  salurbal-revealjs: default
+header-logo: images/salurbal_climate_logo_blue.png
+title-slide-attributes:
+  data-background-image: images/salurbal_climate_logo_blue.png, images/salurbal_all_logos.png
+  data-background-size: auto 150px, auto 150px
+  data-background-position: 10% 98%, 90% 98%
+slide-number: "c/t"
+author:
+  - name: Derek Weix
+    orcid: 0009-0003-4363-3713
+    email: dpw48@drexel.edu
+    affiliations: Drexel University
+date: last-modified
+bibliography: public_health.bib
+embed-resources: true
+echo: true
+---
+
+## What are coding best practices?
+
+- Coding best practices are **general** guidelines to maximize the quality of our code.
+
+$~$
+
+- Possible situations:
+    - Research paper/one time project.
+    - Ongoing analyses that will be updated over time.
+    - Non-interactive, pipeline environment.
+
+$~$
+
+- ***The best code is not that which runs the fastest, or has the fewest keystrokes, but that which is easiest to understand.***
+
+
+## Why should I care?
+
+- Personal benefits:
+    - Following best practices makes it easier for you to understand how your own research choices are translate into code.
+    - Results in higher adaptability to alternative analysis choices.
+
+$~$
+
+- Research society benefits:
+    - Provides clarity to other researchers regarding your choice of methods.
+    - Allows for much easier adaptation of these methods to alternative problems.
+
+## How to approach coding?
+
+- [**Deliberately!**]{.underline}
+    - Treat the final version of your code with the same care as the final draft of your manuscript.
+    - Recall that code should be publicly available, even if the data are not.
+    - Prioritize clarity.
+
+$~$
+
+The [*cost is extra time*]{.underline} spent designing the code base, but this will pay off in the long run!
+
+<!--
+## The Downside:
+the upfront cost of thinking through and writing code in this way at the beginning.
+-->
+
+## Principles of Coding:
+
+### Code should be:
+
+:::{.incremental}
+1. *Consistent:* Maintian consistency in coding style and approach.
+
+2. *Organized:* Organize all files and directories in an intuitive way.
+
+3. *Documented:* Consicely document intentions and key details.
+
+4. *Clear:* The code itself should prioritize clarity.
+
+5. *Generalizable:* Design the codebase for natural expansion.
+:::
+
+
+## Consistency in Style
+
+### [Pick a style guide!](https://style.tidyverse.org/)
+
+- Naming conventions
+    - directories/files
+    - functions/variables
+
+- Writing conventions
+    - documentation
+    - commit messages
+    - GitHub issues
+    - branches/pull requests
+
+
+## Consistency in Approach
+
+- Packages selection 
+    - Utility (`arrow` versus `nanoparquet`)
+    - Analytical (`lmer4` and `glmmTMB`)
+
+- Programming strategies
+    - For loops versus functional maps?
+
+- Intermediary/Exported results
+    - How will data/model objects be saved?
+    - `.csv` files versus formatted tables from `gt`?
+
+## Organizing our Directory
+
+- Directory
+    - README
+    - Scripts
+        - Sections with each script
+    - Sub-directories
+        - Data
+        - Intermediary results
+        - Final results
+
+## Sample directory architechture
+
+```{r}
+# Prints directory content in tree-like format
+fs::dir_tree("~/git/MS280_air_pollution_modification_heat_mortality", recurse = FALSE)
+```
+
+## Organizing our Scripts {.scrollable}
+
+Think about our code as a book that can be read front to back.
+
+$~$
+
+- Separate scripts: Chapters in a book.
+
+- Sections within scripts: Paragraphs within a chapter.
+
+- Comments within sections: Handwritten annotations.
+
+$~$
+
+When planning our analysis, we want to think about how we organize our code base ***in advance***.
+
+## Documenting our Directories {.scrollable}
+
+### Create and update your `README` files regularly!
+
+```{md}
+# MS280 Air Pollution Modification of Heat Mortality
+
+## Scripts
+
+
+### Main Analysis
+
+- `00_import_data.R`: Imports & formats data from DMC. Formatted data objects are saved in the `data/` folder for use in other scripts.
+- `01_fit_models.R`: Fit base model for each outcome.
+- `02_fit_interaction.R`: Fit model stratified by age.
+- `03_estimate_edfs.R`: Estimate excess death fraction.
+- `04_tables.R`: Generate all tables for paper.
+- `05_plots.R`: Generate all figures for paper.
+
+### Exploratory/Supplemental Analysis
+
+- `E1_exploratory_analysis.qmd`: A notebook for documenting/visualizing initial EDA.
+- `E2_modelling_approaches.qmd`: A notebook for exploring potential modeling approaches.
+
+## Directories
+
+- `data/`: Where formatted data from DMC is stored for analysis.
+- `models/`: Where intermediary results, such as model objects, are stored.
+- `results/`: Where results for the paper are stored.
+- `legacy_scripts`: The original code from Hanna Jardel.
+```
+
+## Documenting within Scripts
+
+### Section titles
+
+- Section titles should create an intuitive outline of your script.
+- Each section should contain a single idea.
+
+### Comments
+
+- Comments should not be verbose.
+- Additional detail can be added to the `README.md`.
+- If necessary, a notebook may be a better format.
+
+## Documenting within Scripts (Example)
+
+```{r}
+#| eval: FALSE
+
+library(tidyverse)
+library(glue)
+library(arrow)
+library(sf)
+library(rnaturalearth)
+
+# File paths
+path_data <- "//files.drexel.edu/colleges/SOPH/Shared/UHC/Projects/Wellcome_Trust/Manuscripts/MS280_Kephart_Jardel/2026_03_04/data/clean"
+
+
+# Import data -------------------------------------------------------------
+
+df <- path_data |>
+  list.files(pattern = "*.sas7bdat", full.names = TRUE) |>
+  map(\(file_path) haven::read_sas(file_path)) |>
+  list_rbind()
+
+glimpse(df)
+
+
+# Format data ------------------------------------------------------------
+
+# Format imported SAS data (1 row per city:age:sex:date)
+df_full <- df |>
+  mutate(
+    iso2 = factor(ISO2),
+    salid1 = factor(SALID1),
+    date = allDate,
+    year = year(allDate),
+    sex = factor(
+      male,
+      levels = c(0, 1),
+      labels = c("female", "male")
+    ),
+    age = factor(
+      thisage,
+      levels = c("<65 years", "65+ years"),
+      labels = c("<65", "65+")
+    ),
+    deaths_total = deaths,
+    deaths_cardio = cardio,
+    deaths_respdis = respdisease,
+    deaths_respinf = respinf,
+    tmp = L1ADtemp_pw,
+    tmp_perc = tmp_pw_percentile,
+    tmp_perc_year = tmp_pw_percentileyear,
+    pm25 = APSDPM25POPWTL1AD,
+    .keep = "none"
+  ) |>
+  arrange(across(c(salid1, date, sex, age)))
+
+glimpse(df_full)
+
+# Save daily data stratified by city, age, and sex
+write_parquet(df_full, "data/df_full.parquet")
+
+# Compress to 1 row per city:age:date
+df_age <- df_full |>
+  summarize(
+    across(contains("deaths"), sum),
+    across(matches("tmp|pm25"), mean),
+    .by = c(iso2, salid1, date, year, age)
+  ) |>
+  mutate(
+    strata = factor(glue(
+      "{salid1}:{age}:{year(date)}:{month(date)}:{wday(date, label = TRUE)}"
+    )),
+    group = factor(glue("{salid1}:{age}"))
+  )
+
+# Save daily data stratified by city and age
+write_parquet(df_age, "data/df_age.parquet")
+
+# Compress to 1 row per city:date
+df_daily <- df_full |>
+  summarize(
+    across(matches("deaths"), sum),
+    across(matches("tmp|pm25"), \(x) mean(x, na.rm = TRUE)),
+    .by = c(iso2, salid1, date, year)
+  )
+
+# Save daily data
+write_parquet(df_daily, "data/df_daily.parquet")
+```
+
+## Making Code Clear
+
+### Your code [itself]{.underline} should be as human readable as possible!
+
+- Each code chunk should excute a single idea.
+- Prioritze straitforward/simple implementation.
+- Maintian consistent formatting (via `Air` for example).
+
+### How?
+
+- Utilize packages like `dplyr`, `purrr`, and `lubridate`.
+- Organize code with pipes `|>` or `%>%`.
+- Create global variables for frequently used values.
+- Define functions for repetative tasks unique to your analysis.
+
+## Clarity and Abstraction vs. Hardcoding
+
+### Overly "hardcoded":
+
+- bloats script length
+- difficult to maintain
+- complicated to pivot
+
+### Overly abstracted:
+
+- conceals true meaning of the code
+- can introduce dependency issues
+
+Our porridge should be **just right**!
+
+## Defining Generalizability
+
+### Code should
+
+- Easily expand in scope.
+- Be robust to external changes.
+
+### Examples
+
+- Adding extra data, such as new cities or years.
+- Adding additional analysis, such repeating analysis with cause-specific outcomes or computing new measures of effect.
+- Running the code a new computer.
+
+## Generalizability in Practice
+
+### How do we make our code generalizable?
+
+- Refer to columns by name, instead of by position.
+- Absolute pathing vs. relative pathing.
+
+$~$
+
+- *Avoid copy & pasting code like the plague!*
+    - Save important global variables to the global environment.
+    - Utilize mapping or loops.
+    - Use helper functions to keep code human readable.
+
+## Generalizability in Practice (Example)
+
+```{r}
+#| eval: FALSE
+
+library(tidyverse)
+library(glue)
+library(gnm)
+library(dlnm)
+library(SALURhelper)
+
+
+# Set up -----------------------------------------------------------------
+# Data
+df_age <- arrow::read_parquet("data/df_age.parquet")
+
+# Crossbasis
+cbt <- readRDS("models/cbt.rds")
+
+# Models
+list_fit <- readRDS("models/list_fit.rds")
+
+# Function to get EDF values for the interaction coefs (low to high)
+get_edf <- function(sim = FALSE) {
+  # Map over outcomes to calc either edf or simulated edfs
+  pmap(
+    list(outcome = names(list_fit), model = list_fit),
+    \(outcome, model) {
+      # Identify interaction terms
+      int_terms <- str_detect(names(model$coef_low), "int_")
+
+      # Calculate attributable fractions
+      attrdl(
+        x = df_age$tmp,
+        basis = cbt,
+        cases = df_age[[outcome]],
+        coef = model$coef_low[int_terms],
+        vcov = model$vcov_low[int_terms, int_terms],
+        model.link = "log",
+        type = "af",
+        cen = 20,
+        sim = sim
+      )
+    }
+  ) |>
+    set_names(names(list_fit))
+}
+
+# Get EDF ----------------------------------------------------------------
+# Mean edf values
+list_edf <- get_edf(sim = FALSE)
+
+# Confidence interval for EDF values
+list_edf_sim <- get_edf(sim = TRUE)
+
+# Save EDFs
+saveRDS(list_edf, "models/list_edf.rds")
+saveRDS(list_edf_sim, "models/list_edf_sim.rds")
+```
+
+## The Iterative Approach
+
+### ***There is no great writing, only great rewriting.***
+
+$$~$$
+
+- Get code working while applying these principles.
+
+- Revise code systematically.
+
+- **Goal:** code should be as [*simple and clear*]{.underline} as possible while accomplishing your goal.
+
+
+## Questions or comments?
+
+<!-- 5 minute break-->
+
+## What About Version Control?
+
+Version control software allows us to track changes & share code. We recommend Git/GitHub as the primary software for version control.
+
+$~$
+
+Version control allows us to track changes in our codebase, letting us organize our code across time and easily/accurately communicate that information!
+
+$~$
+
+With version control, we can revert code to earlier versions when something breaks!
+
+
+## Integration with Git/GitHub
+
+### Concepts of Git/Hub
+
+- Repositories
+- Commit
+- Push/Pull
+- Branches
+- Pull request
+- Issues
+
+## Flow with Git
+
+1. Create or clone a repository.
+2. Decide on goal: i.e. expand analysis, increase computational efficiency, fix bugs.
+3. Create a new branch to modify the codebase.
+    a. Submit a pull request to easily track commits related to this goal.
+    b. Commit and push changes to the branch.
+    c. Discuss changes with supervisors on the branch.
+    d. Repeat steps b and c until the goal has been achieved.
+4. Resolve the PR and merge the modifications into main.
+5. Repeat steps 2-4.
+
+## The Pull Request Process (Example)
+
+### What do pull requests look like in practice?
+
+$~$
+
+[MS280_air_pollution_modification_heat_mortality](https://github.com/SALURBAL-Climate/MS280_air_pollution_modification_heat_mortality)
+
+<!-- End with an open PR -->
+
+## Questions or comments?
+
+
+## Tasks for Workshop
+
+Prompts:
+
+1. Break the single script into multiple files.
+2. Create a README file.
+3. Create sections within the scripts.
+3. Add documentation to the code.
+4. Can the code be written to increase clarity?
+
+Bonus Questions:
+
+5. Expand one section of this codebase according to our princples?
+6. How would you rewrite the code to rerun the analysis for each outcome?

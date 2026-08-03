@@ -13,6 +13,7 @@ book:
     - 02 - Positron.qmd
     - 03 - Introdução em R.qmd
     - 04 - GitHub.qmd
+    - 05 - Boas práticas de programação.qmd
 
 
 format:

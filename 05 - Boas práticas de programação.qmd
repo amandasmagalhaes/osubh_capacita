@@ -1,0 +1,330 @@
+---
+title: "Boas práticas de programação"
+subtitle: "Como organizar e tornar seus códigos mais claros e reproduzíveis"
+date: today
+---
+
+## O que são boas práticas?
+
+Boas práticas de programação são formas de escrever, organizar e documentar
+códigos para que eles sejam fáceis de entender, revisar, reutilizar e corrigir.
+
+Um código de qualidade não é necessariamente o código mais curto ou o que
+executa mais rapidamente. Em análises de dados, o mais importante é que outra
+pessoa — ou você mesmo no futuro — consiga compreender o que foi feito e
+reproduzir os resultados.
+
+Esses cuidados são úteis tanto para um pequeno exercício quanto para uma
+pesquisa que será atualizada durante vários anos.
+
+## Por que isso é importante?
+
+Uma análise geralmente envolve várias decisões: quais dados foram usados, como
+eles foram organizados, quais filtros foram aplicados e como os resultados
+foram calculados. Quando essas decisões ficam registradas no código, torna-se
+mais fácil:
+
+- entender o próprio trabalho depois de algum tempo;
+- identificar e corrigir erros;
+- atualizar a análise quando novos dados chegam;
+- compartilhar o trabalho com colegas;
+- reproduzir tabelas, gráficos e resultados;
+- adaptar o código para outra pergunta ou conjunto de dados.
+
+Organizar o código exige algum tempo no início, mas costuma economizar muito
+tempo ao longo do projeto.
+
+## Cinco princípios para começar
+
+Um bom ponto de partida é pensar que o código deve ser:
+
+1. **Consistente:** seguir o mesmo padrão de nomes, formatação e organização.
+2. **Organizado:** manter arquivos e pastas em locais previsíveis.
+3. **Documentado:** registrar o objetivo do projeto e as decisões importantes.
+4. **Claro:** priorizar comandos que sejam fáceis de ler e compreender.
+5. **Reutilizável:** permitir que o código seja adaptado sem copiar e colar
+   grandes blocos.
+
+Não é necessário aplicar tudo de uma vez. O mais importante é criar o hábito
+de escrever o código pensando também em quem precisará lê-lo depois.
+
+## 1. Organize as pastas do projeto
+
+Uma estrutura simples pode ser suficiente para começar:
+
+```text
+meu-projeto/
+├── README.md
+├── scripts/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── results/
+│   ├── tables/
+│   └── figures/
+└── docs/
+```
+
+Uma sugestão para cada pasta:
+
+- `README.md`: apresenta o projeto e explica como executá-lo;
+- `scripts/`: contém os scripts e documentos da análise;
+- `data/raw/`: guarda os dados originais, sem alterações;
+- `data/processed/`: guarda os dados preparados para a análise;
+- `results/`: guarda tabelas, gráficos e outros resultados finais;
+- `docs/`: guarda documentos de apoio e explicações adicionais.
+
+Os nomes das pastas podem variar. O mais importante é que a organização seja
+intuitiva e seja mantida durante todo o projeto.
+
+> **Atenção:** dados confidenciais, senhas e chaves de acesso não devem ser
+> enviados para o GitHub. Antes de compartilhar um projeto, confira os
+> arquivos que estão dentro da pasta.
+
+## 2. Use nomes consistentes
+
+Nomes claros ajudam a entender o código sem precisar consultar cada linha.
+
+```r
+# Nomes claros
+idade_media <- mean(alunos$idade)
+dados_processados <- alunos[!is.na(alunos$nota), ]
+
+# Nomes pouco informativos
+x <- mean(a$b)
+df2 <- df[df$c > 0, ]
+```
+
+Algumas recomendações simples:
+
+- use nomes que indiquem o conteúdo do objeto;
+- escolha um padrão e mantenha-o em todo o projeto;
+- prefira letras minúsculas e `_` para separar palavras;
+- evite nomes como `x`, `objeto_final_final` e `teste2`;
+- evite espaços e acentos em nomes de arquivos e objetos.
+
+Também é importante escolher um padrão para nomes de arquivos. Por exemplo:
+
+```text
+00_importar_dados.R
+01_preparar_dados.R
+02_analisar_dados.R
+03_criar_tabelas.R
+04_criar_graficos.R
+```
+
+A numeração ajuda a indicar a ordem esperada de execução.
+
+## 3. Divida o trabalho em etapas
+
+Um script muito longo e sem organização é difícil de acompanhar. Podemos
+pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia
+principal.
+
+```r
+# Configuração --------------------------------------------------------
+
+# Importação dos dados ------------------------------------------------
+
+# Organização dos dados ------------------------------------------------
+
+# Análise ----------------------------------------------------------------
+
+# Tabelas e gráficos ----------------------------------------------------
+
+# Exportação dos resultados ---------------------------------------------
+```
+
+Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por
+exemplo, um script pode importar os dados, outro pode prepará-los e outro pode
+gerar os resultados. Essa separação facilita encontrar erros e executar apenas
+a etapa necessária.
+
+## 4. Documente o projeto
+
+### O arquivo README
+
+O `README.md` é a porta de entrada do projeto. Ele deve explicar, de forma
+breve:
+
+- qual é o objetivo da análise;
+- quem desenvolveu o projeto;
+- quais dados são utilizados;
+- como as pastas estão organizadas;
+- qual é a ordem de execução dos scripts;
+- quais pacotes precisam ser instalados;
+- onde encontrar os principais resultados.
+
+Um exemplo de início de `README.md`:
+
+```markdown
+# Análise de exemplo
+
+Este projeto analisa as notas de uma turma.
+
+## Como executar
+
+1. Abra o projeto no Positron.
+2. Execute `scripts/00_importar_dados.R`.
+3. Execute `scripts/01_analisar_dados.R`.
+4. Consulte os resultados na pasta `results/`.
+```
+
+### Comentários no código
+
+Comentários devem explicar o objetivo ou uma decisão importante. Não é
+necessário escrever um comentário para cada linha:
+
+```r
+# Calcular a média apenas entre as observações com nota informada.
+media_nota <- mean(alunos$nota, na.rm = TRUE)
+```
+
+Comentários que apenas repetem o código ajudam pouco:
+
+```r
+# Calcular a média
+media_nota <- mean(alunos$nota, na.rm = TRUE)
+```
+
+Use comentários para explicar o **porquê** de uma decisão quando isso não for
+óbvio no próprio código.
+
+## 5. Priorize clareza
+
+Prefira uma solução simples e legível a uma solução muito compacta, mas difícil
+de entender. Separe comandos que representam etapas diferentes e use objetos
+com nomes significativos.
+
+```r
+# Separar o filtro em uma etapa que pode ser conferida.
+dados_validos <- alunos[!is.na(alunos$nota), ]
+
+media_nota <- mean(dados_validos$nota)
+media_nota
+```
+
+Ao criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o
+resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão
+muito longa de uma só vez.
+
+## 6. Evite repetir código sem necessidade
+
+Copiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma
+tarefa for realizada para diferentes valores, considere usar uma função ou uma
+repetição.
+
+```r
+calcular_media <- function(valores) {
+  mean(valores, na.rm = TRUE)
+}
+
+calcular_media(alunos$nota)
+calcular_media(alunos$idade)
+```
+
+Por outro lado, não é necessário criar uma função para cada linha. A função
+deve esconder uma tarefa repetida sem esconder o significado da análise.
+
+## 7. Evite caminhos fixos e valores desnecessariamente codificados
+
+Um caminho como o exemplo abaixo normalmente só funciona no computador de quem
+o escreveu:
+
+```r
+# Evite compartilhar caminhos específicos do seu computador.
+# read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")
+```
+
+Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas
+organizada:
+
+```r
+caminho_dados <- file.path("data", "raw", "dados.csv")
+dados <- read.csv(caminho_dados)
+```
+
+Também evite repetir o mesmo número ou texto em vários lugares do script.
+Quando um valor for uma decisão importante da análise, dê um nome a ele:
+
+```r
+nota_minima <- 7
+alunos_aprovados <- alunos[alunos$nota >= nota_minima, ]
+```
+
+Isso facilita atualizar a análise e deixa a decisão mais visível.
+
+## 8. Pense na reprodução da análise
+
+Uma análise reproduzível é aquela que pode ser executada novamente e produzir
+resultados equivalentes, seguindo as mesmas condições.
+
+Alguns cuidados ajudam nesse processo:
+
+- não altere manualmente o arquivo de dados original;
+- registre a origem e a data dos dados;
+- salve os resultados intermediários importantes;
+- registre os pacotes utilizados;
+- mantenha a ordem de execução dos scripts clara;
+- salve o código e as decisões junto com o projeto;
+- use `set.seed()` quando houver sorteio ou simulação aleatória.
+
+Por exemplo:
+
+```r
+# Torna o sorteio reproduzível.
+set.seed(123)
+amostra <- sample(1:100, size = 5)
+amostra
+```
+
+## 9. Revise o código em etapas
+
+O primeiro objetivo é fazer o código funcionar. Depois, revise o resultado
+com calma:
+
+1. confira se os dados foram importados corretamente;
+2. examine os objetos criados em cada etapa;
+3. verifique se os filtros e cálculos fazem sentido;
+4. melhore os nomes e comentários;
+5. elimine repetições e comandos desnecessários;
+6. execute novamente o projeto do início ao fim.
+
+Programar é um processo iterativo. Um código pode funcionar e ainda precisar
+ser reorganizado para ficar mais claro e fácil de manter.
+
+## 10. Use o Git e o GitHub
+
+O Git registra as versões do projeto no computador. O GitHub guarda uma cópia
+online e facilita o compartilhamento e a colaboração.
+
+O fluxo básico é:
+
+```text
+alterar arquivo → salvar → conferir alterações → commit → push
+```
+
+- `commit`: registra uma versão do trabalho localmente;
+- `push`: envia os commits para o GitHub;
+- `pull`: traz alterações que estão no GitHub para o computador.
+
+No capítulo [GitHub](04%20-%20GitHub.qmd), vimos como fazer esse fluxo pelo
+Positron. Para projetos maiores, também é possível trabalhar com branches,
+*pull requests* e revisão por outras pessoas.
+
+## Checklist antes de compartilhar um projeto
+
+Antes de fazer o primeiro `push` ou enviar o projeto para outra pessoa,
+confira:
+
+- [ ] O projeto tem um `README.md`?
+- [ ] As pastas e os scripts estão organizados?
+- [ ] Os nomes dos arquivos e objetos são claros?
+- [ ] Os comentários explicam as decisões importantes?
+- [ ] O código foi executado do início ao fim?
+- [ ] Os resultados foram conferidos?
+- [ ] Dados sensíveis, senhas e chaves foram removidos?
+- [ ] A análise pode ser entendida por outra pessoa?
+
+Boas práticas não são regras para complicar a programação. Elas são hábitos
+que tornam o trabalho mais claro, confiável e fácil de continuar.
