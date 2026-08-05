@@ -122,7 +122,7 @@ Em geral, arquivos temporários, arquivos de configuração local, caches e logs
 
 Abaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.
 
-```text
+```bash
 # Arquivos temporários do R
 .Rhistory
 .RData
