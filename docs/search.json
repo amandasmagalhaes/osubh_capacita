@@ -74,7 +74,7 @@
     "href": "05 - Boas práticas de programação.html#documente-o-projeto",
     "title": "Boas práticas de programação",
     "section": "4. Documente o projeto",
-    "text": "4. Documente o projeto\n\nO arquivo README\nO README.md é a porta de entrada do projeto. Ele deve explicar, de forma breve:\n\nQual é o objetivo da análise;\nQuem desenvolveu o projeto;\nQuais dados são utilizados;\nComo as pastas estão organizadas;\nQual é a ordem de execução dos scripts;\nQuais pacotes precisam ser instalados;\nOnde encontrar os principais resultados.\n\nUm exemplo de início de README.md:\n\n\nComentários no código\nComentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:\n\n# Calcular a média apenas entre as observações com nota informada.\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\nComentários que apenas repetem o código ajudam pouco:\n\n# Calcular a média\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\nUse comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.",
+    "text": "4. Documente o projeto\n\nO arquivo README\nO README.md é a porta de entrada do projeto. Ele deve explicar, de forma breve:\n\nQual é o objetivo da análise;\nQuem desenvolveu o projeto;\nQuais dados são utilizados;\nComo as pastas estão organizadas;\nQual é a ordem de execução dos scripts;\nQuais pacotes precisam ser instalados;\nOnde encontrar os principais resultados.\n\n\n\nComentários no código\nComentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:\n\n# Calcular a média apenas entre as observações com nota informada.\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\nComentários que apenas repetem o código ajudam pouco:\n\n# Calcular a média\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\nUse comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -135,6 +135,86 @@
     "title": "Boas práticas de programação",
     "section": "10. Use o Git e o GitHub",
     "text": "10. Use o Git e o GitHub\nO Git registra as versões do projeto no computador. O GitHub guarda uma cópia online e facilita o compartilhamento e a colaboração.\nO fluxo básico é:\nalterar arquivo → salvar → conferir alterações → commit → push\nBoas práticas não são regras para complicar a programação. Elas são hábitos que tornam o trabalho mais claro, confiável e fácil de continuar.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OSUBH Capacita",
+    "section": "",
+    "text": "Objetivo\nPromover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#público-alvo",
+    "href": "index.html#público-alvo",
+    "title": "OSUBH Capacita",
+    "section": "Público-alvo",
+    "text": "Público-alvo\nComunidade interna do OSUBH.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#carga-horária",
+    "href": "index.html#carga-horária",
+    "title": "OSUBH Capacita",
+    "section": "Carga horária",
+    "text": "Carga horária\nEncontros quinzenais de 1 hora.\n\nSegundo semestre de 2026: Segundas-feiras, às 10h.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#formato",
+    "href": "index.html#formato",
+    "title": "OSUBH Capacita",
+    "section": "Formato",
+    "text": "Formato\nHíbrido (Aquário e Zoom).\n\nLink do Zoom: ?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#responsáveis",
+    "href": "index.html#responsáveis",
+    "title": "OSUBH Capacita",
+    "section": "Responsáveis",
+    "text": "Responsáveis\nCoordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.\n\nSegundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#cronograma",
+    "href": "index.html#cronograma",
+    "title": "OSUBH Capacita",
+    "section": "Cronograma",
+    "text": "Cronograma\n\n\n\n\n\n\n\n\nData\nAtividade\nTema / Título\nDescrição\nResponsável\nObservações\n\n\n\n\n07/09/2026\nWorkshop\nR e Positron\nInstalação dos softwares e ambientação das ferramentas.\nAmanda Magalhães\nRecursos: notebook e internet.\n\n\n21/09/2026\nWorkshop\nGitHub e boas práticas de programação\nInstalação do software, criação de conta e ambientação das ferramentas.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n05/10/2026\nWorkshop\nIntrodução ao Quarto, GitHub pages, organização de banco de dados e análises descritivas.\nCriação de um documento Quarto, organização de um banco de dados e realização de análises descritivas.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n19/10/2026\nDiscussão de artigo\nCity-level impact of extreme temperatures and mortality in Latin America\nDiscussão crítica do artigo científico.\n?\n\n\nLeitura prévia:\n\n\nhttps://www.nature.com/articles/s41591-022-01872-6\n\n\n\n\n02/11/2026\nWorkshop\nTemperatura, mortalidade e efeitos defasados\nAnálise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM).\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\nLeitura prévia:\n\nhttps://preprints.scielo.org/index.php/scielo/preprint/view/15303\n\nLeitura sugerida:\n\nhttps://onlinelibrary.wiley.com/doi/10.1002/sim.5963\nhttps://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62114-0/fulltext\n\n\n\n\n16/11/2026\n?\n?\n?\n?\n?\n\n\n30/11/2026\n?\n?\n?\n?\n?\n\n\n14/12/2026\nEncerramento\nAvaliação do semestre e confraternização\nDiscussão sobre as atividades realizadas, sugestões para o próximo semestre e confraternização.\nWaleska Caiaffa\n?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "OSUBH Capacita",
+    "section": "Links",
+    "text": "Links\n\nGoogle Drive\nGitHub",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
+    "href": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
+    "title": "Boas práticas de programação",
+    "section": "Checklist antes de compartilhar um projeto",
+    "text": "Checklist antes de compartilhar um projeto\nAntes de fazer o primeiro push ou enviar o projeto para outra pessoa, confira:\n\nO projeto tem um README.md?\nAs pastas e os scripts estão organizados?\nOs nomes dos arquivos e objetos são claros?\nOs comentários explicam as decisões importantes?\nO código foi executado do início ao fim?\nOs resultados foram conferidos?\nDados sensíveis, senhas e chaves foram removidos?\nA análise pode ser entendida por outra pessoa?\n\nBoas práticas não são regras para complicar a programação. Elas são hábitos que tornam o trabalho mais claro, confiável e fácil de continuar.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
