@@ -187,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#o-que-são-boas-práticas" id="toc-o-que-são-boas-práticas" class="nav-link active" data-scroll-target="#o-que-são-boas-práticas">O que são boas práticas?</a></li>
   <li><a href="#por-que-isso-é-importante" id="toc-por-que-isso-é-importante" class="nav-link" data-scroll-target="#por-que-isso-é-importante">Por que isso é importante?</a></li>
   <li><a href="#cinco-princípios-para-começar" id="toc-cinco-princípios-para-começar" class="nav-link" data-scroll-target="#cinco-princípios-para-começar">Cinco princípios para começar</a></li>
+  <li><a href="#dados-usados-nos-exemplos" id="toc-dados-usados-nos-exemplos" class="nav-link" data-scroll-target="#dados-usados-nos-exemplos">Dados usados nos exemplos</a></li>
   <li><a href="#organize-as-pastas-do-projeto" id="toc-organize-as-pastas-do-projeto" class="nav-link" data-scroll-target="#organize-as-pastas-do-projeto">1. Organize as pastas do projeto</a></li>
   <li><a href="#use-nomes-consistentes" id="toc-use-nomes-consistentes" class="nav-link" data-scroll-target="#use-nomes-consistentes">2. Use nomes consistentes</a></li>
   <li><a href="#divida-o-trabalho-em-etapas" id="toc-divida-o-trabalho-em-etapas" class="nav-link" data-scroll-target="#divida-o-trabalho-em-etapas">3. Divida o trabalho em etapas</a></li>
@@ -201,7 +202,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pense-na-reprodução-da-análise" id="toc-pense-na-reprodução-da-análise" class="nav-link" data-scroll-target="#pense-na-reprodução-da-análise">8. Pense na reprodução da análise</a></li>
   <li><a href="#revise-o-código-em-etapas" id="toc-revise-o-código-em-etapas" class="nav-link" data-scroll-target="#revise-o-código-em-etapas">9. Revise o código em etapas</a></li>
   <li><a href="#use-o-git-e-o-github" id="toc-use-o-git-e-o-github" class="nav-link" data-scroll-target="#use-o-git-e-o-github">10. Use o Git e o GitHub</a></li>
-  <li><a href="#checklist-antes-de-compartilhar-um-projeto" id="toc-checklist-antes-de-compartilhar-um-projeto" class="nav-link" data-scroll-target="#checklist-antes-de-compartilhar-um-projeto">Checklist antes de compartilhar um projeto</a></li>
   </ul>
 </nav>
     </div>
@@ -237,19 +237,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="o-que-são-boas-práticas" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-são-boas-práticas">O que são boas práticas?</h2>
 <p>Boas práticas de programação são formas de escrever, organizar e documentar códigos para que eles sejam fáceis de entender, revisar, reutilizar e corrigir.</p>
-<p>Um código de qualidade não é necessariamente o código mais curto ou o que executa mais rapidamente. Em análises de dados, o mais importante é que outra pessoa — ou você mesmo no futuro — consiga compreender o que foi feito e reproduzir os resultados.</p>
+<p>Um código de qualidade não é necessariamente o código mais curto ou o que executa mais rapidamente. Em análises de dados, o mais importante é que outra pessoa, ou você mesmo no futuro, consiga compreender o que foi feito e reproduzir os resultados.</p>
 <p>Esses cuidados são úteis tanto para um pequeno exercício quanto para uma pesquisa que será atualizada durante vários anos.</p>
 </section>
 <section id="por-que-isso-é-importante" class="level2">
 <h2 class="anchored" data-anchor-id="por-que-isso-é-importante">Por que isso é importante?</h2>
 <p>Uma análise geralmente envolve várias decisões: quais dados foram usados, como eles foram organizados, quais filtros foram aplicados e como os resultados foram calculados. Quando essas decisões ficam registradas no código, torna-se mais fácil:</p>
 <ul>
-<li>entender o próprio trabalho depois de algum tempo;</li>
-<li>identificar e corrigir erros;</li>
-<li>atualizar a análise quando novos dados chegam;</li>
-<li>compartilhar o trabalho com colegas;</li>
-<li>reproduzir tabelas, gráficos e resultados;</li>
-<li>adaptar o código para outra pergunta ou conjunto de dados.</li>
+<li>Entender o próprio trabalho depois de algum tempo;</li>
+<li>Identificar e corrigir erros;</li>
+<li>Atualizar a análise quando novos dados chegam;</li>
+<li>Compartilhar o trabalho com colegas;</li>
+<li>Reproduzir tabelas, gráficos e resultados;</li>
+<li>Adaptar o código para outra pergunta ou conjunto de dados.</li>
 </ul>
 <p>Organizar o código exige algum tempo no início, mas costuma economizar muito tempo ao longo do projeto.</p>
 </section>
@@ -264,6 +264,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Reutilizável:</strong> permitir que o código seja adaptado sem copiar e colar grandes blocos.</li>
 </ol>
 <p>Não é necessário aplicar tudo de uma vez. O mais importante é criar o hábito de escrever o código pensando também em quem precisará lê-lo depois.</p>
+</section>
+<section id="dados-usados-nos-exemplos" class="level2">
+<h2 class="anchored" data-anchor-id="dados-usados-nos-exemplos">Dados usados nos exemplos</h2>
+<p>Os exemplos a seguir utilizam dados fictícios de uma turma. A coluna <code>nota</code> contém um valor ausente para ilustrar como lidar com dados incompletos.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">c</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ana"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bruno"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Carla"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Diego"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Elisa"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Felipe"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Gabriela"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hugo"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Isabela"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"João"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">18</span>, <span class="dv">22</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">nota =</span> <span class="fu">c</span>(<span class="fl">8.5</span>, <span class="fl">6.0</span>, <span class="fl">9.2</span>, <span class="fl">7.5</span>, <span class="cn">NA</span>, <span class="fl">5.5</span>, <span class="fl">7.0</span>, <span class="fl">9.5</span>, <span class="fl">6.8</span>, <span class="fl">8.7</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="organize-as-pastas-do-projeto" class="level2">
 <h2 class="anchored" data-anchor-id="organize-as-pastas-do-projeto">1. Organize as pastas do projeto</h2>
@@ -295,20 +317,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="use-nomes-consistentes" class="level2">
 <h2 class="anchored" data-anchor-id="use-nomes-consistentes">2. Use nomes consistentes</h2>
 <p>Nomes claros ajudam a entender o código sem precisar consultar cada linha.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes claros</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>idade_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>idade)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dados_processados <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes pouco informativos</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">mean</span>(a<span class="sc">$</span>b)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df[df<span class="sc">$</span>c <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes claros</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>idade_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>idade)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dados_processados <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes pouco informativos</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">a</span><span class="va">$b</span><span class="kw">)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">df2</span> <span class="op">&lt;</span>- df[df<span class="va">$c</span> <span class="op">&gt;</span> 0, ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Algumas recomendações simples:</p>
 <ul>
-<li>use nomes que indiquem o conteúdo do objeto;</li>
-<li>escolha um padrão e mantenha-o em todo o projeto;</li>
-<li>prefira letras minúsculas e <code>_</code> para separar palavras;</li>
-<li>evite nomes como <code>x</code>, <code>objeto_final_final</code> e <code>teste2</code>;</li>
-<li>evite espaços e acentos em nomes de arquivos e objetos.</li>
+<li>Use nomes que indiquem o conteúdo do objeto;</li>
+<li>Escolha um padrão e mantenha-o em todo o projeto;</li>
+<li>Prefira letras minúsculas e <code>_</code> para separar palavras;</li>
+<li>Evite nomes como <code>x</code>, <code>objeto_final_final</code> e <code>teste2</code>;</li>
+<li>Evite espaços e acentos em nomes de arquivos e objetos.</li>
 </ul>
 <p>Também é importante escolher um padrão para nomes de arquivos. Por exemplo:</p>
 <pre class="text"><code>00_importar_dados.R
@@ -321,17 +344,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="divida-o-trabalho-em-etapas" class="level2">
 <h2 class="anchored" data-anchor-id="divida-o-trabalho-em-etapas">3. Divida o trabalho em etapas</h2>
 <p>Um script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuração --------------------------------------------------------</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Importação dos dados ------------------------------------------------</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Organização dos dados ------------------------------------------------</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Análise ----------------------------------------------------------------</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabelas e gráficos ----------------------------------------------------</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Exportação dos resultados ---------------------------------------------</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Configuração ####</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Importação dos dados ####</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">### Organização dos dados ####</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">### Análise ####</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Tabelas e gráficos ####</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Exportação dos resultados ####</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.</p>
 </section>
 <section id="documente-o-projeto" class="level2">
@@ -340,69 +365,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="o-arquivo-readme">O arquivo README</h3>
 <p>O <code>README.md</code> é a porta de entrada do projeto. Ele deve explicar, de forma breve:</p>
 <ul>
-<li>qual é o objetivo da análise;</li>
-<li>quem desenvolveu o projeto;</li>
-<li>quais dados são utilizados;</li>
-<li>como as pastas estão organizadas;</li>
-<li>qual é a ordem de execução dos scripts;</li>
-<li>quais pacotes precisam ser instalados;</li>
-<li>onde encontrar os principais resultados.</li>
+<li>Qual é o objetivo da análise;</li>
+<li>Quem desenvolveu o projeto;</li>
+<li>Quais dados são utilizados;</li>
+<li>Como as pastas estão organizadas;</li>
+<li>Qual é a ordem de execução dos scripts;</li>
+<li>Quais pacotes precisam ser instalados;</li>
+<li>Onde encontrar os principais resultados.</li>
 </ul>
 <p>Um exemplo de início de <code>README.md</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Análise de exemplo</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Este projeto analisa as notas de uma turma.</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Como executar</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Abra o projeto no Positron.</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Execute <span class="in">`scripts/00_importar_dados.R`</span>.</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Execute <span class="in">`scripts/01_analisar_dados.R`</span>.</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Consulte os resultados na pasta <span class="in">`results/`</span>.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="comentários-no-código" class="level3">
 <h3 class="anchored" data-anchor-id="comentários-no-código">Comentários no código</h3>
 <p>Comentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a média apenas entre as observações com nota informada.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>nota, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Comentários que apenas repetem o código ajudam pouco:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a média</span></span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a média apenas entre as observações com nota informada.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>nota, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Comentários que apenas repetem o código ajudam pouco:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a média</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>nota, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Use comentários para explicar o <strong>porquê</strong> de uma decisão quando isso não for óbvio no próprio código.</p>
 </section>
 </section>
 <section id="priorize-clareza" class="level2">
 <h2 class="anchored" data-anchor-id="priorize-clareza">5. Priorize clareza</h2>
 <p>Prefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separar o filtro em uma etapa que pode ser conferida.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dados_validos <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados_validos<span class="sc">$</span>nota)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>media_nota</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separar o filtro em uma etapa que pode ser conferida.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dados_validos <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados_validos<span class="sc">$</span>nota)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>media_nota</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.633333</code></pre>
+</div>
+</div>
 <p>Ao criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.</p>
 </section>
 <section id="evite-repetir-código-sem-necessidade" class="level2">
 <h2 class="anchored" data-anchor-id="evite-repetir-código-sem-necessidade">6. Evite repetir código sem necessidade</h2>
 <p>Copiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma tarefa for realizada para diferentes valores, considere usar uma função ou uma repetição.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>calcular_media <span class="ot">&lt;-</span> <span class="cf">function</span>(valores) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(valores, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">calcular_media</span>(alunos<span class="sc">$</span>nota)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">calcular_media</span>(alunos<span class="sc">$</span>idade)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>calcular_media <span class="ot">&lt;-</span> <span class="cf">function</span>(valores) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(valores, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">calcular_media</span>(alunos<span class="sc">$</span>nota)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.633333</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcular_media</span>(alunos<span class="sc">$</span>idade)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.4</code></pre>
+</div>
+</div>
 <p>Por outro lado, não é necessário criar uma função para cada linha. A função deve esconder uma tarefa repetida sem esconder o significado da análise.</p>
 </section>
 <section id="evite-caminhos-fixos-e-valores-desnecessariamente-codificados" class="level2">
 <h2 class="anchored" data-anchor-id="evite-caminhos-fixos-e-valores-desnecessariamente-codificados">7. Evite caminhos fixos e valores desnecessariamente codificados</h2>
 <p>Um caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evite compartilhar caminhos específicos do seu computador.</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evite compartilhar caminhos específicos do seu computador.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>caminho_dados <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"dados.csv"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(caminho_dados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">caminho_dados</span> <span class="op">&lt;</span>- file.path<span class="er">(</span><span class="st">"data"</span><span class="ex">,</span> <span class="st">"raw"</span>, <span class="st">"dados.csv"</span><span class="kw">)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dados</span> <span class="op">&lt;</span>- read.csv<span class="er">(</span><span class="ex">caminho_dados</span><span class="kw">)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Também evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nota_minima <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>alunos_aprovados <span class="ot">&lt;-</span> alunos[alunos<span class="sc">$</span>nota <span class="sc">&gt;=</span> nota_minima, ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>nota_minima <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>alunos_aprovados <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota) <span class="sc">&amp;</span> alunos<span class="sc">$</span>nota <span class="sc">&gt;=</span> nota_minima, ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Isso facilita atualizar a análise e deixa a decisão mais visível.</p>
 </section>
 <section id="pense-na-reprodução-da-análise" class="level2">
@@ -410,30 +444,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Uma análise reproduzível é aquela que pode ser executada novamente e produzir resultados equivalentes, seguindo as mesmas condições.</p>
 <p>Alguns cuidados ajudam nesse processo:</p>
 <ul>
-<li>não altere manualmente o arquivo de dados original;</li>
-<li>registre a origem e a data dos dados;</li>
-<li>salve os resultados intermediários importantes;</li>
-<li>registre os pacotes utilizados;</li>
-<li>mantenha a ordem de execução dos scripts clara;</li>
-<li>salve o código e as decisões junto com o projeto;</li>
-<li>use <code>set.seed()</code> quando houver sorteio ou simulação aleatória.</li>
+<li>Não altere manualmente o arquivo de dados original;</li>
+<li>Registre a origem e a data dos dados;</li>
+<li>Salve os resultados intermediários importantes;</li>
+<li>Registre os pacotes utilizados;</li>
+<li>Mantenha a ordem de execução dos scripts clara;</li>
+<li>Salve o código e as decisões junto com o projeto;</li>
+<li>Use <code>set.seed()</code> quando houver sorteio ou simulação aleatória.</li>
 </ul>
 <p>Por exemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Torna o sorteio reproduzível.</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">5</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>amostra</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Torna o sorteio reproduzível.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">5</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>amostra</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31 79 51 14 67</code></pre>
+</div>
+</div>
 </section>
 <section id="revise-o-código-em-etapas" class="level2">
 <h2 class="anchored" data-anchor-id="revise-o-código-em-etapas">9. Revise o código em etapas</h2>
 <p>O primeiro objetivo é fazer o código funcionar. Depois, revise o resultado com calma:</p>
 <ol type="1">
-<li>confira se os dados foram importados corretamente;</li>
-<li>examine os objetos criados em cada etapa;</li>
-<li>verifique se os filtros e cálculos fazem sentido;</li>
-<li>melhore os nomes e comentários;</li>
-<li>elimine repetições e comandos desnecessários;</li>
-<li>execute novamente o projeto do início ao fim.</li>
+<li>Confira se os dados foram importados corretamente;</li>
+<li>Examine os objetos criados em cada etapa;</li>
+<li>Verifique se os filtros e cálculos fazem sentido;</li>
+<li>Melhore os nomes e comentários;</li>
+<li>Elimine repetições e comandos desnecessários;</li>
+<li>Execute novamente o projeto do início ao fim.</li>
 </ol>
 <p>Programar é um processo iterativo. Um código pode funcionar e ainda precisar ser reorganizado para ficar mais claro e fácil de manter.</p>
 </section>
@@ -442,26 +481,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>O Git registra as versões do projeto no computador. O GitHub guarda uma cópia online e facilita o compartilhamento e a colaboração.</p>
 <p>O fluxo básico é:</p>
 <pre class="text"><code>alterar arquivo → salvar → conferir alterações → commit → push</code></pre>
-<ul>
-<li><code>commit</code>: registra uma versão do trabalho localmente;</li>
-<li><code>push</code>: envia os commits para o GitHub;</li>
-<li><code>pull</code>: traz alterações que estão no GitHub para o computador.</li>
-</ul>
-<p>No capítulo <a href="./04 - GitHub.html">GitHub</a>, vimos como fazer esse fluxo pelo Positron. Para projetos maiores, também é possível trabalhar com branches, <em>pull requests</em> e revisão por outras pessoas.</p>
-</section>
-<section id="checklist-antes-de-compartilhar-um-projeto" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-antes-de-compartilhar-um-projeto">Checklist antes de compartilhar um projeto</h2>
-<p>Antes de fazer o primeiro <code>push</code> ou enviar o projeto para outra pessoa, confira:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">O projeto tem um <code>README.md</code>?</label></li>
-<li><label><input type="checkbox">As pastas e os scripts estão organizados?</label></li>
-<li><label><input type="checkbox">Os nomes dos arquivos e objetos são claros?</label></li>
-<li><label><input type="checkbox">Os comentários explicam as decisões importantes?</label></li>
-<li><label><input type="checkbox">O código foi executado do início ao fim?</label></li>
-<li><label><input type="checkbox">Os resultados foram conferidos?</label></li>
-<li><label><input type="checkbox">Dados sensíveis, senhas e chaves foram removidos?</label></li>
-<li><label><input type="checkbox">A análise pode ser entendida por outra pessoa?</label></li>
-</ul>
 <p>Boas práticas não são regras para complicar a programação. Elas são hábitos que tornam o trabalho mais claro, confiável e fácil de continuar.</p>
 
 

@@ -9,8 +9,7 @@ date: today
 
 Boas práticas de programação são formas de escrever, organizar e documentar códigos para que eles sejam fáceis de entender, revisar, reutilizar e corrigir.
 
-Um código de qualidade não é necessariamente o código mais curto ou o que executa mais rapidamente. Em análises de dados, o mais importante é que outra pessoa, ou você mesmo no futuro, consiga compreender o que foi feito e
-reproduzir os resultados.
+Um código de qualidade não é necessariamente o código mais curto ou o que executa mais rapidamente. Em análises de dados, o mais importante é que outra pessoa, ou você mesmo no futuro, consiga compreender o que foi feito e reproduzir os resultados.
 
 Esses cuidados são úteis tanto para um pequeno exercício quanto para uma pesquisa que será atualizada durante vários anos.
 
@@ -19,12 +18,12 @@ Esses cuidados são úteis tanto para um pequeno exercício quanto para uma pesq
 
 Uma análise geralmente envolve várias decisões: quais dados foram usados, como eles foram organizados, quais filtros foram aplicados e como os resultados foram calculados. Quando essas decisões ficam registradas no código, torna-se mais fácil:
 
-- entender o próprio trabalho depois de algum tempo;
-- identificar e corrigir erros;
-- atualizar a análise quando novos dados chegam;
-- compartilhar o trabalho com colegas;
-- reproduzir tabelas, gráficos e resultados;
-- adaptar o código para outra pergunta ou conjunto de dados.
+- Entender o próprio trabalho depois de algum tempo;
+- Identificar e corrigir erros;
+- Atualizar a análise quando novos dados chegam;
+- Compartilhar o trabalho com colegas;
+- Reproduzir tabelas, gráficos e resultados;
+- Adaptar o código para outra pergunta ou conjunto de dados.
 
 Organizar o código exige algum tempo no início, mas costuma economizar muito tempo ao longo do projeto.
 
@@ -40,6 +39,30 @@ Um bom ponto de partida é pensar que o código deve ser:
 5. **Reutilizável:** permitir que o código seja adaptado sem copiar e colar grandes blocos.
 
 Não é necessário aplicar tudo de uma vez. O mais importante é criar o hábito de escrever o código pensando também em quem precisará lê-lo depois.
+
+
+## Dados usados nos exemplos
+
+Os exemplos a seguir utilizam dados fictícios de uma turma. A coluna `nota` contém um valor ausente para ilustrar como lidar com dados incompletos.
+
+```{r}
+alunos <- data.frame(
+  nome = c(
+    "Ana",
+    "Bruno",
+    "Carla",
+    "Diego",
+    "Elisa",
+    "Felipe",
+    "Gabriela",
+    "Hugo",
+    "Isabela",
+    "João"
+  ),
+  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),
+  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)
+)
+```
 
 
 ## 1. Organize as pastas do projeto
@@ -77,11 +100,13 @@ Os nomes das pastas podem variar. O mais importante é que a organização seja 
 
 Nomes claros ajudam a entender o código sem precisar consultar cada linha.
 
-```r
+```{r}
 # Nomes claros
 idade_media <- mean(alunos$idade)
 dados_processados <- alunos[!is.na(alunos$nota), ]
+```
 
+```bash
 # Nomes pouco informativos
 x <- mean(a$b)
 df2 <- df[df$c > 0, ]
@@ -112,7 +137,7 @@ A numeração ajuda a indicar a ordem esperada de execução.
 
 Um script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.
 
-```r
+```{r}
 ### Configuração ####
 
 ### Importação dos dados ####
@@ -126,8 +151,7 @@ Um script muito longo e sem organização é difícil de acompanhar. Podemos pen
 ### Exportação dos resultados ####
 ```
 
-Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas
-a etapa necessária.
+Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.
 
 
 ## 4. Documente o projeto
@@ -144,45 +168,30 @@ O `README.md` é a porta de entrada do projeto. Ele deve explicar, de forma brev
 - Quais pacotes precisam ser instalados;
 - Onde encontrar os principais resultados.
 
-Um exemplo de início de `README.md`:
-
-```markdown
-# Análise de exemplo
-
-Este projeto analisa as notas de uma turma.
-
-## Como executar
-
-1. Abra o projeto no Positron.
-2. Execute `scripts/00_importar_dados.R`.
-3. Execute `scripts/01_analisar_dados.R`.
-4. Consulte os resultados na pasta `results/`.
-```
-
 ### Comentários no código
 
 Comentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:
 
-```r
+```{r}
 # Calcular a média apenas entre as observações com nota informada.
 media_nota <- mean(alunos$nota, na.rm = TRUE)
 ```
 
 Comentários que apenas repetem o código ajudam pouco:
 
-```r
+```{r}
 # Calcular a média
 media_nota <- mean(alunos$nota, na.rm = TRUE)
 ```
 
-Use comentários para explicar o **porquê** de uma decisão quando isso não for óbvio no próprio código.
+Use comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.
 
 
 ## 5. Priorize clareza
 
 Prefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.
 
-```r
+```{r}
 # Separar o filtro em uma etapa que pode ser conferida.
 dados_validos <- alunos[!is.na(alunos$nota), ]
 
@@ -197,7 +206,7 @@ Ao criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o
 
 Copiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma tarefa for realizada para diferentes valores, considere usar uma função ou uma repetição.
 
-```r
+```{r}
 calcular_media <- function(valores) {
   mean(valores, na.rm = TRUE)
 }
@@ -213,14 +222,14 @@ Por outro lado, não é necessário criar uma função para cada linha. A funç�
 
 Um caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:
 
-```r
+```bash
 # Evite compartilhar caminhos específicos do seu computador.
 # read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")
 ```
 
 Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:
 
-```r
+```bash
 caminho_dados <- file.path("data", "raw", "dados.csv")
 dados <- read.csv(caminho_dados)
 ```
@@ -228,9 +237,9 @@ dados <- read.csv(caminho_dados)
 Também evite repetir o mesmo número ou texto em vários lugares do script.
 Quando um valor for uma decisão importante da análise, dê um nome a ele:
 
-```r
+```{r}
 nota_minima <- 7
-alunos_aprovados <- alunos[alunos$nota >= nota_minima, ]
+alunos_aprovados <- alunos[!is.na(alunos$nota) & alunos$nota >= nota_minima, ]
 ```
 
 Isso facilita atualizar a análise e deixa a decisão mais visível.
@@ -252,7 +261,7 @@ Alguns cuidados ajudam nesse processo:
 
 Por exemplo:
 
-```r
+```{r}
 # Torna o sorteio reproduzível.
 set.seed(123)
 amostra <- sample(1:100, size = 5)
