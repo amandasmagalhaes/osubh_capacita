@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GitHub – OSUBH Capacita</title>
+<title>Software R – OSUBH Capacita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,8 +33,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05 - Boas práticas de programação.html" rel="next">
-<link href="./03 - Introdução em R.html" rel="prev">
+<link href="./02 - Positron.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04 - GitHub.html"><span class="chapter-title">GitHub</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01 - R.html"><span class="chapter-title">Software R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -152,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01 - R.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Software R</span></a>
+  <a href="./01 - R.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Software R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04 - GitHub.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">GitHub</span></a>
+  <a href="./04 - GitHub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">GitHub</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,20 +150,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#git-github-e-positron" id="toc-git-github-e-positron" class="nav-link active" data-scroll-target="#git-github-e-positron">Git, GitHub e Positron</a>
+  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a>
   <ul class="collapse">
-  <li><a href="#criar-uma-conta-no-github" id="toc-criar-uma-conta-no-github" class="nav-link" data-scroll-target="#criar-uma-conta-no-github">Criar uma conta no GitHub</a></li>
+  <li><a href="#instalação" id="toc-instalação" class="nav-link" data-scroll-target="#instalação">Instalação</a></li>
   </ul></li>
-  <li><a href="#instalar-o-git" id="toc-instalar-o-git" class="nav-link" data-scroll-target="#instalar-o-git">Instalar o Git</a>
-  <ul class="collapse">
-  <li><a href="#configurar-seu-nome-e-e-mail" id="toc-configurar-seu-nome-e-e-mail" class="nav-link" data-scroll-target="#configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</a></li>
-  </ul></li>
-  <li><a href="#criar-um-repositório-no-github" id="toc-criar-um-repositório-no-github" class="nav-link" data-scroll-target="#criar-um-repositório-no-github">Criar um repositório no GitHub</a>
-  <ul class="collapse">
-  <li><a href="#arquivos-criados-automaticamente" id="toc-arquivos-criados-automaticamente" class="nav-link" data-scroll-target="#arquivos-criados-automaticamente">Arquivos criados automaticamente</a></li>
-  </ul></li>
-  <li><a href="#abrir-um-repositório-no-positron" id="toc-abrir-um-repositório-no-positron" class="nav-link" data-scroll-target="#abrir-um-repositório-no-positron">Abrir um repositório no Positron</a></li>
-  <li><a href="#adicionar-arquivos-e-fazer-um-commit" id="toc-adicionar-arquivos-e-fazer-um-commit" class="nav-link" data-scroll-target="#adicionar-arquivos-e-fazer-um-commit">Adicionar arquivos e fazer um commit</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
   </ul>
 </nav>
     </div>
@@ -207,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">GitHub</span></h1>
+<h1 class="title"><span class="chapter-title">Software R</span></h1>
 </div>
 
 
@@ -230,181 +186,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="git-github-e-positron" class="level2">
-<h2 class="anchored" data-anchor-id="git-github-e-positron">Git, GitHub e Positron</h2>
-<p>O <a href="https://github.com/" target="_blank">GitHub</a> é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.</p>
-<p>Antes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Ferramenta</th>
-<th>Para que serve</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Git</strong></td>
-<td>Sistema de controle de versão que registra o histórico das alterações em um projeto.</td>
-</tr>
-<tr class="even">
-<td><strong>GitHub</strong></td>
-<td>Plataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.</td>
-</tr>
-<tr class="odd">
-<td><strong>Positron</strong></td>
-<td>Ambiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.</td>
-</tr>
-</tbody>
-</table>
-<p>De forma simplificada, o fluxo de trabalho é:</p>
-<pre class="text"><code>Editar arquivos no Positron
-          ↓
-Registrar as alterações (commit)
-          ↓
-Enviar para o GitHub (push)
-          ↓
-Repositório no GitHub</code></pre>
-<p>Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um <strong>commit</strong>, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.</p>
-<section id="criar-uma-conta-no-github" class="level3">
-<h3 class="anchored" data-anchor-id="criar-uma-conta-no-github">Criar uma conta no GitHub</h3>
-<ol type="1">
-<li>Acesse <a href="https://github.com/" target="_blank">github.com</a>.</li>
-<li>Digite seu endereço de e-mail e clique em <strong>“Cadastrar-se no GitHub”</strong>.</li>
-<li>Preencha as informações solicitadas e siga as etapas de criação da conta.</li>
-<li>Confirme o endereço de e-mail cadastrado.</li>
-<li>Faça login na sua conta.</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Dica:</strong> escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: <code>https://github.com/seu-usuario/meu-projeto</code>.</p>
-</blockquote>
-<p>Mais informações estão disponíveis na documentação oficial sobre <a href="https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github" target="_blank">criação de contas no GitHub</a>.</p>
-</section>
-</section>
-<section id="instalar-o-git" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-o-git">Instalar o Git</h2>
-<p>No Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.</p>
-<p>Acesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<p>O <a href="https://www.r-project.org/about.html" target="_blank">R</a> é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:</p>
 <ul>
-<li><a href="https://git-scm.com/install/windows" target="_blank">Windows</a></li>
-<li><a href="https://git-scm.com/install/mac" target="_blank">macOS</a></li>
-<li><a href="https://git-scm.com/install/linux" target="_blank">Linux</a></li>
+<li>Importação, organização e manipulação de dados;</li>
+<li>Análises estatísticas (descritivas e inferenciais);</li>
+<li>Modelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);</li>
+<li>Criação de gráficos de alta qualidade para publicações científicas;</li>
+<li>Desenvolvimento de scripts e funções para automatizar análises.</li>
 </ul>
-<p>Após a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Se uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.</p>
-<section id="configurar-seu-nome-e-e-mail" class="level3">
-<h3 class="anchored" data-anchor-id="configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</h3>
-<p>Essa configuração é realizada apenas uma vez em cada computador.</p>
-<p>Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.</p>
-<p>Abra o <strong>terminal integrado do Positron</strong> e execute os comandos abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"seu-email@exemplo.com"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Para verificar se a configuração foi realizada corretamente, execute:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Se tudo estiver correto, serão exibidas informações semelhantes a:</p>
-<pre class="text"><code>user.name=Seu Nome
-user.email=seu-email@exemplo.com</code></pre>
-</section>
-</section>
-<section id="criar-um-repositório-no-github" class="level2">
-<h2 class="anchored" data-anchor-id="criar-um-repositório-no-github">Criar um repositório no GitHub</h2>
-<p>Um repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.</p>
+<p>Uma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.</p>
+<p>O R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/x4S9rIJHqxU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="instalação" class="level3">
+<h3 class="anchored" data-anchor-id="instalação">Instalação</h3>
 <ol type="1">
-<li>Acesse <a href="https://github.com/new" target="_blank">github.com/new</a>.</li>
-<li>Em <strong>Repository name</strong>, informe um nome para o repositório, por exemplo <code>primeiro_projeto</code>.</li>
-<li>Em <strong>Description</strong>, escreva uma breve descrição, se desejar.</li>
-<li>Em <strong>Choose visibility</strong>, escolha <strong>Public</strong> para tornar o repositório visível para qualquer pessoa ou <strong>Private</strong> para restringir o acesso apenas às pessoas autorizadas.</li>
-<li>Em <strong>Start with a template</strong>, mantenha <strong>No template</strong>.</li>
-<li>Marque a opção <strong>Add a README file</strong>.</li>
-<li>Em <strong>Add .gitignore</strong>, selecione <strong>R</strong>.</li>
-<li>Em <strong>Add license</strong>, mantenha <strong>No license</strong>.</li>
-<li>Clique em <strong>Create repository</strong>.</li>
+<li>Acesse o site oficial do <a href="https://cran.r-project.org/" target="_blank">R (CRAN)</a>.</li>
+<li>Selecione o sistema operacional do seu computador (Windows, macOS ou Linux).</li>
+<li>Baixe a versão mais recente disponível.</li>
+<li>Execute o instalador e siga as instruções padrão de instalação.</li>
 </ol>
-<section id="arquivos-criados-automaticamente" class="level3">
-<h3 class="anchored" data-anchor-id="arquivos-criados-automaticamente">Arquivos criados automaticamente</h3>
-<p>Ao criar o repositório, dois arquivos serão adicionados automaticamente.</p>
-<section id="readme.md" class="level4">
-<h4 class="anchored" data-anchor-id="readme.md">README.md</h4>
-<p>O arquivo <strong>README.md</strong> é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.</p>
-<p>É recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.</p>
-</section>
-<section id="gitignore" class="level4">
-<h4 class="anchored" data-anchor-id="gitignore">.gitignore</h4>
-<p>O arquivo <strong>.gitignore</strong> informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo <strong>R</strong>, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.</p>
-<p>Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.</p>
-<p>Abaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.</p>
-<pre class="text"><code># Arquivos temporários do R
-.Rhistory
-.RData
-.Ruserdata
-.Rproj.user/
-
-# Arquivos temporários do Python
-__pycache__/
-*.pyc
-
-# Configurações locais do Positron / VS Code
-.vscode/
-
-# Arquivos temporários do Quarto
-.quarto/
-*_cache/
-**/*.quarto_ipynb
-
-# Arquivos de log
-*.log
-
-# Dados
-*.csv
-*.xlsx
-*.dta
-*.rds
-*.rda
-*.sav</code></pre>
 </section>
 </section>
-</section>
-<section id="abrir-um-repositório-no-positron" class="level2">
-<h2 class="anchored" data-anchor-id="abrir-um-repositório-no-positron">Abrir um repositório no Positron</h2>
-<p>Agora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.</p>
-<ol type="1">
-<li>No GitHub, acesse o repositório criado.</li>
-<li>Clique em <strong>Code</strong> e copie a URL do repositório.</li>
-<li>Abra o Positron.</li>
-<li>Selecione <strong>New</strong> &gt; <strong>New Folder from Git</strong>.</li>
-<li>Cole a URL no campo <strong>Git repository URL</strong>.</li>
-<li>Em <strong>Create folder as subfolder of</strong>, escolha a pasta onde o projeto será salvo.</li>
-<li>Clique em <strong>OK</strong>.</li>
-<li>Aguarde a clonagem. O Positron abrirá automaticamente a pasta do projeto.</li>
-</ol>
-<p>Após a clonagem, todos os arquivos do projeto estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada com o GitHub por meio do Git.</p>
-</section>
-<section id="adicionar-arquivos-e-fazer-um-commit" class="level2">
-<h2 class="anchored" data-anchor-id="adicionar-arquivos-e-fazer-um-commit">Adicionar arquivos e fazer um commit</h2>
-<p>Como o repositório foi criado com um <code>README.md</code> e um <code>.gitignore</code>, ele já possui um commit inicial. Depois de clonar o repositório, adicione ou copie os arquivos do projeto para a pasta clonada.</p>
-<p>Um <strong>commit</strong> registra um conjunto de alterações no histórico local do Git. Nessa etapa, as alterações ainda <strong>não são enviadas para o GitHub</strong>.</p>
-<p>Na aba <strong>Source Control</strong>:</p>
-<ol type="1">
-<li><p>Confira a lista de arquivos em <strong>Changes</strong>.</p></li>
-<li><p>Escreva uma mensagem que descreva as alterações realizadas, por exemplo:</p>
-<pre class="text"><code>Adiciona arquivos iniciais do projeto</code></pre></li>
-<li><p>Clique em <strong>Commit</strong>.</p></li>
-<li><p>Clique em <strong>Push</strong> ou <strong>Sync Changes</strong> para enviar as alterações ao GitHub.</p></li>
-</ol>
-<p>A mensagem do commit deve ser curta e descrever claramente o que foi feito.</p>
-<p>Evite mensagens genéricas, como <code>mudanças</code>, <code>teste</code> ou <code>atualização</code>, pois elas dificultam a compreensão do histórico do projeto.</p>
-<blockquote class="blockquote">
-<p><strong>Resumo</strong></p>
-<ul>
-<li><strong>Commit:</strong> registra as alterações no histórico local do projeto.</li>
-<li><strong>Push:</strong> envia os commits locais para o GitHub.</li>
-<li><strong>Pull</strong> ou <strong>Sync Changes:</strong> atualiza o projeto local com as alterações existentes no GitHub.</li>
-</ul>
-</blockquote>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<p>O <a href="https://docs.posit.co/ide/user/" target="_blank">RStudio</a> é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.</p>
+<p>Para utilizá-lo, é necessário que o software R esteja instalado no computador.</p>
+<p>É um dos ambientes mais utilizados pela comunidade científica e pode ser <a href="https://posit.co/downloads" target="_blank">baixado gratuitamente</a>.</p>
+<p>Neste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.</p>
 
 
 </section>
@@ -812,13 +622,13 @@ __pycache__/
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./03 - Introdução em R.html" class="pagination-link" aria-label="Introdução em R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Introdução em R</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Apresentação">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Apresentação</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05 - Boas práticas de programação.html" class="pagination-link" aria-label="Boas práticas de programação">
-        <span class="nav-page-text"><span class="chapter-title">Boas práticas de programação</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02 - Positron.html" class="pagination-link" aria-label="Software Positron">
+        <span class="nav-page-text"><span class="chapter-title">Software Positron</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

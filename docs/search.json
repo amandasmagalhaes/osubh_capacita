@@ -214,7 +214,7 @@
     "href": "04 - GitHub.html",
     "title": "GitHub",
     "section": "",
-    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online utilizada para armazenar e compartilhar código-fonte, acompanhar alterações nos arquivos e colaborar com outras pessoas. Além do código, também pode armazenar documentos, dados e outros arquivos relacionados ao projeto.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:\nDe forma simplificada, o fluxo de trabalho é:\nAo trabalhar com Git e GitHub, evite enviar senhas, chaves de acesso, dados ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
+    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:\nDe forma simplificada, o fluxo de trabalho é:\nEvite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -234,7 +234,7 @@
     "href": "04 - GitHub.html#git-github-e-positron",
     "title": "GitHub",
     "section": "",
-    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações realizadas nos arquivos, incluindo quem fez cada alteração e quando ela ocorreu.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e facilita o compartilhamento, a colaboração e o armazenamento remoto dos projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos, além de acessar os recursos do Git por meio de uma interface gráfica.\n\n\n\n\nEditar arquivos no Positron\n          ↓\nRegistrar as alterações (commit)\n          ↓\nEnviar para o GitHub (push)\n          ↓\nRepositório no GitHub\n\n\nCriar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em “Cadastrar-se no GitHub”.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\nA confirmação do e-mail é necessária para utilizar algumas funcionalidades do GitHub, como a criação de repositórios. Após criar a conta, também é recomendado ativar a autenticação em dois fatores (2FA) para aumentar a segurança.\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre a criação de contas no GitHub.",
+    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.\n\n\n\n\nEditar arquivos no Positron\n          ↓\nRegistrar as alterações (commit)\n          ↓\nEnviar para o GitHub (push)\n          ↓\nRepositório no GitHub\n\n\nCriar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em “Cadastrar-se no GitHub”.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -254,7 +254,7 @@
     "href": "04 - GitHub.html#instalar-o-git",
     "title": "GitHub",
     "section": "Instalar o Git",
-    "text": "Instalar o Git\nO Positron utiliza o Git instalado no computador para gerenciar o histórico de alterações dos arquivos e sincronizar projetos com o GitHub.\n\nObservação: No Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, o Git pode já estar disponível ou ser instalado automaticamente junto às ferramentas de desenvolvimento do sistema. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\n\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.\n\nConfigurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\n- user.name=Seu Nome\n- user.email=seu-email@exemplo.com",
+    "text": "Instalar o Git\nNo Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.\n\nConfigurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -264,7 +264,7 @@
     "href": "04 - GitHub.html#criar-um-repositório-no-github",
     "title": "GitHub",
     "section": "Criar um repositório no GitHub",
-    "text": "Criar um repositório no GitHub\nUm repositório (repository ou repo) é o espaço onde ficam armazenados os arquivos de um projeto, seu histórico de alterações e todas as informações relacionadas ao desenvolvimento.\n\nAcesse github.com/new.\nEm Repository name, informe um nome para o repositório, por exemplo primeiro_projeto.\nEm Description, escreva uma breve descrição, se desejar.\nEm Choose visibility, escolha Public para tornar o repositório visível para qualquer pessoa ou Private para restringir o acesso apenas às pessoas autorizadas.\nEm Start with a template, mantenha No template.\nMarque a opção Add a README file.\nEm Add .gitignore, selecione R.\nEm Add license, mantenha No license.\nClique em Create repository.\n\n\nArquivos criados automaticamente\nAo criar o repositório, dois arquivos serão adicionados automaticamente.\n\nREADME.md\nO arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou colaborar com seu desenvolvimento.\nÉ recomendado incluir informações como:\n\nobjetivo do projeto;\ndescrição dos principais arquivos e pastas;\nordem sugerida para execução dos scripts ou documentos;\ninstruções para reprodução das análises;\ninformações sobre autoria e contato, quando necessário.\n\nComo o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.\n\n\n.gitignore\nO arquivo .gitignore informa ao Git quais arquivos e pastas não devem ser versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo contendo regras apropriadas para projetos desenvolvidos nessa linguagem.\nEm geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser enviados ao repositório.\nUm exemplo simplificado é apresentado abaixo:\n# Arquivos temporários do R\n.Rhistory\n.RData\n.Ruserdata\n.Rproj.user/\n\n# Arquivos temporários do Python\n__pycache__/\n*.pyc\n\n# Configurações locais do Positron / VS Code\n.vscode/\n\n# Arquivos temporários do Quarto\n.quarto/\n*_cache/\n**/*.quarto_ipynb\n\n# Arquivos de log\n*.log\n\n# Dados\n# *.csv\n# *.xlsx\n# *.dta\n# *.rds\n# *.rda\n# *.sav\nO arquivo .gitignore pode ser editado posteriormente para incluir ou remover regras conforme as necessidades do projeto.",
+    "text": "Criar um repositório no GitHub\nUm repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.\n\nAcesse github.com/new.\nEm Repository name, informe um nome para o repositório, por exemplo primeiro_projeto.\nEm Description, escreva uma breve descrição, se desejar.\nEm Choose visibility, escolha Public para tornar o repositório visível para qualquer pessoa ou Private para restringir o acesso apenas às pessoas autorizadas.\nEm Start with a template, mantenha No template.\nMarque a opção Add a README file.\nEm Add .gitignore, selecione R.\nEm Add license, mantenha No license.\nClique em Create repository.\n\n\nArquivos criados automaticamente\nAo criar o repositório, dois arquivos serão adicionados automaticamente.\n\nREADME.md\nO arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.\nÉ recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.\n\n\n.gitignore\nO arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.\nEm geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.\nAbaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.\n# Arquivos temporários do R\n.Rhistory\n.RData\n.Ruserdata\n.Rproj.user/\n\n# Arquivos temporários do Python\n__pycache__/\n*.pyc\n\n# Configurações locais do Positron / VS Code\n.vscode/\n\n# Arquivos temporários do Quarto\n.quarto/\n*_cache/\n**/*.quarto_ipynb\n\n# Arquivos de log\n*.log\n\n# Dados\n*.csv\n*.xlsx\n*.dta\n*.rds\n*.rda\n*.sav",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -384,7 +384,7 @@
     "href": "03 - Introdução em R.html",
     "title": "Introdução em R",
     "section": "",
-    "text": "Primeiro script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script utilizado nos exemplos está disponível para download:",
+    "text": "Primeiro script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script está disponível para download:",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
     ]
@@ -404,9 +404,49 @@
     "href": "04 - GitHub.html#abrir-um-repositório-no-positron",
     "title": "GitHub",
     "section": "Abrir um repositório no Positron",
-    "text": "Abrir um repositório no Positron\nAgora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.\n\nNo GitHub, acesse o repositório criado.\nClique em Code e copie a URL do repositório.\nAbra o Positron.\nSelecione New &gt; New Folder from Git.\nCole a URL do repositório no campo Git repository URL.\nEm Create folder as subfolder of, escolha a pasta onde deseja salvar o projeto.\nClique em OK.\nAguarde a clonagem do repositório. O Positron abrirá automaticamente a pasta do projeto.\n\nApós a clonagem, todos os arquivos do repositório estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada posteriormente com o GitHub por meio do Git.",
+    "text": "Abrir um repositório no Positron\nAgora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.\n\nNo GitHub, acesse o repositório criado.\nClique em Code e copie a URL do repositório.\nAbra o Positron.\nSelecione New &gt; New Folder from Git.\nCole a URL no campo Git repository URL.\nEm Create folder as subfolder of, escolha a pasta onde o projeto será salvo.\nClique em OK.\nAguarde a clonagem. O Positron abrirá automaticamente a pasta do projeto.\n\nApós a clonagem, todos os arquivos do projeto estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada com o GitHub por meio do Git.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
+    "href": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
+    "title": "GitHub",
+    "section": "Adicionar arquivos e fazer um commit",
+    "text": "Adicionar arquivos e fazer um commit\nComo o repositório foi criado com um README.md e um .gitignore, ele já possui um commit inicial. Depois de clonar o repositório, adicione ou copie os arquivos do projeto para a pasta clonada.\nUm commit registra um conjunto de alterações no histórico local do Git. Nessa etapa, as alterações ainda não são enviadas para o GitHub.\nNa aba Source Control:\n\nConfira a lista de arquivos em Changes.\nEscreva uma mensagem que descreva as alterações realizadas, por exemplo:\nAdiciona arquivos iniciais do projeto\nClique em Commit.\nClique em Push ou Sync Changes para enviar as alterações ao GitHub.\n\nA mensagem do commit deve ser curta e descrever claramente o que foi feito.\nEvite mensagens genéricas, como mudanças, teste ou atualização, pois elas dificultam a compreensão do histórico do projeto.\n\nResumo\n\nCommit: registra as alterações no histórico local do projeto.\nPush: envia os commits locais para o GitHub.\nPull ou Sync Changes: atualiza o projeto local com as alterações existentes no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html",
+    "href": "01 - R.html",
+    "title": "Software R",
+    "section": "",
+    "text": "R\nO R é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:\nUma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.\nO R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html#r",
+    "href": "01 - R.html#r",
+    "title": "Software R",
+    "section": "",
+    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas (descritivas e inferenciais);\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html#rstudio",
+    "href": "01 - R.html#rstudio",
+    "title": "Software R",
+    "section": "RStudio",
+    "text": "RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.\nPara utilizá-lo, é necessário que o software R esteja instalado no computador.\nÉ um dos ambientes mais utilizados pela comunidade científica e pode ser baixado gratuitamente.\nNeste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]
   }
 ]

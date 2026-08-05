@@ -73,51 +73,75 @@ class(maior_de_idade)
 
 # Um vetor armazena vários valores do mesmo tipo.
 # A função c() (combine) reúne vários valores em um único vetor.
-frutas <- c("Banana", "Maçã", "Manga", "Morango", "Uva")
-precos <- c(5.99, 8.49, 6.99, 12.90, 9.99)
+alunos_nomes <- c(
+  "Ana", "Bruno", "Carla", "Diego", "Elisa",
+  "Felipe", "Gabriela", "Hugo", "Isabela", "João"
+)
+idades <- c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22)
+notas <- c(8.5, 6.0, 9.2, 7.5, 8.0, 5.5, 7.0, 9.5, 6.8, 8.7)
 
 # Visualizando os vetores.
-frutas
-precos
+alunos_nomes
+idades
+notas
 
 # length() informa quantos elementos existem no vetor.
-length(frutas)
+length(alunos_nomes)
 
 # Em R, a contagem das posições começa em 1 (e não em 0).
-frutas[1]
-frutas[2:4]
-frutas[c(1, 5)]
+alunos_nomes[1]
+alunos_nomes[2:4]
+alunos_nomes[c(1, 5)]
 
 # Também podemos realizar operações com todos os elementos do vetor.
-precos + 2
+notas + 1
 
 # As funções recebem seus argumentos entre parênteses.
 # Soma
-sum(precos)
+sum(notas)
 # Média
-mean(precos)
+mean(notas)
 # Mediana
-median(precos)
+median(notas)
 # Mínimo
-min(precos)
+min(notas)
 # Máximo
-max(precos)
+max(notas)
 # Desvio-padrão
-sd(precos)
+sd(notas)
 # Resumo estatístico (mínimo, quartis, mediana, média e máximo)
-summary(precos)
+summary(notas)
 
 
 ### Valores ausentes (NA) ####
 
 # NA representa um valor ausente (missing value).
-precos2 <- c(5.99, 8.49, NA, 12.90, 9.99)
+notas_com_na <- c(8.5, 6.0, NA, 7.5, 8.0)
 
 # is.na() identifica quais posições possuem valores ausentes.
-is.na(precos2)
+is.na(notas_com_na)
 
 # na.rm = TRUE faz com que os valores ausentes sejam ignorados no cálculo.
-mean(precos2, na.rm = TRUE)
+mean(notas_com_na, na.rm = TRUE)
+
+
+### Funções ####
+
+# Funções executam tarefas e podem receber valores como argumentos.
+# O R possui funções prontas, como mean(), e também permite criar funções.
+
+# Esta função classifica a situação de um aluno a partir da sua nota.
+verificar_situacao <- function(nota) {
+  if (nota >= 7) {
+    "Aprovado"
+  } else {
+    "Reprovado"
+  }
+}
+
+# Para usar a função, fornecemos uma nota como argumento.
+verificar_situacao(8.5)
+verificar_situacao(6.0)
 
 
 ### Data frames (tabelas de dados) ####
@@ -128,71 +152,38 @@ mean(precos2, na.rm = TRUE)
 # Um data frame é uma tabela.
 # Cada coluna representa uma variável e cada linha representa uma observação.
 
-mercado <- data.frame(
-  produto = c(
-    "Café",
-    "Banana",
-    "Maçã",
-    "Morango",
-    "Uva",
-    "Arroz",
-    "Feijão",
-    "Leite",
-    "Macarrão",
-    "Óleo"
-  ),
-  categoria = c(
-    "Bebida",
-    "Fruta",
-    "Fruta",
-    "Fruta",
-    "Fruta",
-    "Grão",
-    "Grão",
-    "Laticínio",
-    "Massa",
-    "Óleo"
-  ),
-  preco = c(
-    19.90,
-    5.99,
-    8.49,
-    12.90,
-    9.99,
-    28.90,
-    9.49,
-    6.80,
-    7.99,
-    8.99
-  )
+alunos <- data.frame(
+  nome = alunos_nomes,
+  idade = idades,
+  nota = notas
 )
 
 # Visualizando a tabela.
-mercado
-View(mercado)
+alunos
+View(alunos)
 
 # Algumas funções úteis para conhecer uma base de dados.
 # Primeiras linhas da tabela
-head(mercado)
+head(alunos)
 # Estrutura da tabela e o tipo de cada variável
-str(mercado)
+str(alunos)
 # Nome das colunas
-names(mercado)
+names(alunos)
 # Resumo descritivo da tabela
-summary(mercado)
+summary(alunos)
 
 # O operador $ permite acessar uma coluna específica da tabela.
-mercado$produto
-mercado$preco
+alunos$nome
+alunos$nota
 
-# Selecionando apenas os produtos com preço maior que R$ 10.
-mercado[mercado$preco > 10, ]
+# Selecionando apenas os alunos com nota maior ou igual a 7.
+alunos[alunos$nota >= 7, ]
 
-# Selecionando apenas os produtos da categoria "Fruta".
-mercado[mercado$categoria == "Fruta", ]
+# Selecionando apenas os alunos com idade menor que 21 anos.
+alunos[alunos$idade < 21, ]
 
-# Selecionando apenas a coluna "produto".
-mercado[, "produto"]
+# Selecionando apenas a coluna "nome".
+alunos[, "nome"]
 
 
 ### Gráfico básico ####
@@ -201,15 +192,15 @@ mercado[, "produto"]
 
 barplot(
   # Valores representados pelas barras
-  mercado$preco,
+  alunos$nota,
   # Nomes exibidos abaixo de cada barra
-  names.arg = mercado$produto,
+  names.arg = alunos$nome,
   # Cor das barras
   col = "lightblue",
   # Título do gráfico
-  main = "Preço dos produtos",
+  main = "Notas dos alunos",
   # Título do eixo Y
-  ylab = "Preço (R$)"
+  ylab = "Nota"
 )
 
 ### Boas práticas ####
