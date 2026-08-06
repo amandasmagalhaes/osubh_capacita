@@ -268,12 +268,12 @@ Registrar as alterações (commit)
 Enviar para o GitHub (push)
           ↓
 Repositório no GitHub</code></pre>
-<p>Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um <strong>commit</strong>, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.</p>
+<p>Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.</p>
 <section id="criar-uma-conta-no-github" class="level3">
 <h3 class="anchored" data-anchor-id="criar-uma-conta-no-github">Criar uma conta no GitHub</h3>
 <ol type="1">
 <li>Acesse <a href="https://github.com/" target="_blank">github.com</a>.</li>
-<li>Digite seu endereço de e-mail e clique em <strong>“Cadastrar-se no GitHub”</strong>.</li>
+<li>Digite seu endereço de e-mail e clique em <strong>Cadastrar-se no GitHub</strong>.</li>
 <li>Preencha as informações solicitadas e siga as etapas de criação da conta.</li>
 <li>Confirme o endereço de e-mail cadastrado.</li>
 <li>Faça login na sua conta.</li>
@@ -300,7 +300,7 @@ Repositório no GitHub</code></pre>
 <h3 class="anchored" data-anchor-id="configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</h3>
 <p>Essa configuração é realizada apenas uma vez em cada computador.</p>
 <p>Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.</p>
-<p>Abra o <strong>terminal integrado do Positron</strong> e execute os comandos abaixo:</p>
+<p>Abra o terminal integrado do Positron e execute os comandos abaixo:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"seu-email@exemplo.com"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Para verificar se a configuração foi realizada corretamente, execute:</p>
@@ -315,7 +315,7 @@ user.email=seu-email@exemplo.com</code></pre>
 <p>Um repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.</p>
 <ol type="1">
 <li>Acesse <a href="https://github.com/new" target="_blank">github.com/new</a>.</li>
-<li>Em <strong>Repository name</strong>, informe um nome para o repositório, por exemplo <code>primeiro_projeto</code>.</li>
+<li>Em <strong>Repository name</strong>, informe um nome para o repositório, por exemplo “primeiro_projeto”.</li>
 <li>Em <strong>Description</strong>, escreva uma breve descrição, se desejar.</li>
 <li>Em <strong>Choose visibility</strong>, escolha <strong>Public</strong> para tornar o repositório visível para qualquer pessoa ou <strong>Private</strong> para restringir o acesso apenas às pessoas autorizadas.</li>
 <li>Em <strong>Start with a template</strong>, mantenha <strong>No template</strong>.</li>
@@ -329,12 +329,12 @@ user.email=seu-email@exemplo.com</code></pre>
 <p>Ao criar o repositório, dois arquivos serão adicionados automaticamente.</p>
 <section id="readme.md" class="level4">
 <h4 class="anchored" data-anchor-id="readme.md">README.md</h4>
-<p>O arquivo <strong>README.md</strong> é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.</p>
+<p>O arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.</p>
 <p>É recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.</p>
 </section>
 <section id="gitignore" class="level4">
 <h4 class="anchored" data-anchor-id="gitignore">.gitignore</h4>
-<p>O arquivo <strong>.gitignore</strong> informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo <strong>R</strong>, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.</p>
+<p>O arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.</p>
 <p>Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.</p>
 <p>Abaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arquivos temporários do R</span></span>
@@ -396,7 +396,7 @@ user.email=seu-email@exemplo.com</code></pre>
 <li><p>Clique em <strong>Push</strong> ou <strong>Sync Changes</strong> para enviar as alterações ao GitHub.</p></li>
 </ol>
 <p>A mensagem do commit deve ser curta e descrever claramente o que foi feito.</p>
-<p>Evite mensagens genéricas, como <code>mudanças</code>, <code>teste</code> ou <code>atualização</code>, pois elas dificultam a compreensão do histórico do projeto.</p>
+<p>Evite mensagens genéricas, como mudanças, teste ou atualização, pois elas dificultam a compreensão do histórico do projeto.</p>
 <blockquote class="blockquote">
 <p><strong>Resumo</strong></p>
 <ul>

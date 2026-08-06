@@ -28,13 +28,13 @@ Enviar para o GitHub (push)
 Repositório no GitHub
 ```
 
-Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um **commit**, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
+Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
 
 
 ### Criar uma conta no GitHub
 
 1. Acesse [github.com](https://github.com/){target="_blank"}.
-2. Digite seu endereço de e-mail e clique em **"Cadastrar-se no GitHub"**.
+2. Digite seu endereço de e-mail e clique em **Cadastrar-se no GitHub**.
 3. Preencha as informações solicitadas e siga as etapas de criação da conta.
 4. Confirme o endereço de e-mail cadastrado.
 5. Faça login na sua conta.
@@ -69,7 +69,7 @@ Essa configuração é realizada apenas uma vez em cada computador.
 
 Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.
 
-Abra o **terminal integrado do Positron** e execute os comandos abaixo:
+Abra o terminal integrado do Positron e execute os comandos abaixo:
 
 ```bash
 git config --global user.name "Seu Nome"
@@ -95,7 +95,7 @@ user.email=seu-email@exemplo.com
 Um repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.
 
 1. Acesse [github.com/new](https://github.com/new){target="_blank"}.
-2. Em **Repository name**, informe um nome para o repositório, por exemplo `primeiro_projeto`.
+2. Em **Repository name**, informe um nome para o repositório, por exemplo "primeiro_projeto".
 3. Em **Description**, escreva uma breve descrição, se desejar.
 4. Em **Choose visibility**, escolha **Public** para tornar o repositório visível para qualquer pessoa ou **Private** para restringir o acesso apenas às pessoas autorizadas.
 5. Em **Start with a template**, mantenha **No template**.
@@ -110,13 +110,13 @@ Ao criar o repositório, dois arquivos serão adicionados automaticamente.
 
 #### README.md
 
-O arquivo **README.md** é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.
+O arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.
 
 É recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.
 
 #### .gitignore
 
-O arquivo **.gitignore** informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo **R**, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.
+O arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.
 
 Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.
 
@@ -190,7 +190,7 @@ Na aba **Source Control**:
 
 A mensagem do commit deve ser curta e descrever claramente o que foi feito.
 
-Evite mensagens genéricas, como `mudanças`, `teste` ou `atualização`, pois elas dificultam a compreensão do histórico do projeto.
+Evite mensagens genéricas, como mudanças, teste ou atualização, pois elas dificultam a compreensão do histórico do projeto.
 
 > **Resumo**
 >
