@@ -4,10 +4,10 @@ date: today
 ---
 
 
-## Primeiro script em R
+## Script em R
 
 Executaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.
 
 O script está disponível para download:
 
-> [03.1 - Primeiro script em R](03.1%20-%20Primeiro%20script%20em%20R.R){download=""}
+> [Primeiro script em R](03.1%20-%20Primeiro%20script%20em%20R.R){download=""}

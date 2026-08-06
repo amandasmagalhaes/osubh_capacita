@@ -17,7 +17,7 @@ O [Positron](https://positron.posit.co/){target="_blank"} é um ambiente de dese
 
 Em comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.
 
-Para utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador, como o R ou o Python.
+Para utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador.
 
 Neste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.
 

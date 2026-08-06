@@ -73,7 +73,7 @@ class(maior_de_idade)
 
 # Um vetor armazena vários valores do mesmo tipo.
 # A função c() (combine) reúne vários valores em um único vetor.
-alunos_nomes <- c(
+nomes <- c(
   "Ana",
   "Bruno",
   "Carla",
@@ -89,17 +89,17 @@ idades <- c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22)
 notas <- c(8.5, 6.0, 9.2, 7.5, 8.0, 5.5, 7.0, 9.5, 6.8, 8.7)
 
 # Visualizando os vetores.
-alunos_nomes
+nomes
 idades
 notas
 
 # length() informa quantos elementos existem no vetor.
-length(alunos_nomes)
+length(nomes)
 
 # Em R, a contagem das posições começa em 1 (e não em 0).
-alunos_nomes[1]
-alunos_nomes[2:4]
-alunos_nomes[c(1, 5)]
+nomes[1]
+nomes[2:4]
+nomes[c(1, 5)]
 
 # Também podemos realizar operações com todos os elementos do vetor.
 notas + 1
@@ -161,7 +161,7 @@ verificar_situacao(6.0)
 # Cada coluna representa uma variável e cada linha representa uma observação.
 
 alunos <- data.frame(
-  nome = alunos_nomes,
+  nome = nomes,
   idade = idades,
   nota = notas
 )
@@ -184,14 +184,14 @@ summary(alunos)
 alunos$nome
 alunos$nota
 
+# Selecionando apenas a coluna "nome".
+alunos[, "nome"]
+
 # Selecionando apenas os alunos com nota maior ou igual a 7.
 alunos[alunos$nota >= 7, ]
 
 # Selecionando apenas os alunos com idade menor que 21 anos.
 alunos[alunos$idade < 21, ]
-
-# Selecionando apenas a coluna "nome".
-alunos[, "nome"]
 
 
 ### Gráfico básico ####

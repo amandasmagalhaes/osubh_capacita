@@ -9,7 +9,7 @@ date: today
 O [R](https://www.r-project.org/about.html){target="_blank"} é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:
 
 - Importação, organização e manipulação de dados;
-- Análises estatísticas (descritivas e inferenciais);
+- Análises estatísticas;
 - Modelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);
 - Criação de gráficos de alta qualidade para publicações científicas;
 - Desenvolvimento de scripts e funções para automatizar análises.
