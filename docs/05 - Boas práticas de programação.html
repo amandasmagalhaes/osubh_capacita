@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#o-que-são-boas-práticas" id="toc-o-que-são-boas-práticas" class="nav-link active" data-scroll-target="#o-que-são-boas-práticas">O que são boas práticas?</a></li>
   <li><a href="#por-que-isso-é-importante" id="toc-por-que-isso-é-importante" class="nav-link" data-scroll-target="#por-que-isso-é-importante">Por que isso é importante?</a></li>
   <li><a href="#cinco-princípios-para-começar" id="toc-cinco-princípios-para-começar" class="nav-link" data-scroll-target="#cinco-princípios-para-começar">Cinco princípios para começar</a></li>
-  <li><a href="#dados-usados-nos-exemplos" id="toc-dados-usados-nos-exemplos" class="nav-link" data-scroll-target="#dados-usados-nos-exemplos">Dados usados nos exemplos</a></li>
+  <li><a href="#exemplo" id="toc-exemplo" class="nav-link" data-scroll-target="#exemplo">Exemplo</a></li>
   <li><a href="#organize-as-pastas-do-projeto" id="toc-organize-as-pastas-do-projeto" class="nav-link" data-scroll-target="#organize-as-pastas-do-projeto">1. Organize as pastas do projeto</a></li>
   <li><a href="#use-nomes-consistentes" id="toc-use-nomes-consistentes" class="nav-link" data-scroll-target="#use-nomes-consistentes">2. Use nomes consistentes</a></li>
   <li><a href="#divida-o-trabalho-em-etapas" id="toc-divida-o-trabalho-em-etapas" class="nav-link" data-scroll-target="#divida-o-trabalho-em-etapas">3. Divida o trabalho em etapas</a></li>
@@ -265,9 +265,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>Não é necessário aplicar tudo de uma vez. O mais importante é criar o hábito de escrever o código pensando também em quem precisará lê-lo depois.</p>
 </section>
-<section id="dados-usados-nos-exemplos" class="level2">
-<h2 class="anchored" data-anchor-id="dados-usados-nos-exemplos">Dados usados nos exemplos</h2>
-<p>Os exemplos a seguir utilizam dados fictícios de uma turma. A coluna <code>nota</code> contém um valor ausente para ilustrar como lidar com dados incompletos.</p>
+<section id="exemplo" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo">Exemplo</h2>
+<p>Os exemplos a seguir utilizam dados fictícios de uma turma.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">c</span>(</span>
@@ -329,8 +329,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Use nomes que indiquem o conteúdo do objeto;</li>
 <li>Escolha um padrão e mantenha-o em todo o projeto;</li>
-<li>Prefira letras minúsculas e <code>_</code> para separar palavras;</li>
-<li>Evite nomes como <code>x</code>, <code>objeto_final_final</code> e <code>teste2</code>;</li>
+<li>Prefira letras minúsculas e _ para separar palavras;</li>
+<li>Evite nomes como x, objeto_final_final e teste2;</li>
 <li>Evite espaços e acentos em nomes de arquivos e objetos.</li>
 </ul>
 <p>Também é importante escolher um padrão para nomes de arquivos. Por exemplo:</p>
@@ -427,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="evite-caminhos-fixos-e-valores-desnecessariamente-codificados">7. Evite caminhos fixos e valores desnecessariamente codificados</h2>
 <p>Um caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evite compartilhar caminhos específicos do seu computador.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">read.csv</span><span class="er">(</span><span class="st">"/Users/nome/Documentos/meu-projeto/data/dados.csv"</span><span class="kw">)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">caminho_dados</span> <span class="op">&lt;</span>- file.path<span class="er">(</span><span class="st">"data"</span><span class="ex">,</span> <span class="st">"raw"</span>, <span class="st">"dados.csv"</span><span class="kw">)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dados</span> <span class="op">&lt;</span>- read.csv<span class="er">(</span><span class="ex">caminho_dados</span><span class="kw">)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>

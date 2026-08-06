@@ -41,9 +41,9 @@ Um bom ponto de partida é pensar que o código deve ser:
 Não é necessário aplicar tudo de uma vez. O mais importante é criar o hábito de escrever o código pensando também em quem precisará lê-lo depois.
 
 
-## Dados usados nos exemplos
+## Exemplo
 
-Os exemplos a seguir utilizam dados fictícios de uma turma. A coluna `nota` contém um valor ausente para ilustrar como lidar com dados incompletos.
+Os exemplos a seguir utilizam dados fictícios de uma turma.
 
 ```{r}
 alunos <- data.frame(
@@ -116,8 +116,8 @@ Algumas recomendações simples:
 
 - Use nomes que indiquem o conteúdo do objeto;
 - Escolha um padrão e mantenha-o em todo o projeto;
-- Prefira letras minúsculas e `_` para separar palavras;
-- Evite nomes como `x`, `objeto_final_final` e `teste2`;
+- Prefira letras minúsculas e _ para separar palavras;
+- Evite nomes como x, objeto_final_final e teste2;
 - Evite espaços e acentos em nomes de arquivos e objetos.
 
 Também é importante escolher um padrão para nomes de arquivos. Por exemplo:
@@ -224,7 +224,7 @@ Um caminho como o exemplo abaixo normalmente só funciona no computador de quem 
 
 ```bash
 # Evite compartilhar caminhos específicos do seu computador.
-# read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")
+read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")
 ```
 
 Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:

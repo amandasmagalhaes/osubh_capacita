@@ -104,7 +104,7 @@
     "href": "05 - Boas práticas de programação.html#evite-caminhos-fixos-e-valores-desnecessariamente-codificados",
     "title": "Boas práticas de programação",
     "section": "7. Evite caminhos fixos e valores desnecessariamente codificados",
-    "text": "7. Evite caminhos fixos e valores desnecessariamente codificados\nUm caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:\n# Evite compartilhar caminhos específicos do seu computador.\n# read.csv(\"/Users/nome/Documentos/meu-projeto/data/dados.csv\")\nPrefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:\ncaminho_dados &lt;- file.path(\"data\", \"raw\", \"dados.csv\")\ndados &lt;- read.csv(caminho_dados)\nTambém evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:\n\nnota_minima &lt;- 7\nalunos_aprovados &lt;- alunos[!is.na(alunos$nota) & alunos$nota &gt;= nota_minima, ]\n\nIsso facilita atualizar a análise e deixa a decisão mais visível.",
+    "text": "7. Evite caminhos fixos e valores desnecessariamente codificados\nUm caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:\n# Evite compartilhar caminhos específicos do seu computador.\nread.csv(\"/Users/nome/Documentos/meu-projeto/data/dados.csv\")\nPrefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:\ncaminho_dados &lt;- file.path(\"data\", \"raw\", \"dados.csv\")\ndados &lt;- read.csv(caminho_dados)\nTambém evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:\n\nnota_minima &lt;- 7\nalunos_aprovados &lt;- alunos[!is.na(alunos$nota) & alunos$nota &gt;= nota_minima, ]\n\nIsso facilita atualizar a análise e deixa a decisão mais visível.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -367,6 +367,16 @@
     "text": "Configurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "05 - Boas práticas de programação.html#exemplo",
+    "href": "05 - Boas práticas de programação.html#exemplo",
+    "title": "Boas práticas de programação",
+    "section": "Exemplo",
+    "text": "Exemplo\nOs exemplos a seguir utilizam dados fictícios de uma turma.\n\nalunos &lt;- data.frame(\n  nome = c(\n    \"Ana\",\n    \"Bruno\",\n    \"Carla\",\n    \"Diego\",\n    \"Elisa\",\n    \"Felipe\",\n    \"Gabriela\",\n    \"Hugo\",\n    \"Isabela\",\n    \"João\"\n  ),\n  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),\n  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)\n)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
   }
 ]
