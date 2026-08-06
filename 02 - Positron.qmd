@@ -21,7 +21,7 @@ Para utilizá-lo, é necessário que a linguagem de programação desejada estej
 
 Neste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.
 
-![](rstudio_positron.jpg){width="50%" fig-align="center"}
+![](figuras/rstudio_positron.jpg){width="50%" fig-align="center"}
 
 
 ### Instalação
