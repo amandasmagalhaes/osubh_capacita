@@ -30,8 +30,9 @@ Repositório no GitHub
 
 Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
 
+{{< video https://www.youtube.com/watch?v=pBy1zgt0XPc >}}
 
-### Criar uma conta no GitHub
+## Criar uma conta no GitHub
 
 1. Acesse [github.com](https://github.com/){target="_blank"}.
 2. Digite seu endereço de e-mail e clique em **Cadastrar-se no GitHub**.

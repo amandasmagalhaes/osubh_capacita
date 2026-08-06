@@ -234,7 +234,7 @@
     "href": "04 - GitHub.html#git-github-e-positron",
     "title": "GitHub",
     "section": "",
-    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.\n\n\n\n\nEditar arquivos no Positron\n          ↓\nRegistrar as alterações (commit)\n          ↓\nEnviar para o GitHub (push)\n          ↓\nRepositório no GitHub\n\n\nCriar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
+    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.\n\n\n\n\nEditar arquivos no Positron\n          ↓\nRegistrar as alterações (commit)\n          ↓\nEnviar para o GitHub (push)\n          ↓\nRepositório no GitHub",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -304,7 +304,7 @@
     "href": "02 - Positron.html",
     "title": "Software Positron",
     "section": "",
-    "text": "Positron\nO Positron é um ambiente de desenvolvimento integrado (IDE) gratuito, desenvolvido pela Posit (empresa criadora do RStudio), para programação em R e Python. Entre seus principais recursos estão:\nEm comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.\nPara utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador.\nNeste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.",
+    "text": "Positron\nO Positron é um ambiente de desenvolvimento integrado (IDE) gratuito, desenvolvido pela Posit (empresa criadora do RStudio), para programação em R e Python. Entre seus principais recursos estão:\nEm comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.\nPara utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador, como o R ou o Python.\nNeste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
     ]
@@ -334,7 +334,7 @@
     "href": "01 - R.html#r",
     "title": "Software R",
     "section": "",
-    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas (descritivas e inferenciais);\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]
@@ -377,6 +377,16 @@
     "text": "Exemplo\nOs exemplos a seguir utilizam dados fictícios de uma turma.\n\nalunos &lt;- data.frame(\n  nome = c(\n    \"Ana\",\n    \"Bruno\",\n    \"Carla\",\n    \"Diego\",\n    \"Elisa\",\n    \"Felipe\",\n    \"Gabriela\",\n    \"Hugo\",\n    \"Isabela\",\n    \"João\"\n  ),\n  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),\n  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)\n)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#criar-uma-conta-no-github",
+    "href": "04 - GitHub.html#criar-uma-conta-no-github",
+    "title": "GitHub",
+    "section": "Criar uma conta no GitHub",
+    "text": "Criar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
   }
 ]
