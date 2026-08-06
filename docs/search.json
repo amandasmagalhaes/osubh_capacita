@@ -284,7 +284,7 @@
     "href": "03 - Introdução em R.html",
     "title": "Introdução em R",
     "section": "",
-    "text": "Primeiro script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script está disponível para download:",
+    "text": "Script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script está disponível para download:",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
     ]
@@ -334,7 +334,7 @@
     "href": "01 - R.html#r",
     "title": "Software R",
     "section": "",
-    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas (descritivas e inferenciais);\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]
