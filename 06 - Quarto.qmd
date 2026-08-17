@@ -1,0 +1,122 @@
+---
+title: "Arquivo Quarto"
+date: today
+---
+
+
+## Quarto
+
+O [Quarto](https://quarto.org/){target="_blank"} é um sistema de publicação científica e técnica que permite combinar texto, código e resultados em um único documento.
+
+Ao renderizar o documento, o Quarto transforma esse conteúdo em formatos como HTML, PDF ou Word, facilitando a organização das análises.
+
+O arquivo utilizado pelo Quarto possui a extensão `.qmd`, que significa *Quarto Markdown*.
+
+Um documento Quarto combina diferentes elementos.
+
+## Cabeçalho YAML
+O cabeçalho YAML define o título e outras configurações específicas do documento. Ele fica no início do arquivo, entre duas linhas com três hífens:
+
+```yaml
+---
+title: "Título"
+date: today
+---
+```
+
+As configurações gerais do Quarto serão mantidas em um arquivo separado chamado `_quarto.yml`. Dessa forma, as mesmas configurações podem ser aplicadas a todos os documentos do projeto, sem precisar repeti-las em cada arquivo `.qmd`.
+
+Um exemplo de arquivo `_quarto.yml` é:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+
+lang: pt-BR
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-fold: true
+    smooth-scroll: true
+    anchor-sections: true
+    page-layout: full
+
+execute:
+  freeze: auto
+  cache: true
+  warning: false
+  message: false
+```
+
+
+## Texto em Markdown
+
+Depois do cabeçalho, escrevemos o conteúdo do documento usando Markdown, uma linguagem de marcação simples utilizada para formatar textos. No Quarto, o Markdown permite criar títulos, parágrafos, listas, links, imagens e outros elementos de formatação. Por exemplo:
+
+```markdown
+## Introdução
+
+Este documento apresenta os resultados da análise.
+```
+
+Alguns dos principais recursos são:
+
+```markdown
+# — cria títulos. O número de # indica o nível hierárquico: # representa o título principal, ## uma seção e ### uma subseção.
+**texto** — aplica negrito.
+*texto* — aplica itálico.
+- item — cria listas não numeradas.
+1. item — cria listas numeradas.
+[texto](endereço) — cria links.
+![descrição](imagem) — insere imagens.
+`código` — destaca comandos, funções ou nomes de objetos no texto.
+```
+
+{{< video https://www.youtube.com/watch?v=gFJfyHRKaE0 >}}
+
+
+## Blocos de código em R
+
+Para inserir código em R, usamos um bloco identificado por `{r}`:
+
+<pre><code>```{r}
+media <- mean(c(6, 7, 8, 9))
+media
+```</code></pre>
+
+Durante a renderização, o Quarto executa o código e insere o resultado no documento.
+
+O texto do documento explica o que está sendo feito, enquanto o bloco de código realiza a tarefa. Essa separação ajuda a manter a análise clara para quem lê e para quem desenvolve o projeto.
+
+
+## Renderizar o documento
+
+Renderizar significa processar o arquivo `.qmd`: o Quarto executa os blocos de código, organiza o texto e cria o arquivo final.
+
+No Positron, abra o arquivo `.qmd`. Para visualizar o resultado do documento, clique em **Preview**.
+
+Também é possível ativar **Render on Save**. Quando essa opção estiver habilitada, o documento será renderizado automaticamente sempre que o arquivo for salvo.
+
+
+## Quarto e reprodutibilidade
+
+Um documento pode ser reprodutível quando outra pessoa consegue compreender e repetir a análise a partir dos arquivos e instruções fornecidos.
+
+Para ajudar nesse processo:
+
+- Mantenha o código no próprio documento ou em arquivos do projeto;
+- Use caminhos relativos, como vimos nas boas práticas de programação;
+- Explique as decisões importantes em texto ou comentários;
+- Registre os pacotes necessários para executar a análise;
+- Evite editar manualmente resultados que são produzidos pelo código;
+- Verifique o documento renderizado antes de compartilhá-lo.
+
+O Quarto não corrige automaticamente uma análise incorreta. Ele apenas executa e apresenta o que foi escrito. Por isso, é importante revisar tanto o código quanto a interpretação dos resultados.
+
+{{< video https://www.youtube.com/watch?v=_20US068pzk >}}

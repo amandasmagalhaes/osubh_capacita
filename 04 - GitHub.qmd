@@ -16,18 +16,6 @@ Antes de utilizá-lo, é importante diferenciar três ferramentas que trabalham 
 | **GitHub** | Plataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos. |
 | **Positron** | Ambiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git. |
 
-De forma simplificada, o fluxo de trabalho é:
-
-```text
-Editar arquivos no Positron
-          ↓
-Registrar as alterações (commit)
-          ↓
-Enviar para o GitHub (push)
-          ↓
-Repositório no GitHub
-```
-
 Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
 
 {{< video https://www.youtube.com/watch?v=pBy1zgt0XPc >}}
@@ -120,6 +108,8 @@ O arquivo README.md é a página inicial do repositório. Ele contém uma descri
 O arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.
 
 Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.
+
+> **Importante:** o `.gitignore` só impede que arquivos ainda não versionados sejam adicionados ao Git. Ele não remove dados sensíveis que já tenham sido enviados ao repositório. Nesse caso, é necessário removê-los do histórico e, se for o caso, revogar ou substituir as senhas e chaves de acesso.
 
 Abaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.
 

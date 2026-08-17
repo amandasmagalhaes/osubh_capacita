@@ -1,5 +1,215 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OSUBH Capacita",
+    "section": "",
+    "text": "Objetivo\nPromover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#público-alvo",
+    "href": "index.html#público-alvo",
+    "title": "OSUBH Capacita",
+    "section": "Público-alvo",
+    "text": "Público-alvo\nComunidade interna do OSUBH.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#carga-horária",
+    "href": "index.html#carga-horária",
+    "title": "OSUBH Capacita",
+    "section": "Carga horária",
+    "text": "Carga horária\nEncontros quinzenais de 1 hora.\n\nSegundo semestre de 2026: Segundas-feiras, às 10h.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#formato",
+    "href": "index.html#formato",
+    "title": "OSUBH Capacita",
+    "section": "Formato",
+    "text": "Formato\nHíbrido (OSUBH e Zoom).\n\nLink do Zoom: ?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#responsáveis",
+    "href": "index.html#responsáveis",
+    "title": "OSUBH Capacita",
+    "section": "Responsáveis",
+    "text": "Responsáveis\nCoordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.\n\nSegundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#cronograma",
+    "href": "index.html#cronograma",
+    "title": "OSUBH Capacita",
+    "section": "Cronograma",
+    "text": "Cronograma\n\n\n\n\n\n\n\n\nData\nAtividade\nTema / Título\nDescrição\nResponsável\nObservações\n\n\n\n\n07/09/2026\nWorkshop\nR e Positron\nInstalação dos softwares e ambientação das ferramentas.\nAmanda Magalhães\nRecursos: notebook e internet.\n\n\n21/09/2026\nWorkshop\nGitHub e boas práticas de programação\nInstalação do software, criação de conta e ambientação da ferramenta.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n05/10/2026\nWorkshop\nIntrodução ao Quarto, GitHub pages, organização de banco de dados e análises descritivas.\nCriação de um documento Quarto, organização de um banco de dados e realização de análises descritivas.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n19/10/2026\nDiscussão de artigo\nCity-level impact of extreme temperatures and mortality in Latin America\nDiscussão crítica do artigo científico.\n?\n\n\nLeitura prévia:\n\n\nhttps://www.nature.com/articles/s41591-022-01872-6\n\n\n\n\n02/11/2026\nWorkshop\nTemperatura, mortalidade e efeitos defasados\nAnálise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM).\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\nLeitura prévia:\n\nhttps://preprints.scielo.org/index.php/scielo/preprint/view/15303\n\nLeitura sugerida:\n\nhttps://onlinelibrary.wiley.com/doi/10.1002/sim.5963\nhttps://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62114-0/fulltext\n\n\n\n\n16/11/2026\n?\n?\n?\n?\n?\n\n\n30/11/2026\n?\n?\n?\n?\n?\n\n\n14/12/2026\nEncerramento\nAvaliação do semestre e confraternização\nDiscussão sobre as atividades realizadas, sugestões para o próximo semestre e confraternização.\nWaleska Caiaffa\n?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "OSUBH Capacita",
+    "section": "Links",
+    "text": "Links\n\nGoogle Drive\nGitHub",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html",
+    "href": "01 - R.html",
+    "title": "Software R",
+    "section": "",
+    "text": "R\nO R é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:\nUma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.\nO R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html#r",
+    "href": "01 - R.html#r",
+    "title": "Software R",
+    "section": "",
+    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
+    ]
+  },
+  {
+    "objectID": "01 - R.html#rstudio",
+    "href": "01 - R.html#rstudio",
+    "title": "Software R",
+    "section": "RStudio",
+    "text": "RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.\nPara utilizá-lo, é necessário que o software R esteja instalado no computador.\nÉ um dos ambientes mais utilizados pela comunidade científica e pode ser baixado gratuitamente.\nNeste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
+    ]
+  },
+  {
+    "objectID": "02 - Positron.html",
+    "href": "02 - Positron.html",
+    "title": "Software Positron",
+    "section": "",
+    "text": "Positron\nO Positron é um ambiente de desenvolvimento integrado (IDE) gratuito, desenvolvido pela Posit (empresa criadora do RStudio), para programação em R e Python. Entre seus principais recursos estão:\nEm comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.\nPara utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador.\nNeste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
+    ]
+  },
+  {
+    "objectID": "02 - Positron.html#positron",
+    "href": "02 - Positron.html#positron",
+    "title": "Software Positron",
+    "section": "",
+    "text": "Editor de código moderno;\nConsole interativo para execução de comandos;\nGerenciamento de arquivos e projetos;\nVisualização de gráficos e exploração de dados;\nCriação de documentos em Quarto;\nSuporte a extensões e integração com ferramentas de inteligência artificial.\n\n\n\n\n\n\n\n\n\n\nInstalação\n\nAcesse a página oficial de download do Positron.\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão correspondente ao seu sistema.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
+    ]
+  },
+  {
+    "objectID": "03 - Introdução em R.html",
+    "href": "03 - Introdução em R.html",
+    "title": "Introdução em R",
+    "section": "",
+    "text": "Script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script está disponível para download:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
+    ]
+  },
+  {
+    "objectID": "03 - Introdução em R.html#script-em-r",
+    "href": "03 - Introdução em R.html#script-em-r",
+    "title": "Introdução em R",
+    "section": "",
+    "text": "Primeiro script em R",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html",
+    "href": "04 - GitHub.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:\nEvite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#git-github-e-positron",
+    "href": "04 - GitHub.html#git-github-e-positron",
+    "title": "GitHub",
+    "section": "",
+    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#criar-uma-conta-no-github",
+    "href": "04 - GitHub.html#criar-uma-conta-no-github",
+    "title": "GitHub",
+    "section": "Criar uma conta no GitHub",
+    "text": "Criar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#instalar-o-git",
+    "href": "04 - GitHub.html#instalar-o-git",
+    "title": "GitHub",
+    "section": "Instalar o Git",
+    "text": "Instalar o Git\nNo Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.\n\nConfigurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#criar-um-repositório-no-github",
+    "href": "04 - GitHub.html#criar-um-repositório-no-github",
+    "title": "GitHub",
+    "section": "Criar um repositório no GitHub",
+    "text": "Criar um repositório no GitHub\nUm repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.\n\nAcesse github.com/new.\nEm Repository name, informe um nome para o repositório, por exemplo “primeiro_projeto”.\nEm Description, escreva uma breve descrição, se desejar.\nEm Choose visibility, escolha Public para tornar o repositório visível para qualquer pessoa ou Private para restringir o acesso apenas às pessoas autorizadas.\nEm Start with a template, mantenha No template.\nMarque a opção Add a README file.\nEm Add .gitignore, selecione R.\nEm Add license, mantenha No license.\nClique em Create repository.\n\n\nArquivos criados automaticamente\nAo criar o repositório, dois arquivos serão adicionados automaticamente.\n\nREADME.md\nO arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.\nÉ recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.\n\n\n.gitignore\nO arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.\nEm geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.\n\nImportante: o .gitignore só impede que arquivos ainda não versionados sejam adicionados ao Git. Ele não remove dados sensíveis que já tenham sido enviados ao repositório. Nesse caso, é necessário removê-los do histórico e, se for o caso, revogar ou substituir as senhas e chaves de acesso.\n\nAbaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.\n# Arquivos temporários do R\n.Rhistory\n.RData\n.Ruserdata\n.Rproj.user/\n\n# Arquivos temporários do Python\n__pycache__/\n*.pyc\n\n# Configurações locais do Positron / VS Code\n.vscode/\n\n# Arquivos temporários do Quarto\n.quarto/\n*_cache/\n**/*.quarto_ipynb\n\n# Arquivos de log\n*.log\n\n# Dados\n*.csv\n*.xlsx\n*.dta\n*.rds\n*.rda\n*.sav",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#abrir-um-repositório-no-positron",
+    "href": "04 - GitHub.html#abrir-um-repositório-no-positron",
+    "title": "GitHub",
+    "section": "Abrir um repositório no Positron",
+    "text": "Abrir um repositório no Positron\nAgora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.\n\nNo GitHub, acesse o repositório criado.\nClique em Code e copie a URL do repositório.\nAbra o Positron.\nSelecione New &gt; New Folder from Git.\nCole a URL no campo Git repository URL.\nEm Create folder as subfolder of, escolha a pasta onde o projeto será salvo.\nClique em OK.\nAguarde a clonagem. O Positron abrirá automaticamente a pasta do projeto.\n\nApós a clonagem, todos os arquivos do projeto estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada com o GitHub por meio do Git.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
+    "href": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
+    "title": "GitHub",
+    "section": "Adicionar arquivos e fazer um commit",
+    "text": "Adicionar arquivos e fazer um commit\nComo o repositório foi criado com um README.md e um .gitignore, ele já possui um commit inicial. Depois de clonar o repositório, adicione ou copie os arquivos do projeto para a pasta clonada.\nUm commit registra um conjunto de alterações no histórico local do Git. Nessa etapa, as alterações ainda não são enviadas para o GitHub.\nNa aba Source Control:\n\nConfira a lista de arquivos em Changes.\nEscreva uma mensagem que descreva as alterações realizadas, por exemplo:\nAdiciona arquivos iniciais do projeto\nClique em Commit.\nClique em Push ou Sync Changes para enviar as alterações ao GitHub.\n\nA mensagem do commit deve ser curta e descrever claramente o que foi feito.\nEvite mensagens genéricas, como mudanças, teste ou atualização, pois elas dificultam a compreensão do histórico do projeto.\n\nResumo\n\nCommit: registra as alterações no histórico local do projeto.\nPush: envia os commits locais para o GitHub.\nPull ou Sync Changes: atualiza o projeto local com as alterações existentes no GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
     "objectID": "05 - Boas práticas de programação.html",
     "href": "05 - Boas práticas de programação.html",
     "title": "Boas práticas de programação",
@@ -30,11 +240,11 @@
     ]
   },
   {
-    "objectID": "05 - Boas práticas de programação.html#dados-usados-nos-exemplos",
-    "href": "05 - Boas práticas de programação.html#dados-usados-nos-exemplos",
+    "objectID": "05 - Boas práticas de programação.html#exemplo",
+    "href": "05 - Boas práticas de programação.html#exemplo",
     "title": "Boas práticas de programação",
-    "section": "Dados usados nos exemplos",
-    "text": "Dados usados nos exemplos\nOs exemplos a seguir utilizam dados fictícios de uma turma. A coluna nota contém um valor ausente para ilustrar como lidar com dados incompletos.\n\nalunos &lt;- data.frame(\n  nome = c(\n    \"Ana\",\n    \"Bruno\",\n    \"Carla\",\n    \"Diego\",\n    \"Elisa\",\n    \"Felipe\",\n    \"Gabriela\",\n    \"Hugo\",\n    \"Isabela\",\n    \"João\"\n  ),\n  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),\n  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)\n)",
+    "section": "Exemplo",
+    "text": "Exemplo\nOs exemplos a seguir utilizam dados fictícios de uma turma.\n\nalunos &lt;- data.frame(\n  nome = c(\n    \"Ana\",\n    \"Bruno\",\n    \"Carla\",\n    \"Diego\",\n    \"Elisa\",\n    \"Felipe\",\n    \"Gabriela\",\n    \"Hugo\",\n    \"Isabela\",\n    \"João\"\n  ),\n  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),\n  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)\n)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -44,7 +254,7 @@
     "href": "05 - Boas práticas de programação.html#organize-as-pastas-do-projeto",
     "title": "Boas práticas de programação",
     "section": "1. Organize as pastas do projeto",
-    "text": "1. Organize as pastas do projeto\nUma estrutura simples pode ser suficiente para começar:\nmeu-projeto/\n├── README.md\n├── scripts/\n├── data/\n│   ├── raw/\n│   └── processed/\n├── results/\n│   ├── tables/\n│   └── figures/\n└── docs/\nUma sugestão para cada pasta:\n\nREADME.md: apresenta o projeto e explica como executá-lo;\nscripts/: contém os scripts e documentos da análise;\ndata/raw/: guarda os dados originais, sem alterações;\ndata/processed/: guarda os dados preparados para a análise;\nresults/: guarda tabelas, gráficos e outros resultados finais;\ndocs/: guarda documentos de apoio e explicações adicionais.\n\nOs nomes das pastas podem variar. O mais importante é que a organização seja intuitiva e seja mantida durante todo o projeto.\n\nAtenção: dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.",
+    "text": "1. Organize as pastas do projeto\nUma estrutura simples pode ser suficiente para começar:\nmeu_projeto/\n├── README.md\n├── scripts/\n├── data/\n│   ├── raw/\n│   └── processed/\n├── results/\n│   ├── tables/\n│   └── figures/\n└── docs/\nUma sugestão para cada pasta:\n\nREADME.md: apresenta o projeto e explica como executá-lo;\nscripts/: contém os scripts e documentos da análise;\ndata/raw/: guarda os dados originais, sem alterações;\ndata/processed/: guarda os dados preparados para a análise;\nresults/: guarda tabelas, gráficos e outros resultados finais;\ndocs/: guarda documentos de apoio e explicações adicionais.\n\nOs nomes das pastas podem variar. O mais importante é que a organização seja intuitiva e seja mantida durante todo o projeto.\n\nAtenção: dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -140,253 +350,133 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OSUBH Capacita",
+    "objectID": "06 - Quarto.html",
+    "href": "06 - Quarto.html",
+    "title": "Arquivo Quarto",
     "section": "",
-    "text": "Objetivo\nPromover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.",
+    "text": "Quarto\nO Quarto é um sistema de publicação científica e técnica que permite combinar texto, código e resultados em um único documento.\nAo renderizar o documento, o Quarto transforma esse conteúdo em formatos como HTML, PDF ou Word, facilitando a organização das análises.\nO arquivo utilizado pelo Quarto possui a extensão .qmd, que significa Quarto Markdown.\nUm documento Quarto combina diferentes elementos.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#público-alvo",
-    "href": "index.html#público-alvo",
-    "title": "OSUBH Capacita",
-    "section": "Público-alvo",
-    "text": "Público-alvo\nComunidade interna do OSUBH.",
+    "objectID": "06 - Quarto.html#como-o-quarto-se-relaciona-com-o-conteúdo-anterior",
+    "href": "06 - Quarto.html#como-o-quarto-se-relaciona-com-o-conteúdo-anterior",
+    "title": "Quarto",
+    "section": "Como o Quarto se relaciona com o conteúdo anterior?",
+    "text": "Como o Quarto se relaciona com o conteúdo anterior?\n\n\n\n\n\n\n\nFerramenta\nPara que serve\n\n\n\n\nR\nExecuta os comandos, análises e gráficos.\n\n\nPositron\nPermite editar os arquivos e acompanhar os resultados.\n\n\nGit e GitHub\nRegistram e compartilham as alterações do projeto.\n\n\nQuarto\nOrganiza código, texto e resultados em um documento final.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#carga-horária",
-    "href": "index.html#carga-horária",
-    "title": "OSUBH Capacita",
-    "section": "Carga horária",
-    "text": "Carga horária\nEncontros quinzenais de 1 hora.\n\nSegundo semestre de 2026: Segundas-feiras, às 10h.",
+    "objectID": "06 - Quarto.html#cabeçalho-yaml",
+    "href": "06 - Quarto.html#cabeçalho-yaml",
+    "title": "Arquivo Quarto",
+    "section": "Cabeçalho YAML",
+    "text": "Cabeçalho YAML\nO cabeçalho YAML define o título e outras configurações específicas do documento. Ele fica no início do arquivo, entre duas linhas com três hífens:\n---\ntitle: \"Título\"\ndate: today\n---\nAs configurações gerais do Quarto serão mantidas em um arquivo separado chamado _quarto.yml. Dessa forma, as mesmas configurações podem ser aplicadas a todos os documentos do projeto, sem precisar repeti-las em cada arquivo .qmd.\nUm exemplo de arquivo _quarto.yml é:\nproject:\n  type: website\n  output-dir: docs\n\nlang: pt-BR\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    toc-depth: 3\n    toc-location: left\n    number-sections: true\n    code-fold: true\n    smooth-scroll: true\n    anchor-sections: true\n    page-layout: full\n\nexecute:\n  freeze: auto\n  cache: true\n  warning: false\n  message: false",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#formato",
-    "href": "index.html#formato",
-    "title": "OSUBH Capacita",
-    "section": "Formato",
-    "text": "Formato\nHíbrido (OSUBH e Zoom).\n\nLink do Zoom: ?",
+    "objectID": "06 - Quarto.html#texto-em-markdown",
+    "href": "06 - Quarto.html#texto-em-markdown",
+    "title": "Arquivo Quarto",
+    "section": "Texto em Markdown",
+    "text": "Texto em Markdown\nDepois do cabeçalho, escrevemos o conteúdo do documento usando Markdown, uma linguagem de marcação simples utilizada para formatar textos. No Quarto, o Markdown permite criar títulos, parágrafos, listas, links, imagens e outros elementos de formatação. Por exemplo:\n## Introdução\n\nEste documento apresenta os resultados da análise.\nAlguns dos principais recursos são:\n# — cria títulos. O número de # indica o nível hierárquico: # representa o título principal, ## uma seção e ### uma subseção.\n**texto** — aplica negrito.\n*texto* — aplica itálico.\n- item — cria listas não numeradas.\n1. item — cria listas numeradas.\n[texto](endereço) — cria links.\n![descrição](imagem) — insere imagens.\n`código` — destaca comandos, funções ou nomes de objetos no texto.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#responsáveis",
-    "href": "index.html#responsáveis",
-    "title": "OSUBH Capacita",
-    "section": "Responsáveis",
-    "text": "Responsáveis\nCoordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.\n\nSegundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.",
+    "objectID": "06 - Quarto.html#blocos-de-código-em-r",
+    "href": "06 - Quarto.html#blocos-de-código-em-r",
+    "title": "Arquivo Quarto",
+    "section": "Blocos de código em R",
+    "text": "Blocos de código em R\nPara inserir código em R, usamos um bloco identificado por {r}:\n```{r}\nmedia &lt;- mean(c(6, 7, 8, 9))\nmedia\n```\nDurante a renderização, o Quarto executa o código e insere o resultado no documento.\nO texto do documento explica o que está sendo feito, enquanto o bloco de código realiza a tarefa. Essa separação ajuda a manter a análise clara para quem lê e para quem desenvolve o projeto.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#cronograma",
-    "href": "index.html#cronograma",
-    "title": "OSUBH Capacita",
-    "section": "Cronograma",
-    "text": "Cronograma\n\n\n\n\n\n\n\n\nData\nAtividade\nTema / Título\nDescrição\nResponsável\nObservações\n\n\n\n\n07/09/2026\nWorkshop\nR e Positron\nInstalação dos softwares e ambientação das ferramentas.\nAmanda Magalhães\nRecursos: notebook e internet.\n\n\n21/09/2026\nWorkshop\nGitHub e boas práticas de programação\nInstalação do software, criação de conta e ambientação da ferramenta.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n05/10/2026\nWorkshop\nIntrodução ao Quarto, GitHub pages, organização de banco de dados e análises descritivas.\nCriação de um documento Quarto, organização de um banco de dados e realização de análises descritivas.\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\n\n\n19/10/2026\nDiscussão de artigo\nCity-level impact of extreme temperatures and mortality in Latin America\nDiscussão crítica do artigo científico.\n?\n\n\nLeitura prévia:\n\n\nhttps://www.nature.com/articles/s41591-022-01872-6\n\n\n\n\n02/11/2026\nWorkshop\nTemperatura, mortalidade e efeitos defasados\nAnálise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM).\nAmanda Magalhães\n\n\nRecursos: notebook e internet.\n\nSoftwares: R e Positron.\nLeitura prévia:\n\nhttps://preprints.scielo.org/index.php/scielo/preprint/view/15303\n\nLeitura sugerida:\n\nhttps://onlinelibrary.wiley.com/doi/10.1002/sim.5963\nhttps://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62114-0/fulltext\n\n\n\n\n16/11/2026\n?\n?\n?\n?\n?\n\n\n30/11/2026\n?\n?\n?\n?\n?\n\n\n14/12/2026\nEncerramento\nAvaliação do semestre e confraternização\nDiscussão sobre as atividades realizadas, sugestões para o próximo semestre e confraternização.\nWaleska Caiaffa\n?",
+    "objectID": "06 - Quarto.html#renderizar-o-documento",
+    "href": "06 - Quarto.html#renderizar-o-documento",
+    "title": "Arquivo Quarto",
+    "section": "Renderizar o documento",
+    "text": "Renderizar o documento\nRenderizar significa processar o arquivo .qmd: o Quarto executa os blocos de código, organiza o texto e cria o arquivo final.\nNo Positron, abra o arquivo .qmd. Para visualizar o resultado do documento, clique em Preview.\nTambém é possível ativar Render on Save. Quando essa opção estiver habilitada, o documento será renderizado automaticamente sempre que o arquivo for salvo.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "OSUBH Capacita",
-    "section": "Links",
-    "text": "Links\n\nGoogle Drive\nGitHub",
+    "objectID": "06 - Quarto.html#quarto-e-reprodutibilidade",
+    "href": "06 - Quarto.html#quarto-e-reprodutibilidade",
+    "title": "Arquivo Quarto",
+    "section": "Quarto e reprodutibilidade",
+    "text": "Quarto e reprodutibilidade\nUm documento pode ser reprodutível quando outra pessoa consegue compreender e repetir a análise a partir dos arquivos e instruções fornecidos.\nPara ajudar nesse processo:\n\nMantenha o código no próprio documento ou em arquivos do projeto;\nUse caminhos relativos, como vimos nas boas práticas de programação;\nExplique as decisões importantes em texto ou comentários;\nRegistre os pacotes necessários para executar a análise;\nEvite editar manualmente resultados que são produzidos pelo código;\nVerifique o documento renderizado antes de compartilhá-lo.\n\nO Quarto não corrige automaticamente uma análise incorreta. Ele apenas executa e apresenta o que foi escrito. Por isso, é importante revisar tanto o código quanto a interpretação dos resultados.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Apresentação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Arquivo Quarto</span>"
     ]
   },
   {
-    "objectID": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
-    "href": "05 - Boas práticas de programação.html#checklist-antes-de-compartilhar-um-projeto",
-    "title": "Boas práticas de programação",
-    "section": "Checklist antes de compartilhar um projeto",
-    "text": "Checklist antes de compartilhar um projeto\nAntes de fazer o primeiro push ou enviar o projeto para outra pessoa, confira:\n\nO projeto tem um README.md?\nAs pastas e os scripts estão organizados?\nOs nomes dos arquivos e objetos são claros?\nOs comentários explicam as decisões importantes?\nO código foi executado do início ao fim?\nOs resultados foram conferidos?\nDados sensíveis, senhas e chaves foram removidos?\nA análise pode ser entendida por outra pessoa?\n\nBoas práticas não são regras para complicar a programação. Elas são hábitos que tornam o trabalho mais claro, confiável e fácil de continuar.",
+    "objectID": "06 - Quarto.html#estrutura-de-um-arquivo-.qmd",
+    "href": "06 - Quarto.html#estrutura-de-um-arquivo-.qmd",
+    "title": "Quarto",
+    "section": "Estrutura de um arquivo .qmd",
+    "text": "Estrutura de um arquivo .qmd\nUm documento Quarto geralmente possui três partes:\n\nCabeçalho YAML: define título, formato e outras opções do documento;\nTexto em Markdown: contém a explicação, títulos, listas, links e imagens;\nBlocos de código: contêm comandos que serão executados durante a renderização.\n\nO cabeçalho fica entre duas linhas com três hífens:\n---\ntitle: \"Análise\"\ndate: today\n---\nDepois do cabeçalho, escrevemos o conteúdo do documento usando Markdown. Por exemplo:\n## Resultados\n\nEste documento apresenta os resultados da análise.\nOs títulos são criados com #. O número de símbolos indica o nível hierárquico do título: # representa o título principal, ## uma seção e ### uma subseção.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "04 - GitHub.html",
-    "href": "04 - GitHub.html",
-    "title": "GitHub",
-    "section": "",
-    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:\nDe forma simplificada, o fluxo de trabalho é:\nEvite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
+    "objectID": "06 - Quarto.html#formatos-de-saída",
+    "href": "06 - Quarto.html#formatos-de-saída",
+    "title": "Quarto",
+    "section": "Formatos de saída",
+    "text": "Formatos de saída\nO formato pode ser definido no cabeçalho do documento:\nformat: html\nO formato HTML é adequado para publicação na internet e pode ser aberto em um navegador. Também podemos gerar outros formatos, desde que os recursos necessários estejam instalados:\nformat: pdf\nformat: docx\nEm um projeto Quarto, as configurações comuns a vários documentos podem ser definidas no arquivo _quarto.yml. Neste curso, esse arquivo define que o material será publicado como um livro, com capítulos em uma ordem específica.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "04 - GitHub.html#git-github-e-positron",
-    "href": "04 - GitHub.html#git-github-e-positron",
-    "title": "GitHub",
-    "section": "",
-    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.\n\n\n\n\nEditar arquivos no Positron\n          ↓\nRegistrar as alterações (commit)\n          ↓\nEnviar para o GitHub (push)\n          ↓\nRepositório no GitHub",
+    "objectID": "06 - Quarto.html#opções-dos-blocos-de-código",
+    "href": "06 - Quarto.html#opções-dos-blocos-de-código",
+    "title": "Quarto",
+    "section": "Opções dos blocos de código",
+    "text": "Opções dos blocos de código\nAs opções do bloco permitem controlar o que será exibido no documento. Por exemplo, o código pode ser executado sem ser mostrado:\n\n::: {.cell}\n::: {.cell-output-display}\n![](06---Quarto_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\nNesse caso, o gráfico aparece, mas o código fica oculto. Outras opções úteis são:\n\necho: false: oculta o código e mantém o resultado;\noutput: false: executa o código, mas não mostra sua saída;\nwarning: false: oculta avisos;\nmessage: false: oculta mensagens produzidas por pacotes;\neval: false: não executa o código.\n\nDurante o aprendizado, é recomendável manter o código visível. Assim, quem lê consegue acompanhar como cada resultado foi produzido.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "04 - GitHub.html#instalar-o-git",
-    "href": "04 - GitHub.html#instalar-o-git",
-    "title": "GitHub",
-    "section": "Instalar o Git",
-    "text": "Instalar o Git\nNo Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.\n\nConfigurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
+    "objectID": "06 - Quarto.html#organização-de-um-projeto-quarto",
+    "href": "06 - Quarto.html#organização-de-um-projeto-quarto",
+    "title": "Quarto",
+    "section": "Organização de um projeto Quarto",
+    "text": "Organização de um projeto Quarto\nUma estrutura simples para um projeto pode ser:\nmeu-projeto/\n├── _quarto.yml\n├── index.qmd\n├── 01 - introducao.qmd\n├── 02 - analise.qmd\n├── data/\n├── figures/\n└── README.md\nO arquivo _quarto.yml reúne configurações do projeto. Os arquivos .qmd contêm os capítulos ou documentos. As pastas data/ e figures/ podem armazenar dados e imagens, conforme a necessidade do projeto.\nEssa organização segue os princípios apresentados no capítulo sobre boas práticas: arquivos com nomes claros, pastas com funções específicas e um fluxo fácil de compreender.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "04 - GitHub.html#criar-um-repositório-no-github",
-    "href": "04 - GitHub.html#criar-um-repositório-no-github",
-    "title": "GitHub",
-    "section": "Criar um repositório no GitHub",
-    "text": "Criar um repositório no GitHub\nUm repositório (repository ou repo) é o local onde ficam armazenados os arquivos de um projeto e o histórico de todas as alterações realizadas.\n\nAcesse github.com/new.\nEm Repository name, informe um nome para o repositório, por exemplo “primeiro_projeto”.\nEm Description, escreva uma breve descrição, se desejar.\nEm Choose visibility, escolha Public para tornar o repositório visível para qualquer pessoa ou Private para restringir o acesso apenas às pessoas autorizadas.\nEm Start with a template, mantenha No template.\nMarque a opção Add a README file.\nEm Add .gitignore, selecione R.\nEm Add license, mantenha No license.\nClique em Create repository.\n\n\nArquivos criados automaticamente\nAo criar o repositório, dois arquivos serão adicionados automaticamente.\n\nREADME.md\nO arquivo README.md é a página inicial do repositório. Ele contém uma descrição do projeto e orientações para quem irá utilizá-lo ou contribuir com seu desenvolvimento.\nÉ recomendado incluir o objetivo do projeto, a estrutura dos principais arquivos e pastas, as instruções de uso e, quando necessário, informações sobre autoria e contato. Como o README é exibido automaticamente na página inicial do GitHub, ele funciona como a documentação principal do projeto.\n\n\n.gitignore\nO arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados e, portanto, normalmente não serão versionados. Ao selecionar o modelo R, o GitHub cria automaticamente um arquivo com regras apropriadas para projetos desenvolvidos nessa linguagem.\nEm geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.\nAbaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.\n# Arquivos temporários do R\n.Rhistory\n.RData\n.Ruserdata\n.Rproj.user/\n\n# Arquivos temporários do Python\n__pycache__/\n*.pyc\n\n# Configurações locais do Positron / VS Code\n.vscode/\n\n# Arquivos temporários do Quarto\n.quarto/\n*_cache/\n**/*.quarto_ipynb\n\n# Arquivos de log\n*.log\n\n# Dados\n*.csv\n*.xlsx\n*.dta\n*.rds\n*.rda\n*.sav",
+    "objectID": "06 - Quarto.html#atividade-prática",
+    "href": "06 - Quarto.html#atividade-prática",
+    "title": "Quarto",
+    "section": "Atividade prática",
+    "text": "Atividade prática\nCrie um novo arquivo chamado meu_primeiro_documento.qmd e inclua:\n\nUm título no cabeçalho YAML;\nUma seção explicando o objetivo do documento;\nUm vetor com cinco valores numéricos;\nO cálculo da média desses valores;\nUm gráfico simples;\nUm parágrafo interpretando o resultado.\n\nDepois, renderize o arquivo em HTML e revise se o texto, o código e os resultados aparecem na ordem esperada.\nPor fim, salve o arquivo no repositório, faça um commit com uma mensagem descritiva e envie a alteração para o GitHub. Assim, retomamos o fluxo apresentado nos capítulos anteriores: organizar, documentar, executar e compartilhar.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   },
   {
-    "objectID": "04 - GitHub.html#abrir-um-repositório-no-positron",
-    "href": "04 - GitHub.html#abrir-um-repositório-no-positron",
-    "title": "GitHub",
-    "section": "Abrir um repositório no Positron",
-    "text": "Abrir um repositório no Positron\nAgora vamos clonar o repositório criado no GitHub para o computador utilizando o Positron.\n\nNo GitHub, acesse o repositório criado.\nClique em Code e copie a URL do repositório.\nAbra o Positron.\nSelecione New &gt; New Folder from Git.\nCole a URL no campo Git repository URL.\nEm Create folder as subfolder of, escolha a pasta onde o projeto será salvo.\nClique em OK.\nAguarde a clonagem. O Positron abrirá automaticamente a pasta do projeto.\n\nApós a clonagem, todos os arquivos do projeto estarão disponíveis no computador. A partir desse momento, qualquer alteração realizada poderá ser sincronizada com o GitHub por meio do Git.",
+    "objectID": "06 - Quarto.html#seção",
+    "href": "06 - Quarto.html#seção",
+    "title": "Quarto",
+    "section": "Seção",
+    "text": "Seção\n\nSubseção\nNegrito e itálico\nUse ** para destacar um texto em negrito e * para escrever em itálico:\ntexto em negrito\ntexto em itálico Listas\nPara criar uma lista, utilize - antes de cada item:\n\nPrimeiro item\nSegundo item\nTerceiro item\n\nTambém é possível criar listas numeradas:\n\nPrimeiro item\nSegundo item\nTerceiro item Links\n\nPara inserir um link, coloque o texto entre colchetes e o endereço entre parênteses:\nSite do Quarto Imagens\nPara inserir uma imagem, utilize ! antes da estrutura de um link:\n Código no texto\nPara destacar um comando, função ou nome de objeto dentro de um parágrafo, utilize crases:\nA função mean() calcula a média.\nO Markdown é simples e permite estruturar o texto de forma organizada, mantendo o código-fonte legível mesmo antes da renderização.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
-    ]
-  },
-  {
-    "objectID": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
-    "href": "04 - GitHub.html#adicionar-arquivos-e-fazer-um-commit",
-    "title": "GitHub",
-    "section": "Adicionar arquivos e fazer um commit",
-    "text": "Adicionar arquivos e fazer um commit\nComo o repositório foi criado com um README.md e um .gitignore, ele já possui um commit inicial. Depois de clonar o repositório, adicione ou copie os arquivos do projeto para a pasta clonada.\nUm commit registra um conjunto de alterações no histórico local do Git. Nessa etapa, as alterações ainda não são enviadas para o GitHub.\nNa aba Source Control:\n\nConfira a lista de arquivos em Changes.\nEscreva uma mensagem que descreva as alterações realizadas, por exemplo:\nAdiciona arquivos iniciais do projeto\nClique em Commit.\nClique em Push ou Sync Changes para enviar as alterações ao GitHub.\n\nA mensagem do commit deve ser curta e descrever claramente o que foi feito.\nEvite mensagens genéricas, como mudanças, teste ou atualização, pois elas dificultam a compreensão do histórico do projeto.\n\nResumo\n\nCommit: registra as alterações no histórico local do projeto.\nPush: envia os commits locais para o GitHub.\nPull ou Sync Changes: atualiza o projeto local com as alterações existentes no GitHub.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
-    ]
-  },
-  {
-    "objectID": "03 - Introdução em R.html",
-    "href": "03 - Introdução em R.html",
-    "title": "Introdução em R",
-    "section": "",
-    "text": "Script em R\nExecutaremos os primeiros comandos em R para conhecer a estrutura básica da linguagem e nos familiarizarmos com sua sintaxe.\nO script está disponível para download:",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
-    ]
-  },
-  {
-    "objectID": "03 - Introdução em R.html#primeiro-script-em-r",
-    "href": "03 - Introdução em R.html#primeiro-script-em-r",
-    "title": "Introdução em R",
-    "section": "",
-    "text": "03.1 - Primeiro script em R",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
-    ]
-  },
-  {
-    "objectID": "02 - Positron.html",
-    "href": "02 - Positron.html",
-    "title": "Software Positron",
-    "section": "",
-    "text": "Positron\nO Positron é um ambiente de desenvolvimento integrado (IDE) gratuito, desenvolvido pela Posit (empresa criadora do RStudio), para programação em R e Python. Entre seus principais recursos estão:\nEm comparação ao RStudio, o Positron possui uma interface mais moderna e foi desenvolvido sobre uma arquitetura mais recente, proporcionando maior flexibilidade para diferentes fluxos de trabalho. Embora ainda esteja em desenvolvimento ativo, a Posit tem concentrado seus esforços em sua evolução e na incorporação de novos recursos.\nPara utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador.\nNeste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
-    ]
-  },
-  {
-    "objectID": "02 - Positron.html#positron",
-    "href": "02 - Positron.html#positron",
-    "title": "Software Positron",
-    "section": "",
-    "text": "Editor de código moderno;\nConsole interativo para execução de comandos;\nGerenciamento de arquivos e projetos;\nVisualização de gráficos e exploração de dados;\nCriação de documentos em Quarto;\nSuporte a extensões e integração com ferramentas de inteligência artificial.\n\n\n\n\n\n\n\n\n\n\nInstalação\n\nAcesse a página oficial de download do Positron.\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão correspondente ao seu sistema.\nExecute o instalador e siga as instruções padrão de instalação.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Software Positron</span>"
-    ]
-  },
-  {
-    "objectID": "01 - R.html",
-    "href": "01 - R.html",
-    "title": "Software R",
-    "section": "",
-    "text": "R\nO R é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:\nUma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.\nO R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
-    ]
-  },
-  {
-    "objectID": "01 - R.html#r",
-    "href": "01 - R.html#r",
-    "title": "Software R",
-    "section": "",
-    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade para publicações científicas;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\nInstalação\n\nAcesse o site oficial do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente disponível.\nExecute o instalador e siga as instruções padrão de instalação.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
-    ]
-  },
-  {
-    "objectID": "01 - R.html#rstudio",
-    "href": "01 - R.html#rstudio",
-    "title": "Software R",
-    "section": "RStudio",
-    "text": "RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.\nPara utilizá-lo, é necessário que o software R esteja instalado no computador.\nÉ um dos ambientes mais utilizados pela comunidade científica e pode ser baixado gratuitamente.\nNeste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
-    ]
-  },
-  {
-    "objectID": "03 - Introdução em R.html#script-em-r",
-    "href": "03 - Introdução em R.html#script-em-r",
-    "title": "Introdução em R",
-    "section": "",
-    "text": "Primeiro script em R",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introdução em R</span>"
-    ]
-  },
-  {
-    "objectID": "04 - GitHub.html#configurar-seu-nome-e-e-mail",
-    "href": "04 - GitHub.html#configurar-seu-nome-e-e-mail",
-    "title": "GitHub",
-    "section": "Configurar seu nome e e-mail",
-    "text": "Configurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
-    ]
-  },
-  {
-    "objectID": "05 - Boas práticas de programação.html#exemplo",
-    "href": "05 - Boas práticas de programação.html#exemplo",
-    "title": "Boas práticas de programação",
-    "section": "Exemplo",
-    "text": "Exemplo\nOs exemplos a seguir utilizam dados fictícios de uma turma.\n\nalunos &lt;- data.frame(\n  nome = c(\n    \"Ana\",\n    \"Bruno\",\n    \"Carla\",\n    \"Diego\",\n    \"Elisa\",\n    \"Felipe\",\n    \"Gabriela\",\n    \"Hugo\",\n    \"Isabela\",\n    \"João\"\n  ),\n  idade = c(20, 22, 19, 25, 21, 23, 20, 24, 18, 22),\n  nota = c(8.5, 6.0, 9.2, 7.5, NA, 5.5, 7.0, 9.5, 6.8, 8.7)\n)",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
-    ]
-  },
-  {
-    "objectID": "04 - GitHub.html#criar-uma-conta-no-github",
-    "href": "04 - GitHub.html#criar-uma-conta-no-github",
-    "title": "GitHub",
-    "section": "Criar uma conta no GitHub",
-    "text": "Criar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
   }
 ]

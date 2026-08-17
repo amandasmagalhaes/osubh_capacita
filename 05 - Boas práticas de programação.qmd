@@ -1,6 +1,5 @@
 ---
 title: "Boas práticas de programação"
-subtitle: "Como organizar e tornar seus códigos mais claros e reproduzíveis"
 date: today
 ---
 
@@ -70,7 +69,7 @@ alunos <- data.frame(
 Uma estrutura simples pode ser suficiente para começar:
 
 ```text
-meu-projeto/
+meu_projeto/
 ├── README.md
 ├── scripts/
 ├── data/

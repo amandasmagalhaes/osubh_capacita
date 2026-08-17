@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OSUBH Capacita</title>
+<title>Arquivo Quarto – OSUBH Capacita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01 - R.html" rel="next">
+<link href="./05 - Boas práticas de programação.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Apresentação</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06 - Quarto.html"><span class="chapter-title">Arquivo Quarto</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -111,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Apresentação</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apresentação</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06 - Quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quarto</span></a>
+  <a href="./06 - Quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Arquivo Quarto</span></a>
   </div>
 </li>
     </ul>
@@ -154,13 +189,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#público-alvo" id="toc-público-alvo" class="nav-link" data-scroll-target="#público-alvo">Público-alvo</a></li>
-  <li><a href="#carga-horária" id="toc-carga-horária" class="nav-link" data-scroll-target="#carga-horária">Carga horária</a></li>
-  <li><a href="#formato" id="toc-formato" class="nav-link" data-scroll-target="#formato">Formato</a></li>
-  <li><a href="#responsáveis" id="toc-responsáveis" class="nav-link" data-scroll-target="#responsáveis">Responsáveis</a></li>
-  <li><a href="#cronograma" id="toc-cronograma" class="nav-link" data-scroll-target="#cronograma">Cronograma</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#cabeçalho-yaml" id="toc-cabeçalho-yaml" class="nav-link" data-scroll-target="#cabeçalho-yaml">Cabeçalho YAML</a></li>
+  <li><a href="#texto-em-markdown" id="toc-texto-em-markdown" class="nav-link" data-scroll-target="#texto-em-markdown">Texto em Markdown</a></li>
+  <li><a href="#blocos-de-código-em-r" id="toc-blocos-de-código-em-r" class="nav-link" data-scroll-target="#blocos-de-código-em-r">Blocos de código em R</a></li>
+  <li><a href="#renderizar-o-documento" id="toc-renderizar-o-documento" class="nav-link" data-scroll-target="#renderizar-o-documento">Renderizar o documento</a></li>
+  <li><a href="#quarto-e-reprodutibilidade" id="toc-quarto-e-reprodutibilidade" class="nav-link" data-scroll-target="#quarto-e-reprodutibilidade">Quarto e reprodutibilidade</a></li>
   </ul>
 </nav>
     </div>
@@ -169,8 +203,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">OSUBH Capacita</h1>
-<p class="subtitle lead">Grupo de Estudos e Capacitação do Observatório de Saúde Urbana de Belo Horizonte (OSUBH)</p>
+<h1 class="title"><span class="chapter-title">Arquivo Quarto</span></h1>
 </div>
 
 
@@ -193,607 +226,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objetivo" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
-<p>Promover a capacitação e a troca de conhecimentos entre professores, pesquisadores e alunos por meio de discussões sobre métodos de pesquisa, análise de dados, artigos científicos, propostas de pesquisa e trabalhos em andamento.</p>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>O <a href="https://quarto.org/" target="_blank">Quarto</a> é um sistema de publicação científica e técnica que permite combinar texto, código e resultados em um único documento.</p>
+<p>Ao renderizar o documento, o Quarto transforma esse conteúdo em formatos como HTML, PDF ou Word, facilitando a organização das análises.</p>
+<p>O arquivo utilizado pelo Quarto possui a extensão <code>.qmd</code>, que significa <em>Quarto Markdown</em>.</p>
+<p>Um documento Quarto combina diferentes elementos.</p>
 </section>
-<section id="público-alvo" class="level2">
-<h2 class="anchored" data-anchor-id="público-alvo">Público-alvo</h2>
-<p>Comunidade interna do OSUBH.</p>
+<section id="cabeçalho-yaml" class="level2">
+<h2 class="anchored" data-anchor-id="cabeçalho-yaml">Cabeçalho YAML</h2>
+<p>O cabeçalho YAML define o título e outras configurações específicas do documento. Ele fica no início do arquivo, entre duas linhas com três hífens:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Título"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> today</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>As configurações gerais do Quarto serão mantidas em um arquivo separado chamado <code>_quarto.yml</code>. Dessa forma, as mesmas configurações podem ser aplicadas a todos os documentos do projeto, sem precisar repeti-las em cada arquivo <code>.qmd</code>.</p>
+<p>Um exemplo de arquivo <code>_quarto.yml</code> é:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> pt-BR</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-location</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smooth-scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">anchor-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> auto</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="carga-horária" class="level2">
-<h2 class="anchored" data-anchor-id="carga-horária">Carga horária</h2>
-<p>Encontros quinzenais de 1 hora.</p>
-<ul>
-<li>Segundo semestre de 2026: Segundas-feiras, às 10h.</li>
-</ul>
+<section id="texto-em-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="texto-em-markdown">Texto em Markdown</h2>
+<p>Depois do cabeçalho, escrevemos o conteúdo do documento usando Markdown, uma linguagem de marcação simples utilizada para formatar textos. No Quarto, o Markdown permite criar títulos, parágrafos, listas, links, imagens e outros elementos de formatação. Por exemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introdução</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Este documento apresenta os resultados da análise.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Alguns dos principais recursos são:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># — cria títulos. O número de # indica o nível hierárquico: # representa o título principal, ## uma seção e ### uma subseção.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>**texto** — aplica negrito.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>*texto* — aplica itálico.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item — cria listas não numeradas.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>item — cria listas numeradas.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">texto</span><span class="co">](endereço)</span> — cria links.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="al">![descrição](imagem)</span> — insere imagens.</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">`código`</span> — destaca comandos, funções ou nomes de objetos no texto.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gFJfyHRKaE0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="formato" class="level2">
-<h2 class="anchored" data-anchor-id="formato">Formato</h2>
-<p>Híbrido (OSUBH e Zoom).</p>
-<ul>
-<li>Link do Zoom: ?</li>
-</ul>
+<section id="blocos-de-código-em-r" class="level2">
+<h2 class="anchored" data-anchor-id="blocos-de-código-em-r">Blocos de código em R</h2>
+<p>Para inserir código em R, usamos um bloco identificado por <code>{r}</code>:</p>
+<pre><code>```{r}
+media &lt;- mean(c(6, 7, 8, 9))
+media
+```</code></pre>
+<p>Durante a renderização, o Quarto executa o código e insere o resultado no documento.</p>
+<p>O texto do documento explica o que está sendo feito, enquanto o bloco de código realiza a tarefa. Essa separação ajuda a manter a análise clara para quem lê e para quem desenvolve o projeto.</p>
 </section>
-<section id="responsáveis" class="level2">
-<h2 class="anchored" data-anchor-id="responsáveis">Responsáveis</h2>
-<p>Coordenação compartilhada entre um professor e um aluno ou pesquisador, com rodízio anual.</p>
-<ul>
-<li>Segundo semestre de 2026: Waleska Caiaffa, Amanda Andrade e Amanda Magalhães.</li>
-</ul>
+<section id="renderizar-o-documento" class="level2">
+<h2 class="anchored" data-anchor-id="renderizar-o-documento">Renderizar o documento</h2>
+<p>Renderizar significa processar o arquivo <code>.qmd</code>: o Quarto executa os blocos de código, organiza o texto e cria o arquivo final.</p>
+<p>No Positron, abra o arquivo <code>.qmd</code>. Para visualizar o resultado do documento, clique em <strong>Preview</strong>.</p>
+<p>Também é possível ativar <strong>Render on Save</strong>. Quando essa opção estiver habilitada, o documento será renderizado automaticamente sempre que o arquivo for salvo.</p>
 </section>
-<section id="cronograma" class="level2">
-<h2 class="anchored" data-anchor-id="cronograma">Cronograma</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div id="jktnlkenlz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:100%;height:auto;">
-<style>#jktnlkenlz table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#jktnlkenlz thead, #jktnlkenlz tbody, #jktnlkenlz tfoot, #jktnlkenlz tr, #jktnlkenlz td, #jktnlkenlz th {
-  border-style: none;
-}
-
-#jktnlkenlz p {
-  margin: 0;
-  padding: 0;
-}
-
-#jktnlkenlz .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: 100%;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#jktnlkenlz .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#jktnlkenlz .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#jktnlkenlz .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#jktnlkenlz .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#jktnlkenlz .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#jktnlkenlz .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#jktnlkenlz .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#jktnlkenlz .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#jktnlkenlz .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#jktnlkenlz .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#jktnlkenlz .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#jktnlkenlz .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#jktnlkenlz .gt_row {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#jktnlkenlz .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jktnlkenlz .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#jktnlkenlz .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#jktnlkenlz .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#jktnlkenlz .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jktnlkenlz .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#jktnlkenlz .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jktnlkenlz .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#jktnlkenlz .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jktnlkenlz .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jktnlkenlz .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jktnlkenlz .gt_left {
-  text-align: left;
-}
-
-#jktnlkenlz .gt_center {
-  text-align: center;
-}
-
-#jktnlkenlz .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#jktnlkenlz .gt_font_normal {
-  font-weight: normal;
-}
-
-#jktnlkenlz .gt_font_bold {
-  font-weight: bold;
-}
-
-#jktnlkenlz .gt_font_italic {
-  font-style: italic;
-}
-
-#jktnlkenlz .gt_super {
-  font-size: 65%;
-}
-
-#jktnlkenlz .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#jktnlkenlz .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#jktnlkenlz .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#jktnlkenlz .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#jktnlkenlz .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#jktnlkenlz .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#jktnlkenlz .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#jktnlkenlz .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#jktnlkenlz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_col_headings header">
-<th id="Data" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Data</th>
-<th id="Atividade" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Atividade</th>
-<th id="Tema-/-Título" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Tema / Título</th>
-<th id="Descrição" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Descrição</th>
-<th id="Responsável" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Responsável</th>
-<th id="Observações" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;" scope="col">Observações</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Data">07/09/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Workshop</td>
-<td class="gt_row gt_left" headers="Tema / Título">R e Positron</td>
-<td class="gt_row gt_left" headers="Descrição">Instalação dos softwares e ambientação das ferramentas.</td>
-<td class="gt_row gt_left" headers="Responsável">Amanda Magalhães</td>
-<td class="gt_row gt_left" headers="Observações">Recursos: notebook e internet.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Data">21/09/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Workshop</td>
-<td class="gt_row gt_left" headers="Tema / Título">GitHub e boas práticas de programação</td>
-<td class="gt_row gt_left" headers="Descrição">Instalação do software, criação de conta e ambientação da ferramenta.</td>
-<td class="gt_row gt_left" headers="Responsável">Amanda Magalhães</td>
-<td class="gt_row gt_left" headers="Observações"><span data-qmd-base64="UmVjdXJzb3M6IG5vdGVib29rIGUgaW50ZXJuZXQuCgpTb2Z0d2FyZXM6IFIgZSBQb3NpdHJvbi4=">
-<span class="gt_from_md">
-Recursos: notebook e internet.
-<p></p>
-<p>Softwares: R e Positron.</p></span></span></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Data">05/10/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Workshop</td>
-<td class="gt_row gt_left" headers="Tema / Título">Introdução ao Quarto, GitHub pages, organização de banco de dados e análises descritivas.</td>
-<td class="gt_row gt_left" headers="Descrição">Criação de um documento Quarto, organização de um banco de dados e realização de análises descritivas.</td>
-<td class="gt_row gt_left" headers="Responsável">Amanda Magalhães</td>
-<td class="gt_row gt_left" headers="Observações"><span data-qmd-base64="UmVjdXJzb3M6IG5vdGVib29rIGUgaW50ZXJuZXQuCgpTb2Z0d2FyZXM6IFIgZSBQb3NpdHJvbi4=">
-<span class="gt_from_md">
-Recursos: notebook e internet.
-<p></p>
-<p>Softwares: R e Positron.</p></span></span></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Data">19/10/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Discussão de artigo</td>
-<td class="gt_row gt_left" headers="Tema / Título">City-level impact of extreme temperatures and mortality in Latin America</td>
-<td class="gt_row gt_left" headers="Descrição">Discussão crítica do artigo científico.</td>
-<td class="gt_row gt_left" headers="Responsável">?</td>
-<td class="gt_row gt_left" headers="Observações"><span data-qmd-base64="TGVpdHVyYSBwcsOpdmlhOgoqIGh0dHBzOi8vd3d3Lm5hdHVyZS5jb20vYXJ0aWNsZXMvczQxNTkxLTAyMi0wMTg3Mi02">
-<span class="gt_from_md">
-Leitura prévia:
-<p></p>
+<section id="quarto-e-reprodutibilidade" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-e-reprodutibilidade">Quarto e reprodutibilidade</h2>
+<p>Um documento pode ser reprodutível quando outra pessoa consegue compreender e repetir a análise a partir dos arquivos e instruções fornecidos.</p>
+<p>Para ajudar nesse processo:</p>
 <ul>
-<li><a href="https://www.nature.com/articles/s41591-022-01872-6">https://www.nature.com/articles/s41591-022-01872-6</a></li>
+<li>Mantenha o código no próprio documento ou em arquivos do projeto;</li>
+<li>Use caminhos relativos, como vimos nas boas práticas de programação;</li>
+<li>Explique as decisões importantes em texto ou comentários;</li>
+<li>Registre os pacotes necessários para executar a análise;</li>
+<li>Evite editar manualmente resultados que são produzidos pelo código;</li>
+<li>Verifique o documento renderizado antes de compartilhá-lo.</li>
 </ul>
-</span></span></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Data">02/11/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Workshop</td>
-<td class="gt_row gt_left" headers="Tema / Título">Temperatura, mortalidade e efeitos defasados</td>
-<td class="gt_row gt_left" headers="Descrição">Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM).</td>
-<td class="gt_row gt_left" headers="Responsável">Amanda Magalhães</td>
-<td class="gt_row gt_left" headers="Observações"><span data-qmd-base64="UmVjdXJzb3M6IG5vdGVib29rIGUgaW50ZXJuZXQuCgpTb2Z0d2FyZXM6IFIgZSBQb3NpdHJvbi4KCkxlaXR1cmEgcHLDqXZpYToKKiBodHRwczovL3ByZXByaW50cy5zY2llbG8ub3JnL2luZGV4LnBocC9zY2llbG8vcHJlcHJpbnQvdmlldy8xNTMwMwoKTGVpdHVyYSBzdWdlcmlkYToKKiBodHRwczovL29ubGluZWxpYnJhcnkud2lsZXkuY29tL2RvaS8xMC4xMDAyL3NpbS41OTYzCiogaHR0cHM6Ly93d3cudGhlbGFuY2V0LmNvbS9qb3VybmFscy9sYW5jZXQvYXJ0aWNsZS9QSUlTMDE0MC02NzM2KDE0KTYyMTE0LTAvZnVsbHRleHQ=">
-<span class="gt_from_md">
-Recursos: notebook e internet.
-<p></p>
-<p>Softwares: R e Positron.</p>
-<p>Leitura prévia:</p>
-<ul>
-<li><a href="https://preprints.scielo.org/index.php/scielo/preprint/view/15303">https://preprints.scielo.org/index.php/scielo/preprint/view/15303</a></li>
-</ul>
-<p>Leitura sugerida:</p>
-<ul>
-<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/sim.5963">https://onlinelibrary.wiley.com/doi/10.1002/sim.5963</a></li>
-<li><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62114-0/fulltext">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62114-0/fulltext</a></li>
-</ul>
-</span></span></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Data">16/11/2026</td>
-<td class="gt_row gt_left" headers="Atividade">?</td>
-<td class="gt_row gt_left" headers="Tema / Título">?</td>
-<td class="gt_row gt_left" headers="Descrição">?</td>
-<td class="gt_row gt_left" headers="Responsável">?</td>
-<td class="gt_row gt_left" headers="Observações">?</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Data">30/11/2026</td>
-<td class="gt_row gt_left" headers="Atividade">?</td>
-<td class="gt_row gt_left" headers="Tema / Título">?</td>
-<td class="gt_row gt_left" headers="Descrição">?</td>
-<td class="gt_row gt_left" headers="Responsável">?</td>
-<td class="gt_row gt_left" headers="Observações">?</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Data">14/12/2026</td>
-<td class="gt_row gt_left" headers="Atividade">Encerramento</td>
-<td class="gt_row gt_left" headers="Tema / Título">Avaliação do semestre e confraternização</td>
-<td class="gt_row gt_left" headers="Descrição">Discussão sobre as atividades realizadas, sugestões para o próximo semestre e confraternização.</td>
-<td class="gt_row gt_left" headers="Responsável">Waleska Caiaffa</td>
-<td class="gt_row gt_left" headers="Observações">?</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<ul>
-<li><p><a href="https://drive.google.com/drive/folders/1jLRcQ0hC7HYuVq41OOcvnYejVXcEgdSF?usp=sharing" target="_blank">Google Drive</a></p></li>
-<li><p><a href="https://github.com/amandasmagalhaes/osubh_capacita" target="_blank">GitHub</a></p></li>
-</ul>
+<p>O Quarto não corrige automaticamente uma análise incorreta. Ele apenas executa e apresenta o que foi escrito. Por isso, é importante revisar tanto o código quanto a interpretação dos resultados.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/_20US068pzk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 </section>
@@ -1201,11 +720,11 @@ Recursos: notebook e internet.
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./05 - Boas práticas de programação.html" class="pagination-link" aria-label="Boas práticas de programação">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Boas práticas de programação</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01 - R.html" class="pagination-link" aria-label="Software R">
-        <span class="nav-page-text"><span class="chapter-title">Software R</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

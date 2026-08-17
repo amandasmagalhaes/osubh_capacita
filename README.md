@@ -18,5 +18,6 @@ Atualmente, o material está organizado da seguinte forma:
 | `03 - Introdução em R.qmd` | Primeiros passos na linguagem R. |
 | `04 - GitHub.qmd` | Introdução ao Git e GitHub. |
 | `05 - Boas práticas de programação.qmd` | Recomendações para organização e escrita de código. |
+| `06 - Quarto.qmd` | Introdução à criação de documentos com Quarto. |
 
 Novos capítulos serão adicionados conforme a evolução dos encontros.

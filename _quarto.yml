@@ -14,7 +14,7 @@ book:
     - 03 - Introdução em R.qmd
     - 04 - GitHub.qmd
     - 05 - Boas práticas de programação.qmd
-
+    - 06 - Quarto.qmd
 
 format:
   html:
