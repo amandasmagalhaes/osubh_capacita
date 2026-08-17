@@ -1,0 +1,76 @@
+---
+title: "Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)"
+format: html
+---
+
+
+## Introdução
+
+Iremos replicar parte da análise apresentada no artigo [Mortalidade Associada ao Calor Extremo: definição de marcadores térmicos para um sistema de alerta em Belo Horizonte – MG](https://doi.org/10.1590/SciELOPreprints.15303){target="_blank"}, que teve como objetivo estabelecer limiares de temperatura máxima diária para a definição de níveis de alerta e a caracterização de ondas de calor em Belo Horizonte, fornecendo uma base teórico-metodológica para a gestão de riscos climáticos no município.
+
+
+## Métodos
+
+### Área de estudo
+
+O município de Belo Horizonte, com uma área territorial de 331,4 km², localiza-se na região Sudeste do Brasil e possui aproximadamente 2,3 milhões de habitantes.
+
+### Fontes de dados
+
+#### Desfecho
+
+Os dados de mortalidade foram obtidos do Sistema de Informação sobre Mortalidade (SIM), sendo extraídos os registros diários de óbitos por todas as causas no período de 2014 a 2024.
+
+#### Exposição
+
+Os dados meteorológicos são provenientes da rede de monitoramento do Instituto Nacional de Meteorologia (INMET), sendo selecionada a Estação Automática da Pampulha devido à sua representatividade espacial e altimétrica.
+
+
+## Análises estatísticas
+
+### Pacotes
+
+Para realizar a análise, utilizaremos diferentes pacotes do R. Pacotes são conjuntos de funções, objetos e recursos desenvolvidos para realizar tarefas específicas.
+
+O `pacman` é um pacote que facilita o gerenciamento de outros pacotes no R. Ele permite instalar e carregar vários pacotes de forma prática.
+
+A instalação de um pacote é realizada apenas uma vez no computador. Por isso, esse comando deve ser executado na **Session do Positron** e não como um bloco de código R no arquivo `.qmd`.
+
+Na **Session**, execute:
+
+```bash
+install.packages("pacman")
+```
+
+Depois de instalado, podemos utilizar o `pacman` para carregar os demais pacotes necessários para a análise.
+
+A função `p_load()` verifica se os pacotes estão disponíveis. Caso algum ainda não esteja instalado, o `pacman` pode instalá-lo e, em seguida, carregá-lo.
+
+```{r}
+#| label: Pacotes
+#| code-summary: Pacotes
+
+pacman::p_load(
+  # Importação de dados
+  "haven",
+
+  # Manipulação de dados
+  "dplyr",
+  "lubridate",
+  "tidyr",
+
+  # Visualização de dados
+  "ggplot2",
+  "patchwork",
+
+  # Correlação
+  "Hmisc",
+  "reshape2",
+
+  # Modelagem
+  "dlnm",
+  "gnm",
+  "splines",
+  "MuMIn"
+)
+```

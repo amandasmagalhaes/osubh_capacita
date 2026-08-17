@@ -478,5 +478,25 @@
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Quarto</span>"
     ]
+  },
+  {
+    "objectID": "07 - Análise de temperatura e mortalidade.html",
+    "href": "07 - Análise de temperatura e mortalidade.html",
+    "title": "Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)",
+    "section": "",
+    "text": "Introdução\nIremos replicar parte da análise apresentada no artigo Mortalidade Associada ao Calor Extremo: definição de marcadores térmicos para um sistema de alerta em Belo Horizonte – MG, que teve como objetivo estabelecer limiares de temperatura máxima diária para a definição de níveis de alerta e a caracterização de ondas de calor em Belo Horizonte, fornecendo uma base teórico-metodológica para a gestão de riscos climáticos no município.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)</span>"
+    ]
+  },
+  {
+    "objectID": "07 - Análise de temperatura e mortalidade.html#métodos",
+    "href": "07 - Análise de temperatura e mortalidade.html#métodos",
+    "title": "Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)",
+    "section": "Métodos",
+    "text": "Métodos\n\nÁrea de estudo\nO município de Belo Horizonte, com uma área territorial de 331,4 km², localiza-se na região Sudeste do Brasil e possui aproximadamente 2,3 milhões de habitantes.\n\n\nFontes de dados\n\nDesfecho\nOs dados de mortalidade foram obtidos do Sistema de Informação sobre Mortalidade (SIM), sendo extraídos os registros diários de óbitos por todas as causas no período de 2014 a 2024.\n\n\nExposição\nOs dados meteorológicos são provenientes da rede de monitoramento do Instituto Nacional de Meteorologia (INMET), sendo selecionada a Estação Automática da Pampulha devido à sua representatividade espacial e altimétrica.\n\n\n\nAnálises estatísticas\n\nPacotes\nPara realizar a análise, utilizaremos diferentes pacotes do R. Pacotes são conjuntos de funções, objetos e recursos desenvolvidos para realizar tarefas específicas.\nO pacman é um pacote que facilita o gerenciamento de outros pacotes no R. Ele permite instalar e carregar vários pacotes de forma prática.\nA instalação de um pacote é realizada apenas uma vez no computador. Por isso, esse comando deve ser executado no Console do R e não dentro do arquivo .qmd.\nNo Console, execute:\ninstall.packages(\"pacman\")\nDepois de instalado, podemos utilizar o pacman para carregar os demais pacotes necessários para a análise.\nA função p_load() verifica se os pacotes estão disponíveis. Caso algum ainda não esteja instalado, o pacman pode instalá-lo e, em seguida, carregá-lo.\n\n## Pacotes ####\n\npacman::p_load(\n  # Importação de dados\n  \"haven\",\n\n  # Manipulação de dados\n  \"dplyr\",\n  \"lubridate\",\n  \"tidyr\",\n\n  # Visualização de dados\n  \"ggplot2\",\n  \"patchwork\",\n\n  # Correlação\n  \"Hmisc\",\n  \"reshape2\",\n\n  # Modelagem\n  \"dlnm\",\n  \"gnm\",\n  \"splines\",\n  \"MuMIn\"\n)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)</span>"
+    ]
   }
 ]
