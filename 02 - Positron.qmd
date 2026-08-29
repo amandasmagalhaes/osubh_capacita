@@ -30,3 +30,43 @@ Neste encontro, utilizaremos o Positron por representar a nova geração de ambi
 2. Selecione o sistema operacional do seu computador (Windows, macOS ou Linux).
 3. Baixe a versão correspondente ao seu sistema.
 4. Execute o instalador e siga as instruções padrão de instalação.
+
+
+### Formatação automática do código
+
+O Positron pode formatar o código automaticamente sempre que um arquivo for salvo. Essa funcionalidade ajuda a manter o código organizado, com indentação, espaçamento e quebras de linha padronizados.
+
+A configuração pode ser feita uma única vez nas **User Settings** do Positron e, dessa forma, será aplicada aos diferentes projetos.
+
+Para configurar:
+
+1. Abra as configurações do Positron:
+   - Windows/Linux: `Ctrl + Shift + P`
+   - macOS: `Cmd + Shift + P`
+
+2. Procure por **Preferences: Open User Settings (JSON)** e selecione essa opção.
+
+3. No arquivo `settings.json`, adicione as configurações abaixo:
+
+```json
+{
+    "files.associations": {
+        "renv.lock": "json"
+    },
+    "workbench.colorTheme": "Default Positron Dark",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "positron.assistant.notebook.ghostCellSuggestions.enabled": true,
+    "console.showResourceMonitor": false,
+    "[r]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Posit.air-vscode"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.formatOnSave": true,
+    "security.workspace.trust.untrustedFiles": "open"
+}
+```
