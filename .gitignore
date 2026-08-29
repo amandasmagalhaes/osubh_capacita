@@ -24,3 +24,9 @@ __pycache__/
 *.log
 /.quarto/
 **/*.quarto_ipynb
+
+# Arquivos e pastas gerados
+07 - Análise de temperatura e mortalidade_files/
+README_files/
+figuras/
+README.html
