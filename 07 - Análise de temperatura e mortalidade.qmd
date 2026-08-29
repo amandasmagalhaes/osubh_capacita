@@ -4,16 +4,20 @@ format: html
 ---
 
 
+
 ## Introdução
 
-Iremos replicar parte da análise apresentada no artigo [Mortalidade Associada ao Calor Extremo: definição de marcadores térmicos para um sistema de alerta em Belo Horizonte – MG](https://doi.org/10.1590/SciELOPreprints.15303){target="_blank"}, que teve como objetivo estabelecer limiares de temperatura máxima diária para a definição de níveis de alerta e a caracterização de ondas de calor em Belo Horizonte, fornecendo uma base teórico-metodológica para a gestão de riscos climáticos no município.
+Iremos replicar parte da análise apresentada no artigo [Definição de marcadores térmicos associados à mortalidade para um sistema de alerta de calor extremo em Belo Horizonte, Minas Gerais, Brasil](https://doi.org/10.1590/1980-549720260048.2){target="_blank"}, que teve como objetivo estabelecer limiares de temperatura máxima diária para definição de níveis de alerta e caracterização de ondas de calor em Belo Horizonte, fornecendo base teórico-metodológica para a gestão de riscos climáticos no município.
+
 
 
 ## Métodos
 
+
 ### Área de estudo
 
-O município de Belo Horizonte, com uma área territorial de 331,4 km², localiza-se na região Sudeste do Brasil e possui aproximadamente 2,3 milhões de habitantes.
+O município de Belo Horizonte, localizado no Sudeste do Brasil, possui 331,4 km² e aproximadamente 2,3 milhões de habitantes.
+
 
 ### Fontes de dados
 
@@ -26,7 +30,9 @@ Os dados de mortalidade foram obtidos do Sistema de Informação sobre Mortalida
 Os dados meteorológicos são provenientes da rede de monitoramento do Instituto Nacional de Meteorologia (INMET), sendo selecionada a Estação Automática da Pampulha devido à sua representatividade espacial e altimétrica.
 
 
+
 ## Análises estatísticas
+
 
 ### Pacotes
 
@@ -75,3 +81,821 @@ pacman::p_load(
 )
 ```
 
+
+
+### Dados
+
+Nesta etapa, vamos importar a base de dados que será utilizada na análise e visualizar suas informações.
+
+A função `read_dta()` do pacote `haven` permite importar arquivos no formato `.dta`, utilizado pelo Stata. O arquivo está armazenado na pasta `dados` do projeto.
+
+A função `attach()` permite acessar as variáveis da base diretamente pelo nome, sem precisar indicar o nome do objeto a cada vez. Já a função `View()` abre a base em uma janela para facilitar sua visualização.
+
+```{r}
+#| label: Dados
+#| code-summary: Dados
+
+dados_brutos <- read_dta("dados/clima_obitos.dta")
+attach(dados_brutos)
+
+#View(dados_brutos)
+```
+
+
+
+### Descritiva
+
+Nesta etapa, vamos explorar a base de dados.
+
+```{r}
+#| label: Resumo de todas as variáveis
+#| code-summary: Resumo de todas as variáveis
+
+summary(dados_brutos)
+```
+
+O `|>` é o operador **pipe**. Ele permite passar o resultado de uma etapa diretamente para a próxima função, facilitando a leitura e a organização do código. Geralmente, cada etapa é colocada em uma nova linha para tornar o código mais fácil de ler.
+
+```{r}
+#| label: Registros por ano
+#| code-summary: Registros por ano
+
+dados_brutos |>
+  count(ano) |>
+  arrange(ano)
+```
+
+```{r}
+#| label: Registros por mês
+#| code-summary: Registros por mês
+
+dados_brutos |>
+  count(mes) |>
+  arrange(mes)
+```
+
+A função `group_by()` agrupa os dados por ano, permitindo realizar os cálculos separadamente para cada ano. `summarise()` calcula o total de óbitos, enquanto `sum()` realiza a soma dos óbitos. Por fim, `mutate()` cria uma nova variável e `round()` arredonda o percentual para uma casa decimal.
+
+```{r}
+#| label: Óbitos por ano
+#| code-summary: Óbitos por ano
+
+dados_brutos |>
+  group_by(ano) |>
+  summarise(
+    total_obitos = sum(obitos_total, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  mutate(
+    percent = round(100 * total_obitos / sum(total_obitos), 1)
+  )
+```
+
+
+
+### Gráficos
+
+Nesta etapa, vamos criar alguns gráficos para explorar a distribuição das variáveis.
+
+O **histograma** é um gráfico utilizado para visualizar a distribuição de uma variável numérica. Os valores são divididos em intervalos, representados por barras, e a altura de cada barra indica a frequência de observações naquele intervalo.
+
+```{r}
+#| label: Distribuição da temperatura média
+#| code-summary: Distribuição da temperatura média
+
+# Criar o gráfico
+grafico_temp_media <- ggplot(
+  dados_brutos,
+  aes(x = temp_media)
+) +
+
+  # Histograma com 20 intervalos
+  geom_histogram(
+    bins = 20,
+    fill = "gray45",
+    color = "white"
+  ) +
+
+  # Títulos dos eixos
+  xlab("\n Temperatura média (°C)") +
+  ylab("Frequência \n") +
+
+  # Título do gráfico
+  ggtitle("Distribuição da temperatura média \n") +
+
+  # Tema visual
+  theme_minimal(base_size = 14)
+
+# Exibir o gráfico
+grafico_temp_media
+
+# Salvar o gráfico
+ggsave(
+  filename = file.path("figuras", "temp_media.jpg"),
+  plot = grafico_temp_media,
+  width = 21,
+  height = 12,
+  units = "in",
+  dpi = 300
+)
+```
+
+```{r}
+#| label: Distribuição da temperatura máxima
+#| code-summary: Distribuição da temperatura máxima
+
+grafico_temp_max <- ggplot(
+  dados_brutos,
+  aes(x = temp_max)
+) +
+  geom_histogram(
+    bins = 20,
+    fill = "gray45",
+    color = "white"
+  ) +
+  xlab("\n Temperatura máxima (°C)") +
+  ylab("Frequência \n") +
+  ggtitle("Distribuição da temperatura máxima \n") +
+  scale_y_continuous(
+    breaks = seq(0, 800, by = 100),
+    limits = c(0, 800)
+  ) +
+  theme_minimal(base_size = 14)
+
+grafico_temp_max
+
+ggsave(
+  filename = file.path("figuras", "temp_max.jpg"),
+  plot = grafico_temp_max,
+  width = 21,
+  height = 12,
+  units = "in",
+  dpi = 300
+)
+```
+
+Para comparar as temperaturas em um mesmo gráfico, vamos primeiro reorganizar os dados. Atualmente, a base está no formato **largo**, em que cada tipo de temperatura ocupa uma coluna diferente (`temp_min`, `temp_media` e `temp_max`). Assim, uma mesma observação possui os três tipos de temperatura em colunas separadas.
+
+No formato **longo**, cada linha representa uma combinação entre uma observação e um tipo de temperatura. Em vez de ter uma coluna para cada tipo de temperatura, passamos a ter uma coluna que identifica o **tipo** de temperatura e outra que contém o seu **valor**. Dessa forma, as temperaturas mínima, média e máxima passam a ser categorias de uma mesma variável.
+
+A função `pivot_longer()` é utilizada para realizar essa transformação, facilitando a utilização dos dados em algumas análises e visualizações.
+
+O **boxplot** é um gráfico utilizado para visualizar e comparar a distribuição de uma variável numérica.
+
+- A **linha dentro da caixa** representa a mediana, ou seja, o valor que divide os dados em duas partes iguais.
+- A **caixa** representa os 50% centrais dos dados, entre o primeiro e o terceiro quartil.
+- As **linhas que se estendem a partir da caixa**, chamadas de *bigodes*, mostram a dispersão dos valores dentro de um determinado limite.
+- Os **pontos além dos bigodes** representam possíveis valores extremos (*outliers*).
+
+Neste caso, cada caixa representa um tipo de temperatura: mínima, média e máxima, permitindo comparar suas distribuições.
+
+```{r}
+#| label: Distribuição das temperaturas
+#| code-summary: Distribuição das temperaturas
+
+# Selecionar as variáveis de temperatura e transformar a base
+# do formato largo para o formato longo
+dados_temp <- dados_brutos |>
+  select(temp_min, temp_media, temp_max) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "tipo",
+    values_to = "temperatura"
+  ) |>
+
+  # Organizar os tipos de temperatura como categorias.
+  mutate(
+    tipo = factor(
+      tipo,
+      levels = c("temp_min", "temp_media", "temp_max"),
+      labels = c("Mínima", "Média", "Máxima")
+    )
+  )
+
+# Criar o boxplot para comparar as três temperaturas.
+grafico_temp <- ggplot(
+  dados_temp,
+  aes(x = tipo, y = temperatura, fill = tipo)
+) +
+  geom_boxplot(color = "black") +
+
+  # Definir as cores de cada categoria.
+  scale_fill_manual(
+    values = c(
+      "Mínima" = "#253C9C",
+      "Média" = "#35b779",
+      "Máxima" = "#D64933"
+    )
+  ) +
+
+  # Configurar a escala do eixo Y.
+  scale_y_continuous(
+    breaks = seq(0, 40, by = 5),
+    limits = c(0, 40)
+  ) +
+
+  # Aplicar um tema visual e remover a legenda.
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none") +
+
+  # Definir título e nomes dos eixos.
+  labs(
+    title = "Distribuição das temperaturas",
+    x = "",
+    y = "Temperatura (°C)"
+  )
+
+# Exibir o gráfico.
+grafico_temp
+
+# Salvar o gráfico.
+ggsave(
+  filename = file.path("figuras", "temp.jpg"),
+  plot = grafico_temp,
+  width = 21,
+  height = 12,
+  units = "in",
+  dpi = 300
+)
+```
+
+
+#### Correlação
+
+A **correlação** é uma medida que indica a intensidade e a direção da associação entre duas variáveis. O coeficiente de correlação varia de -1 a 1: valores próximos de 1 indicam uma associação positiva, valores próximos de -1 indicam uma associação negativa e valores próximos de 0 indicam pouca ou nenhuma associação.
+
+Utilizaremos a correlação de Spearman, que é útil quando a relação entre as variáveis não é necessariamente linear ou quando os dados não atendem a alguns pressupostos da correlação de Pearson, como linearidade, ausência de outliers influentes e distribuição aproximadamente normal.
+
+A matriz de correlação permite visualizar simultaneamente as associações entre todas as variáveis analisadas.
+
+```{r}
+#| label: Matriz de correlação
+#| code-summary: Matriz de correlação
+
+# Selecionar as variáveis e remover as colunas que não serão utilizadas
+dados_correlacao <- dados_brutos |>
+  select(
+    -data,
+    -obitos_infantil
+  ) |>
+  na.omit() |>
+  sapply(as.numeric)
+
+# Calcular as correlações de Spearman
+cor_res <- rcorr(dados_correlacao, type = "spearman")
+cor_matrix <- cor_res$r
+p_values <- cor_res$P
+
+# Criar os rótulos da matriz com duas casas decimais
+# e um asterisco para correlações estatisticamente significativas
+cor_text <- ifelse(
+  !is.na(cor_matrix),
+  paste0(
+    formatC(cor_matrix, format = "f", digits = 2),
+    ifelse(p_values < 0.05, "*", "")
+  ),
+  NA
+)
+
+# Substituir os valores da diagonal por 1.00
+diag(cor_text) <- "1.00"
+
+# Definir os nomes das linhas e colunas
+colnames(cor_matrix) <- rownames(cor_matrix) <- colnames(dados_correlacao)
+colnames(cor_text) <- rownames(cor_text) <- colnames(dados_correlacao)
+
+# Manter apenas a metade inferior da matriz
+cor_matrix[upper.tri(cor_matrix)] <- NA
+cor_text[upper.tri(cor_text)] <- NA
+
+# Transformar as matrizes em data frames para criar o gráfico
+cor_df <- melt(cor_matrix, value.name = "value")
+cor_text_df <- melt(cor_text, value.name = "label")
+
+cor_df$label <- cor_text_df$label
+
+# Criar o gráfico da matriz de correlação
+grafico_correlacao <- ggplot(
+  cor_df,
+  aes(x = Var1, y = Var2, fill = value)
+) +
+  geom_tile(na.rm = TRUE) +
+  geom_text(
+    aes(label = label),
+    color = "black",
+    size = 5,
+    na.rm = TRUE
+  ) +
+  scale_fill_gradient2(
+    low = "#253C9C",
+    mid = "white",
+    high = "#D64933",
+    midpoint = 0,
+    limits = c(-1, 1),
+    na.value = NA
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.title = element_blank(),
+    panel.grid = element_line(color = "gray95")
+  ) +
+  labs(
+    title = "Matriz de correlação de Spearman",
+    x = "",
+    y = ""
+  )
+
+# Exibir o gráfico
+grafico_correlacao
+
+# Salvar o gráfico
+ggsave(
+  filename = file.path("figuras", "correlacao.jpg"),
+  plot = grafico_correlacao,
+  width = 21,
+  height = 12,
+  units = "in",
+  dpi = 300
+)
+```
+
+
+
+### Estrato
+
+Antes de ajustar o modelo, precisamos criar uma variável de **estrato**. Neste estudo, os estratos serão definidos pela combinação de **ano, mês e dia da semana**.
+
+Essa combinação permite comparar os dias dentro de períodos semelhantes, ajudando a controlar a **sazonalidade** e a **variação ao longo dos dias da semana** na análise de mortalidade.
+
+A função `paste()` combina as informações de ano, mês e dia da semana em uma única variável. O argumento `sep = ":"` define o separador entre essas informações. Por fim, `factor()` transforma a variável em um fator, um tipo de variável utilizado no R para representar categorias ou grupos. Neste caso, cada combinação de ano, mês e dia da semana corresponde a um estrato diferente, que será utilizado na modelagem.
+
+```{r}
+#| label: Estratos
+#| code-summary: Estratos
+
+dados_modelo <- dados_brutos |>
+  mutate(
+    strata = paste(
+      ano,
+      mes,
+      wday(data, label = TRUE),
+      sep = ":"
+    ) |>
+      factor()
+  )
+```
+
+
+
+### Knots
+
+Para estudar a relação entre temperatura e mortalidade, não queremos assumir que essa relação seja uma linha reta. Por exemplo, o risco de mortalidade pode ser diferente em temperaturas baixas, moderadas e altas.
+
+Uma **spline** é uma função que permite representar uma relação não linear de forma flexível. Em vez de ajustar uma única linha reta para todos os valores de temperatura, a spline constrói uma curva a partir de vários trechos, permitindo que ela acompanhe diferentes padrões observados nos dados.
+
+Uma **spline cúbica** utiliza funções polinomiais de terceiro grau para construir esses trechos. Os diferentes trechos são conectados de maneira suave, formando uma única curva.
+
+Uma **spline cúbica natural** adiciona restrições à curva, especialmente nas extremidades da distribuição dos dados. Fora dos *knots* mais extremos, a curva é restrita a um comportamento linear. Isso evita que a curva fique excessivamente flexível nas regiões onde geralmente há menos observações.
+
+Os **knots (nós)** são pontos definidos ao longo da distribuição da temperatura que determinam onde os diferentes trechos da spline se encontram. A posição desses pontos influencia a forma e a flexibilidade da curva.
+
+Nesta análise, os *knots* serão definidos a partir de diferentes **percentis da temperatura**. Por exemplo, um *knot* no percentil 50 corresponde ao valor de temperatura que divide as observações em duas partes: 50% estão abaixo desse valor e 50% estão acima.
+
+Vamos testar diferentes combinações de *knots* para avaliar qual especificação representa melhor a relação entre temperatura e mortalidade.
+
+A função `quantile()` é utilizada para calcular os valores correspondentes aos percentis escolhidos.
+
+```{r}
+#| label: Knots para temperatura
+#| code-summary: Knots para temperatura
+
+# Definir as combinações de percentis que serão utilizadas
+percentis_knots <- list(
+  # Percentis 10, 75 e 90
+  # https://doi.org/10.1038/s41591-022-01872-6
+  knots_10_75_90 = c(10, 75, 90),
+
+  # Percentis 10, 50 e 90
+  # https://doi.org/10.1038/s41591-023-02419-z
+  knots_10_50_90 = c(10, 50, 90),
+
+  # Percentis 25, 50 e 90
+  # https://doi.org/10.1590/0102-311XEN042524
+  knots_25_50_90 = c(25, 50, 90),
+
+  # Percentis 50, 75 e 90
+  knots_50_75_90 = c(50, 75, 90),
+
+  # Percentis 50 e 90
+  # https://doi.org/10.1016/j.envres.2024.119347
+  # https://doi.org/10.3390/atmos16020196
+  knots_50_90 = c(50, 90)
+)
+
+# Calcular os knots para a temperatura média
+knots_media <- lapply(
+  percentis_knots,
+  \(x) {
+    quantile(
+      dados_modelo$temp_media,
+      x / 100,
+      na.rm = TRUE
+    )
+  }
+)
+
+# Calcular os knots para a temperatura máxima
+knots_max <- lapply(
+  percentis_knots,
+  \(x) {
+    quantile(
+      dados_modelo$temp_max,
+      x / 100,
+      na.rm = TRUE
+    )
+  }
+)
+
+# Visualizar os knots calculados
+knots_media
+knots_max
+```
+
+
+
+### Boundary knots
+
+Além dos *knots* internos, precisamos definir os **boundary knots** (nós de fronteira). Eles determinam os limites do intervalo em que a spline poderá apresentar um comportamento flexível.
+
+Neste estudo, vamos definir os *boundary knots* como os **percentis 1 e 99 da temperatura**. Isso significa que o limite inferior será o valor de temperatura abaixo do qual estão 1% das observações, e o limite superior será o valor acima do qual estão 1% das observações.
+
+Dentro desses limites, a spline pode representar a relação não linear entre temperatura e mortalidade. Fora deles, a spline cúbica natural é restrita a um comportamento linear. Essa estratégia reduz a influência de valores extremos e pouco frequentes na forma da curva.
+
+```{r}
+#| label: Boundary knots
+#| code-summary: Boundary knots
+
+# Boundary knots nos percentis 1 e 99 da temperatura média.
+boundary_media_1_99 <- quantile(
+  dados_modelo$temp_media,
+  c(0.01, 0.99),
+  na.rm = TRUE
+)
+
+# Boundary knots nos percentis 1 e 99 da temperatura máxima.
+boundary_max_1_99 <- quantile(
+  dados_modelo$temp_max,
+  c(0.01, 0.99),
+  na.rm = TRUE
+)
+
+boundary_media_1_99
+boundary_max_1_99
+```
+
+
+
+### Lags
+
+Em estudos sobre os efeitos da temperatura na saúde, o efeito da exposição pode não ocorrer apenas no mesmo dia. Uma temperatura elevada pode estar associada a alterações na mortalidade nos dias seguintes.
+
+O **lag** representa o número de dias de defasagem entre a exposição à temperatura e o desfecho. Por exemplo, um `lag_7` permite avaliar efeitos da temperatura desde o dia da exposição até os 7 dias seguintes.
+
+Nesta análise, vamos testar diferentes períodos de defasagem, com base em intervalos utilizados em estudos anteriores.
+
+```{r}
+#| label: Lags
+#| code-summary: Lags
+
+lags <- list(
+  # Defasagem de 1 a 21 dias
+  # https://doi.org/10.1038/s41591-022-01872-6
+  lag_21 = c(1, 21),
+
+  # Defasagem de 1 a 14 dias
+  # https://doi.org/10.1016/j.scs.2022.103758
+  lag_14 = c(1, 14),
+
+  # Defasagem de 1 a 10 dias
+  # https://doi.org/10.1093/aje/kwv260
+  lag_10 = c(1, 10),
+
+  # Defasagem de 1 a 7 dias
+  # https://doi.org/10.1016/j.envres.2024.119347
+  lag_7 = c(1, 7),
+
+  # Defasagem de 1 a 5 dias
+  lag_5 = c(1, 5)
+)
+
+lags
+```
+
+
+
+### Knots para os splines de lags
+
+Além de modelar de forma não linear a relação entre temperatura e mortalidade, também precisamos representar como esse efeito varia ao longo dos dias de defasagem (*lags*).
+
+Para isso, vamos utilizar *knots* na dimensão dos *lags*. Serão testadas duas formas de posicionar esses nós:
+
+- `logknots()` distribui os nós de forma logarítmica, concentrando mais nós nos primeiros dias de *lag*. Essa configuração permite maior flexibilidade para representar efeitos que acontecem logo após a exposição.
+- `equalknots()` distribui os nós igualmente ao longo do período de *lags*, permitindo representar de forma mais uniforme possíveis efeitos que se distribuem ao longo dos dias.
+
+Em ambos os casos, utilizaremos **3 knots** para cada período de *lag*.
+
+```{r}
+#| label: Knots para os splines de lags
+#| code-summary: Knots para os splines de lags
+
+# Knots distribuídos de forma logarítmica.
+lags_knots_3 <- list(
+  lag_21_knots_3 = logknots(lags$lag_21, nk = 3),
+  lag_14_knots_3 = logknots(lags$lag_14, nk = 3),
+  lag_10_knots_3 = logknots(lags$lag_10, nk = 3),
+  lag_7_knots_3 = logknots(lags$lag_7, nk = 3),
+  lag_5_knots_3 = logknots(lags$lag_5, nk = 3)
+)
+
+# Knots distribuídos igualmente.
+lags_knots_3_equal <- list(
+  lag_21_knots_3_eq = equalknots(lags$lag_21, nk = 3),
+  lag_14_knots_3_eq = equalknots(lags$lag_14, nk = 3),
+  lag_10_knots_3_eq = equalknots(lags$lag_10, nk = 3),
+  lag_7_knots_3_eq = equalknots(lags$lag_7, nk = 3),
+  lag_5_knots_3_eq = equalknots(lags$lag_5, nk = 3)
+)
+
+# Combinar as duas formas de distribuição dos knots.
+lags_knots_list <- c(
+  lags_knots_3,
+  lags_knots_3_equal
+)
+
+lags_knots_list
+```
+
+
+
+### Cross-basis
+
+Agora vamos combinar as duas dimensões que estamos estudando: a **temperatura** e o **tempo de defasagem (*lag*)**.
+
+No DLNM, essa combinação é chamada de **cross-basis**. Ela permite representar simultaneamente como a associação entre temperatura e mortalidade varia de acordo com a temperatura e como esse efeito se distribui ao longo dos dias após a exposição.
+
+Para a temperatura, utilizaremos uma **spline cúbica natural**, com os *knots* definidos anteriormente e os *boundary knots* nos percentis 1 e 99. Para os *lags*, também utilizaremos uma spline cúbica natural, com os *knots* definidos por `logknots()` ou `equalknots()`.
+
+A função `crossbasis()` do pacote `dlnm` combina essas duas dimensões em uma estrutura que poderá ser incluída posteriormente no modelo estatístico.
+
+O argumento `argvar` define como a **temperatura** será modelada, enquanto `arglag` define como os **lags** serão modelados. O argumento `fun = "ns"` indica que será utilizada uma spline cúbica natural.
+
+Como estamos avaliando diferentes combinações de *knots*, períodos de *lag* e formas de distribuição dos *knots* dos lags, vamos criar vários *cross-basis*. Eles serão armazenados separadamente para a temperatura média e para a temperatura máxima.
+
+```{r}
+#| label: Cross-basis
+#| code-summary: Cross-basis
+
+# Criar listas para armazenar os cross-basis separadamente.
+cbs_media <- list()
+cbs_max <- list()
+
+# Definir as temperaturas que serão analisadas.
+temperaturas <- list(
+  temp_media = list(
+    dados = dados_modelo$temp_media,
+    knots = knots_media,
+    boundary = boundary_media_1_99
+  ),
+  temp_max = list(
+    dados = dados_modelo$temp_max,
+    knots = knots_max,
+    boundary = boundary_max_1_99
+  )
+)
+
+# Criar os cross-basis para cada temperatura,
+# período de lag e distribuição dos knots dos lags.
+for (temp_name in names(temperaturas)) {
+  temp_info <- temperaturas[[temp_name]]
+
+  for (knots_name in names(temp_info$knots)) {
+    pred_knots <- temp_info$knots[[knots_name]]
+
+    for (lag_name in names(lags)) {
+      n_lag <- lags[[lag_name]]
+
+      for (tipo_lag in c("logknots", "equally")) {
+        lag_knots <- if (tipo_lag == "logknots") {
+          lags_knots_3[[paste0(lag_name, "_knots_3")]]
+        } else {
+          lags_knots_3_equal[[paste0(lag_name, "_knots_3_eq")]]
+        }
+
+        cb <- crossbasis(
+          temp_info$dados,
+          lag = n_lag,
+          argvar = list(
+            fun = "ns",
+            knots = pred_knots,
+            Boundary.knots = temp_info$boundary
+          ),
+          arglag = list(
+            fun = "ns",
+            knots = lag_knots,
+            intercept = TRUE
+          )
+        )
+
+        cb_name <- paste(
+          temp_name,
+          knots_name,
+          lag_name,
+          tipo_lag,
+          sep = "_"
+        )
+
+        # Armazenar o cross-basis na lista correspondente.
+        if (temp_name == "temp_media") {
+          cbs_media[[cb_name]] <- cb
+        } else {
+          cbs_max[[cb_name]] <- cb
+        }
+      }
+    }
+  }
+}
+
+# Visualizar os nomes dos cross-basis criados.
+names(cbs_media)
+names(cbs_max)
+```
+
+### Modelos CP-DLNM
+
+Depois de criar os *cross-basis*, vamos utilizá-los nos modelos estatísticos.
+
+O **CP-DLNM** combina o *cross-basis* da temperatura e dos *lags* com a variável de mortalidade. Neste estudo, utilizaremos um modelo **quasi-Poisson**, apropriado para dados de contagem quando há **superdispersão**, ou seja, quando a variabilidade observada nos óbitos é maior do que a esperada pelo modelo de Poisson.
+
+A variável `strata`, criada anteriormente, será utilizada para controlar a variação associada aos estratos definidos por ano, mês e dia da semana.
+
+Como estamos testando diferentes especificações de *knots* e *lags*, serão ajustados vários modelos. Os modelos serão armazenados em listas para facilitar a organização e a comparação das diferentes especificações.
+
+```{r}
+#| label: Modelos com temperatura média
+#| code-summary: Modelos com temperatura média
+
+# Lista para armazenar os modelos.
+modelos_media <- list()
+
+# Ajustar um modelo para cada cross-basis.
+for (cb_name in names(cbs_media)) {
+  cb <- cbs_media[[cb_name]]
+
+  mod <- gnm(
+    obitos_total ~ cb,
+    eliminate = strata,
+    family = quasipoisson(),
+    data = dados_modelo
+  )
+
+  modelos_media[[cb_name]] <- mod
+}
+
+# Visualizar os nomes dos modelos.
+names(modelos_media)
+
+# Exemplo de resumo de um modelo.
+summary(
+  modelos_media[["temp_media_knots_10_75_90_lag_21_logknots"]]
+)
+```
+
+```{r}
+#| label: Modelos com temperatura máxima
+#| code-summary: Modelos com temperatura máxima
+
+# Lista para armazenar os modelos.
+modelos_max <- list()
+
+# Ajustar um modelo para cada cross-basis.
+for (cb_name in names(cbs_max)) {
+  cb <- cbs_max[[cb_name]]
+
+  mod <- gnm(
+    obitos_total ~ cb,
+    eliminate = strata,
+    family = quasipoisson(),
+    data = dados_modelo
+  )
+
+  modelos_max[[cb_name]] <- mod
+}
+
+# Visualizar os nomes dos modelos.
+names(modelos_max)
+
+# Exemplo de resumo de um modelo.
+summary(
+  modelos_max[["temp_max_knots_10_75_90_lag_21_logknots"]]
+)
+```
+
+
+
+### Comparação dos modelos
+
+Até aqui, criamos diferentes modelos variando os **knots da temperatura**, os **períodos de lag** e a forma de distribuição dos **knots dos lags**. Agora vamos comparar essas diferentes especificações para identificar quais apresentam melhor ajuste aos dados.
+
+Como estamos utilizando modelos **quasi-Poisson**, não utilizaremos diretamente o AIC tradicional. Utilizaremos o **QAIC (Quasi-Akaike Information Criterion)**, uma adaptação do AIC para modelos com sobredispersão.
+
+O QAIC considera tanto o ajuste do modelo aos dados quanto sua complexidade. De forma geral, **valores menores de QAIC indicam modelos com melhor equilíbrio entre ajuste e complexidade**.
+
+Também vamos calcular a média dos resíduos de deviance e dos resíduos de Pearson. Os resíduos representam a diferença entre os valores observados e os valores esperados pelo modelo e podem ajudar a avaliar o ajuste.
+
+A referência utilizada para o cálculo do QAIC é:
+
+https://doi.org/10.1186/1476-069X-11-63
+
+```{r}
+#| label: Comparação dos modelos
+#| code-summary: Comparação dos modelos
+
+# Média dos valores absolutos dos resíduos de deviance.
+deviance_media <- function(mod) {
+  mean(
+    abs(residuals(mod, type = "deviance")),
+    na.rm = TRUE
+  )
+}
+
+# Média dos valores absolutos dos resíduos de Pearson.
+pearson_media <- function(mod) {
+  mean(
+    abs(residuals(mod, type = "pearson")),
+    na.rm = TRUE
+  )
+}
+
+# Calcular o QAIC manualmente.
+qaic_manual <- function(mod) {
+  dev <- deviance(mod)
+  phi <- summary(mod)$dispersion
+  k <- length(coef(mod))
+
+  dev / phi + 2 * k
+}
+
+# Função para avaliar todos os modelos de uma lista.
+avaliar_modelos <- function(modelos, tipo = "media") {
+  resultados <- data.frame(
+    modelo = names(modelos),
+    deviance_media = NA,
+    pearson_media = NA,
+    QAIC = NA,
+    tipo = tipo
+  )
+
+  for (i in seq_along(modelos)) {
+    mod <- modelos[[i]]
+
+    resultados$deviance_media[i] <- deviance_media(mod)
+    resultados$pearson_media[i] <- pearson_media(mod)
+    resultados$QAIC[i] <- qaic_manual(mod)
+  }
+
+  # Diferença entre o QAIC de cada modelo e o menor QAIC.
+  resultados$delta_QAIC <- resultados$QAIC - min(resultados$QAIC)
+
+  return(resultados)
+}
+
+# Avaliar os modelos de temperatura média e máxima.
+resultados_media <- avaliar_modelos(
+  modelos_media,
+  tipo = "media"
+)
+
+resultados_max <- avaliar_modelos(
+  modelos_max,
+  tipo = "max"
+)
+
+# Juntar os resultados e ordenar pelo menor QAIC.
+resultados <- bind_rows(
+  resultados_media,
+  resultados_max
+) |>
+  arrange(QAIC)
+
+# Visualizar os resultados.
+resultados
+
+# Selecionar os modelos com delta-QAIC menor que 10.
+resultados_melhores <- resultados |>
+  filter(delta_QAIC < 10) |>
+  arrange(QAIC)
+
+# Visualizar os modelos selecionados.
+resultados_melhores
+```

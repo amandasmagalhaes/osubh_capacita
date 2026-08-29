@@ -1,32 +1,29 @@
 # R
-.Rhistory
 .RData
+.Rhistory
+.Rproj.user/
 .Ruserdata
+
+# Python
+*.pyc
+__pycache__/
 
 # Positron / VS Code
 .vscode/
 
+# Quarto
+**/*.quarto_ipynb
+*_cache/
+.quarto/
+*.log
+README.html
+
 # macOS
 .DS_Store
 
-# Quarto cache
-.quarto/
-*_cache/
-
-# R cache
-.Rproj.user/
-
-# Python
-__pycache__/
-*.pyc
-
-# Logs
-*.log
-/.quarto/
-**/*.quarto_ipynb
-
-# Arquivos e pastas gerados
+# Pastas
 07 - Análise de temperatura e mortalidade_files/
-README_files/
+dados/
 figuras/
-README.html
+README_files/
+/.quarto/
