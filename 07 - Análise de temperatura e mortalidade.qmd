@@ -355,7 +355,7 @@ grafico_temp <- ggplot(
   labs(
     title = "Distribuição das temperaturas \n",
     x = "",
-    y = "\n Temperatura (°C)"
+    y = "Temperatura (°C) \n"
   )
 
 # Salvar
@@ -626,6 +626,8 @@ Observe que as splines permitem uma curva mais flexível do que a relação line
 ```{r}
 #| label: Comparação entre funções
 #| code-summary: Comparação entre funções
+#| fig-width: 10
+#| fig-height: 7
 
 # Definir os knots nos percentis 50 e 90 da temperatura máxima
 knots_exemplo <- quantile(
@@ -1405,7 +1407,9 @@ No gráfico abaixo, a linha azul indica a MMT, as linhas verdes indicam os nós 
 
 ```{r}
 #| label: Curva cumulativa com MMT
-#| code-summary: Curva cumulativa temperatura–mortalidade com MMT
+#| code-summary: Curva cumulativa com MMT
+#| fig-width: 10
+#| fig-height: 7
 
 # Recuperar a curva cumulativa centralizada na MMT
 red_name <- "temp_max_knots_50_90_lag_21_equally"
@@ -1493,6 +1497,7 @@ legend(
 ```{r}
 #| label: Salvar curva cumulativa com MMT
 #| code-summary: Salvar curva cumulativa com MMT
+#| output: false
 
 # Definir o arquivo de saída
 file_path <- file.path(

@@ -24,10 +24,7 @@ format:
     page-layout: full
     toc: true
     number-sections: false
-    code-fold: false
-
-    fig-width: 8
-    fig-height: 5
+    code-fold: true
 
   pdf:
     documentclass: scrreprt

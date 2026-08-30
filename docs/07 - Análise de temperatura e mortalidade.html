@@ -325,6 +325,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Depois de instalado, podemos utilizar o <code>pacman</code> para carregar os demais pacotes necessários para a análise.</p>
 <p>A função <code>p_load()</code> verifica se os pacotes estão disponíveis. Caso algum ainda não esteja instalado, o <code>pacman</code> pode instalá-lo e, em seguida, carregá-lo.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Pacotes</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Importação de dados</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"haven"</span>,</span>
@@ -346,6 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Exportação de resultados</span></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openxlsx"</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="importação-dos-dados" class="level3">
@@ -353,16 +356,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A função <code>read_dta()</code> do pacote <code>haven</code> permite importar arquivos no formato <code>.dta</code>, utilizado pelo Stata. O arquivo está armazenado na pasta <code>dados</code> do projeto.</p>
 <p>A função <code>View()</code> abre a base em uma janela para facilitar sua visualização. Aqui, vamos manter o nome do objeto (<code>dados_brutos</code>) explícito no código. Isso reduz ambiguidades, especialmente quando o projeto cresce e passa a ter várias bases.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Dados</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados_brutos <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"dados/clima_obitos.dta"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#View(dados_brutos)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="análise-descritiva" class="level3">
 <h3 class="anchored" data-anchor-id="análise-descritiva">2.3 Análise descritiva</h3>
 <p>A análise descritiva é a primeira conferência da base. Ela ajuda a responder perguntas simples: quais variáveis existem, quais valores aparecem, quantos dias foram registrados e há dados ausentes?</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Resumo de todas as variáveis</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados_brutos)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>      data                 mes              ano          temp_min    
  Min.   :2014-01-01   Min.   : 1.000   Min.   :2014   Min.   : 6.40  
@@ -408,9 +417,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>O <code>|&gt;</code> é o operador <strong>pipe</strong>. Ele permite passar o resultado de uma etapa diretamente para a próxima função, facilitando a leitura e a organização do código. Geralmente, cada etapa é colocada em uma nova linha para tornar o código mais fácil de ler.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Registros por ano</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ano) <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ano)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 11 × 2
      ano     n
@@ -429,9 +441,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Registros por mês</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(mes) <span class="sc">|&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(mes)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 2
      mes     n
@@ -452,6 +467,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>A função <code>group_by()</code> agrupa os dados por ano, permitindo realizar os cálculos separadamente para cada ano. <code>summarise()</code> calcula o total de óbitos, enquanto <code>sum()</code> realiza a soma dos óbitos. Por fim, <code>mutate()</code> cria uma nova variável e <code>round()</code> arredonda o percentual para uma casa decimal.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Óbitos por ano</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
@@ -461,6 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> total_obitos <span class="sc">/</span> <span class="fu">sum</span>(total_obitos), <span class="dv">1</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 11 × 3
      ano total_obitos percent
@@ -484,6 +502,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Os gráficos transformam números em padrões mais fáceis de enxergar. Nesta seção, veremos a quantidade de óbitos ao longo do tempo, a distribuição das temperaturas e a associação entre as variáveis.</p>
 <p>O <strong>gráfico de dispersão</strong> é utilizado para visualizar a relação entre duas variáveis numéricas, em que cada ponto representa uma observação e sua posição mostra os valores das duas variáveis.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Óbitos ao longo dos anos</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar o gráfico</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>grafico_obitos_anos <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  dados_brutos,</span>
@@ -527,16 +547,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>grafico_obitos_anos</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Óbitos ao longo dos anos-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Óbitos ao longo dos anos-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>O <strong>histograma</strong> é um gráfico utilizado para visualizar a distribuição de uma variável numérica. Os valores são divididos em intervalos, representados por barras, e a altura de cada barra indica a frequência de observações naquele intervalo.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Distribuição da temperatura média</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar o gráfico</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>grafico_temp_media <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  dados_brutos,</span>
@@ -568,15 +591,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>grafico_temp_media</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição da temperatura média-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição da temperatura média-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Distribuição da temperatura máxima</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grafico_temp_max <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  dados_brutos,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> temp_max)</span>
@@ -605,10 +631,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>grafico_temp_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição da temperatura máxima-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição da temperatura máxima-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -625,6 +652,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Neste caso, cada caixa representa um tipo de temperatura: mínima, média e máxima, permitindo comparar suas distribuições.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Distribuição das temperaturas</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionar as variáveis de temperatura e transformar a base</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dados_temp <span class="ot">&lt;-</span> dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(temp_min, temp_media, temp_max) <span class="sc">|&gt;</span></span>
@@ -668,7 +697,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribuição das temperaturas </span><span class="sc">\n</span><span class="st">"</span>,</span>
 <span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"</span><span class="sc">\n</span><span class="st"> Temperatura (°C)"</span></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Temperatura (°C) </span><span class="sc">\n</span><span class="st">"</span></span>
 <span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Salvar</span></span>
@@ -683,10 +712,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>grafico_temp</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição das temperaturas-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Distribuição das temperaturas-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -697,6 +727,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Utilizaremos a correlação de Spearman, que é útil quando a relação entre as variáveis não é necessariamente linear ou quando os dados não atendem a alguns pressupostos da correlação de Pearson, como linearidade, ausência de outliers influentes e distribuição aproximadamente normal.</p>
 <p>A matriz de correlação permite visualizar simultaneamente as associações entre todas as variáveis analisadas.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Matriz de correlação</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionar as variáveis e remover as colunas que não serão utilizadas</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dados_correlacao <span class="ot">&lt;-</span> dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
@@ -790,10 +822,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>grafico_correlacao</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Matriz de correlação-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Matriz de correlação-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -811,6 +844,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Essa combinação permite comparar dias dentro de períodos semelhantes, ajudando a controlar diferenças entre meses, anos e dias da semana. Em outras palavras, o modelo compara dias que pertencem ao mesmo grupo de tempo.</p>
 <p>A função <code>paste()</code> combina as informações de ano, mês e dia da semana em uma única variável. O argumento <code>sep = ":"</code> define o separador entre essas informações. Por fim, <code>factor()</code> transforma a variável em um fator, um tipo de variável utilizado no R para representar categorias ou grupos. Neste caso, cada combinação de ano, mês e dia da semana corresponde a um estrato diferente, que será utilizado no modelo.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Estratos</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dados_modelo <span class="ot">&lt;-</span> dados_brutos <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> <span class="fu">paste</span>(</span>
@@ -821,6 +856,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>()</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="splines-e-nós-knots" class="level3">
@@ -836,6 +872,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Nesta análise, os nós serão definidos a partir de diferentes <strong>percentis da temperatura</strong>. Percentil é um ponto de referência na distribuição: por exemplo, o P90 é uma temperatura maior do que a observada em 90% dos dias. Vamos testar diferentes combinações para avaliar qual especificação representa melhor a relação entre temperatura e mortalidade.</p>
 <p>A função <code>quantile()</code> é utilizada para calcular os valores correspondentes aos percentis escolhidos.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Nós para temperatura</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir as combinações de percentis que serão utilizadas</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>percentis_knots <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Percentis 10, 75 e 90</span></span>
@@ -885,6 +923,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar os knots calculados</span></span>
 <span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>knots_media</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$knots_10_75_90
  10%  75%  90% 
@@ -906,7 +945,10 @@ $knots_50_90
  50%  90% 
 22.2 25.3 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Nós para temperatura</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knots_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$knots_10_75_90
   10%   75%   90% 
@@ -937,6 +979,8 @@ $knots_50_90
 <p>Dentro desses limites, a spline pode representar a relação não linear entre temperatura e mortalidade. Fora deles, a <strong>spline cúbica natural</strong> é restrita a um comportamento linear. Essa estratégia reduz a influência de valores extremos e pouco frequentes na forma da curva.</p>
 <p>Assim, temos três conceitos diferentes: os <strong>nós internos</strong>, que permitem mudanças no comportamento da curva; os <strong>nós de fronteira</strong>, que definem os limites do intervalo da spline; e a <strong>spline cúbica natural</strong>, que faz com que a curva assuma um comportamento linear nas regiões mais externas, além desses limites. Essa restrição evita que a curva fique excessivamente flexível nas extremidades, onde geralmente há menos observações e maior possibilidade de variações influenciadas por valores extremos.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Nós de fronteira</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boundary knots nos percentis 1 e 99 da temperatura média</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>boundary_media_1_99 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  dados_modelo<span class="sc">$</span>temp_media,</span>
@@ -944,10 +988,13 @@ $knots_50_90
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>boundary_media_1_99</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    1%    99% 
 16.300 27.883 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Nós de fronteira</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boundary knots nos percentis 1 e 99 da temperatura máxima</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>boundary_max_1_99 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  dados_modelo<span class="sc">$</span>temp_max,</span>
@@ -955,6 +1002,7 @@ $knots_50_90
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>boundary_max_1_99</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    1%    99% 
 21.300 35.783 </code></pre>
@@ -963,6 +1011,8 @@ $knots_50_90
 <p>Para tornar a diferença concreta, vamos comparar uma <strong>relação linear</strong>, uma <strong>spline cúbica</strong> e uma <strong>spline cúbica natural</strong> usando a temperatura máxima. A linha reta é a opção mais simples; as splines permitem que a associação mude ao longo dos valores de temperatura. As linhas verticais indicam os nós internos (P50 e P90) e os nós de fronteira (P1 e P99).</p>
 <p>Observe que as splines permitem uma curva mais flexível do que a relação linear. A spline cúbica e a spline cúbica natural apresentam formas semelhantes na região central, mas a spline cúbica natural possui restrições nas extremidades. Essas restrições fazem com que a curva tenha um comportamento mais simples além dos nós de fronteira, evitando oscilações excessivas nas regiões mais externas.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Comparação entre funções</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir os knots nos percentis 50 e 90 da temperatura máxima</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>knots_exemplo <span class="ot">&lt;-</span> <span class="fu">quantile</span>(</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  dados_brutos<span class="sc">$</span>temp_max,</span>
@@ -1131,10 +1181,11 @@ $knots_50_90
 <span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a>grafico_splines</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação entre funções-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação entre funções-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1146,6 +1197,8 @@ $knots_50_90
 <p>A defasagem representa o número de dias entre a exposição à temperatura e o desfecho. Por exemplo, um período de <code>lag_7</code> permite avaliar a associação desde o dia da exposição até 7 dias depois. Portanto, <em>lag</em> não é uma nova medida de temperatura: é uma forma de marcar o tempo desde a exposição.</p>
 <p>Nesta análise, vamos testar diferentes períodos de defasagem, com base em intervalos utilizados em estudos anteriores.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Defasagens</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>lags <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Defasagem de 1 a 21 dias</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># https://doi.org/10.1038/s41591-022-01872-6</span></span>
@@ -1168,6 +1221,7 @@ $knots_50_90
 <span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>lags</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$lag_21
 [1]  1 21
@@ -1196,6 +1250,8 @@ $lag_5
 </ul>
 <p>Em ambos os casos, utilizaremos <strong>3 nós</strong> para cada período de defasagem.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Nós para as curvas de defasagem</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Knots distribuídos de forma logarítmica</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>lags_knots_3 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">lag_21_knots_3 =</span> <span class="fu">logknots</span>(lags<span class="sc">$</span>lag_21, <span class="at">nk =</span> <span class="dv">3</span>),</span>
@@ -1221,6 +1277,7 @@ $lag_5
 <span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>lags_knots_list</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$lag_21_knots_3
 [1] 1.998934 3.712488 8.365443
@@ -1256,6 +1313,8 @@ $lag_5_knots_3_eq
 <p>A figura abaixo mostra como os <strong>3 nós</strong> são distribuídos ao longo dos diferentes períodos de <strong>defasagem</strong> avaliados (5, 7, 10, 14 e 21 dias). Os círculos representam os nós definidos por <code>logknots()</code>, que ficam mais concentrados nos primeiros dias de defasagem. Os quadrados representam os nós definidos por <code>equalknots()</code>, que são distribuídos de forma mais uniforme ao longo de todo o período.</p>
 <p>Assim, à medida que o período de defasagem aumenta, as duas funções apresentam distribuições diferentes dos nós. Essa comparação permite visualizar como a escolha da posição dos nós influencia a forma como o modelo poderá representar a variação do efeito da temperatura ao longo dos dias de defasagem.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Comparação das defasagens e dos nós</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar dataframe com os nós logarítmicos</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>dados_knots_log <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="fu">names</span>(lags_knots_3), <span class="cf">function</span>(nome) {</span>
@@ -1397,10 +1456,11 @@ $lag_5_knots_3_eq
 <span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
 <span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a>grafico_lags_knots</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação das defasagens e dos nós-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação das defasagens e dos nós-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1419,6 +1479,8 @@ $lag_5_knots_3_eq
 <p>O argumento <code>argvar</code> define como a <strong>temperatura</strong> será modelada, enquanto <code>arglag</code> define como as <strong>defasagens (<em>lags</em>)</strong> serão modeladas. O argumento <code>fun = "ns"</code> indica que será utilizada uma spline cúbica natural.</p>
 <p>Como estamos avaliando diferentes combinações de nós, períodos de defasagem e formas de distribuição dos nós das defasagens, vamos criar vários <strong>cross-basis</strong>. Eles serão armazenados separadamente para a temperatura média e para a temperatura máxima.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Cross-basis</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar listas para armazenar os cross-basis separadamente</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>cbs_media <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>cbs_max <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
@@ -1481,6 +1543,7 @@ $lag_5_knots_3_eq
 <span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb32-62"><a href="#cb32-62" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="ajuste-dos-modelos" class="level3">
@@ -1492,6 +1555,8 @@ $lag_5_knots_3_eq
 <p>Como estamos avaliando diferentes combinações de <strong>nós</strong>, <strong>períodos de defasagem</strong> e formas de distribuição dos nós das defasagens, serão ajustados vários modelos. Os modelos serão armazenados em listas separadas para a temperatura média e para a temperatura máxima, facilitando sua organização e posterior comparação.</p>
 <p>Ao utilizar <code>summary()</code> em um modelo, o R apresenta informações sobre o ajuste, como os <strong>resíduos de deviance</strong>, os <strong>coeficientes estimados</strong>, seus erros-padrão, valores de teste e níveis de significância, além da estimativa de dispersão do modelo. Os coeficientes apresentados como <code>cbv1.1</code>, <code>cbv1.2</code>, entre outros, correspondem aos diferentes componentes do <strong>cross-basis</strong> e não devem ser interpretados isoladamente. A interpretação da associação entre temperatura e mortalidade será feita posteriormente a partir dos resultados derivados do modelo.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Ajuste dos modelos</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listas para armazenar os modelos separadamente</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>modelos_media <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>modelos_max <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
@@ -1528,6 +1593,7 @@ $lag_5_knots_3_eq
 <span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(</span>
 <span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>  modelos_max[[<span class="st">"temp_max_knots_50_90_lag_21_equally"</span>]]</span>
 <span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1579,6 +1645,8 @@ Number of iterations: 2</code></pre>
 <p>Assim, vamos utilizar o QAIC para comparar todas as combinações de nós, períodos de defasagem e formas de distribuição dos nós das defasagens. O QAIC ajuda a escolher uma especificação, mas não substitui a avaliação científica da pergunta, da qualidade dos dados e da plausibilidade do modelo.</p>
 <p>A referência utilizada para o uso do Q-AIC na seleção da especificação do modelo é: https://doi.org/10.1186/1476-069X-11-63</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Comparação dos modelos</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular o QAIC manualmente</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>qaic_manual <span class="ot">&lt;-</span> <span class="cf">function</span>(mod) {</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  dev <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod)</span>
@@ -1689,6 +1757,7 @@ Number of iterations: 2</code></pre>
 <span id="cb35-108"><a href="#cb35-108" aria-hidden="true" tabindex="-1"></a>  ),</span>
 <span id="cb35-109"><a href="#cb35-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
 <span id="cb35-110"><a href="#cb35-110" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="modelo-selecionado-e-predições" class="level3">
@@ -1714,6 +1783,8 @@ Number of iterations: 2</code></pre>
 <h4 class="anchored" data-anchor-id="preparando-a-curva-cumulativa">Preparando a curva cumulativa</h4>
 <p>Antes de identificar a MMT, precisamos recuperar o modelo selecionado e calcular a curva cumulativa. Nesta curva, cada temperatura é comparada inicialmente com a mediana da temperatura máxima.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Curva cumulativa usada para estimar a MMT</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nome do modelo selecionado</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>modelo_selecionado <span class="ot">&lt;-</span> <span class="st">"temp_max_knots_50_90_lag_21_equally"</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1734,12 +1805,15 @@ Number of iterations: 2</code></pre>
 <span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">cen =</span> temp_max_mediana,</span>
 <span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">model.link =</span> <span class="st">"log"</span></span>
 <span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="identificando-a-mmt" class="level4">
 <h4 class="anchored" data-anchor-id="identificando-a-mmt">Identificando a MMT</h4>
 <p>A função <code>which.min()</code> localiza a posição do menor risco relativo estimado em <code>red_max$RRfit</code>. Usamos essa posição para recuperar a temperatura correspondente em <code>red_max$predvar</code>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Estimativa da temperatura de mortalidade mínima</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontrar a posição do menor risco relativo estimado</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>indice_mmt <span class="ot">&lt;-</span> <span class="fu">which.min</span>(red_max<span class="sc">$</span>RRfit)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1748,6 +1822,7 @@ Number of iterations: 2</code></pre>
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar a MMT</span></span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>mmt_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29.3</code></pre>
 </div>
@@ -1757,6 +1832,8 @@ Number of iterations: 2</code></pre>
 <h4 class="anchored" data-anchor-id="recalculando-a-curva-com-a-mmt-como-referência">Recalculando a curva com a MMT como referência</h4>
 <p>Com a MMT identificada, usamos novamente <code>crossreduce()</code>. A única mudança importante é o argumento <code>cen = mmt_max</code>, que define a temperatura de mortalidade mínima como referência da curva.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Curva cumulativa temperatura–mortalidade centralizada na MMT</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recalcular a curva cumulativa usando a MMT como referência.</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Os objetos `cb` e `mod` foram criados no bloco anterior.</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>red_max_mmt <span class="ot">&lt;-</span> <span class="fu">crossreduce</span>(</span>
@@ -1770,12 +1847,15 @@ Number of iterations: 2</code></pre>
 <span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">cen =</span> mmt_max,</span>
 <span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">model.link =</span> <span class="st">"log"</span></span>
 <span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="visualizando-a-curva-centralizada-na-mmt" class="level4">
 <h4 class="anchored" data-anchor-id="visualizando-a-curva-centralizada-na-mmt">Visualizando a curva centralizada na MMT</h4>
 <p>No gráfico abaixo, a linha azul indica a MMT, as linhas verdes indicam os nós usados para a temperatura e as linhas vermelhas indicam os percentis 95, 98 e 99. Esses percentis ajudam a marcar temperaturas muito altas na distribuição observada.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Curva cumulativa com MMT</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar a curva cumulativa centralizada na MMT</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>red_name <span class="ot">&lt;-</span> <span class="st">"temp_max_knots_50_90_lag_21_equally"</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> red_max_mmt</span>
@@ -1857,15 +1937,18 @@ Number of iterations: 2</code></pre>
 <span id="cb40-79"><a href="#cb40-79" aria-hidden="true" tabindex="-1"></a>  <span class="at">inset =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.25</span>),</span>
 <span id="cb40-80"><a href="#cb40-80" aria-hidden="true" tabindex="-1"></a>  <span class="at">cex =</span> <span class="fl">0.8</span></span>
 <span id="cb40-81"><a href="#cb40-81" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Curva cumulativa com MMT-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Curva cumulativa com MMT-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Salvar curva cumulativa com MMT</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir o arquivo de saída</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"figuras"</span>,</span>
@@ -1883,25 +1966,14 @@ Number of iterations: 2</code></pre>
 <span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">8</span>,</span>
 <span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
 <span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="dv">300</span></span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>quartz_off_screen 
-                3 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>quartz_off_screen 
-                2 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conferir o caminho e se o arquivo foi criado</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>file_path</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "figuras/temp_max_knots_50_90_lag_21_equally_mmt.jpg"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.exists</span>(file_path)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Conferir o caminho e se o arquivo foi criado</span></span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>file_path</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="fu">file.exists</span>(file_path)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 
