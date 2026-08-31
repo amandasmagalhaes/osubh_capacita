@@ -19,16 +19,16 @@ Em comparação ao RStudio, o Positron possui uma interface mais moderna e foi d
 
 Para utilizá-lo, é necessário que a linguagem de programação desejada esteja instalada no computador.
 
-Neste encontro, utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.
+Utilizaremos o Positron por representar a nova geração de ambientes de desenvolvimento, oferecendo uma interface moderna e recursos que facilitam a organização de projetos e o desenvolvimento de análises reprodutíveis.
 
 ![](figuras/rstudio_positron.jpg){width="50%" fig-align="center"}
 
 
 ### Instalação
 
-1. Acesse a página oficial de download do [Positron](https://positron.posit.co/download.html){target="_blank"}.
+1. Acesse a página de download do [Positron](https://positron.posit.co/download.html){target="_blank"}.
 2. Selecione o sistema operacional do seu computador (Windows, macOS ou Linux).
-3. Baixe a versão correspondente ao seu sistema.
+3. Baixe a versão mais recente correspondente ao seu sistema.
 4. Execute o instalador e siga as instruções padrão de instalação.
 
 

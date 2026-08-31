@@ -11,7 +11,7 @@
 
 ### Operações básicas ----
 
-# O R também pode ser utilizado como uma calculadora.
+# O R pode ser utilizado como uma calculadora.
 # Soma
 2 + 3
 # Subtração
