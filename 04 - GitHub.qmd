@@ -111,7 +111,9 @@ O arquivo .gitignore informa ao Git quais arquivos e pastas devem ser ignorados 
 
 Em geral, arquivos temporários, arquivos de configuração local, caches e logs não devem ser incluídos no repositório.
 
-> **Importante:** o `.gitignore` só impede que arquivos ainda não versionados sejam adicionados ao Git. Ele não remove dados sensíveis que já tenham sido enviados ao repositório. Nesse caso, é necessário removê-los do histórico e, se for o caso, revogar ou substituir as senhas e chaves de acesso.
+::: {.callout-important}
+O `.gitignore` só impede que arquivos ainda não versionados sejam adicionados ao Git. Ele não remove dados sensíveis que já tenham sido enviados ao repositório. Nesse caso, é necessário removê-los do histórico e, se for o caso, revogar ou substituir as senhas e chaves de acesso.
+:::
 
 Abaixo é apresentado um exemplo simplificado. O arquivo .gitignore pode ser editado a qualquer momento para incluir ou remover regras conforme as necessidades do projeto.
 
