@@ -14,7 +14,7 @@ Antes de utilizá-lo, é importante diferenciar três ferramentas que trabalham 
 |---|---|
 | **Git** | Sistema de controle de versão que registra o histórico das alterações em um projeto. |
 | **GitHub** | Plataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos. |
-| **Positron** | Ambiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git. |
+| **Positron** | Ambiente de desenvolvimento onde criamos e editamos arquivos e utilizamos os recursos do Git. |
 
 Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
 
@@ -28,7 +28,9 @@ Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o 
 4. Confirme o endereço de e-mail cadastrado.
 5. Faça login na sua conta.
 
-> **Dica:** escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: `https://github.com/seu-usuario/meu-projeto`.
+::: {.callout-tip}
+Escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: `https://github.com/seu-usuario/meu-projeto`.
+:::
 
 Mais informações estão disponíveis na documentação oficial sobre [criação de contas no GitHub](https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github){target="_blank"}.
 

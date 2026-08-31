@@ -154,7 +154,7 @@
     "href": "04 - GitHub.html#git-github-e-positron",
     "title": "GitHub",
     "section": "",
-    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento (IDE) onde criamos e editamos arquivos e utilizamos os recursos do Git.",
+    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento onde criamos e editamos arquivos e utilizamos os recursos do Git.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -164,7 +164,7 @@
     "href": "04 - GitHub.html#criar-uma-conta-no-github",
     "title": "GitHub",
     "section": "Criar uma conta no GitHub",
-    "text": "Criar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\nDica: escolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
+    "text": "Criar uma conta no GitHub\n\nAcesse github.com.\nDigite seu endereço de e-mail e clique em Cadastrar-se no GitHub.\nPreencha as informações solicitadas e siga as etapas de criação da conta.\nConfirme o endereço de e-mail cadastrado.\nFaça login na sua conta.\n\n\n\n\n\n\n\nDica\n\n\n\nEscolha um nome de usuário simples e fácil de identificar. Ele fará parte do endereço dos seus repositórios. Por exemplo: https://github.com/seu-usuario/meu-projeto.\n\n\nMais informações estão disponíveis na documentação oficial sobre criação de contas no GitHub.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
