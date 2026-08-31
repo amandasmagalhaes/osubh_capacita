@@ -3,31 +3,14 @@ title: "Análise da associação entre temperatura e mortalidade utilizando mode
 date: today
 ---
 
-::: {.callout-note}
-## Para quem é este capítulo?
-
-Este capítulo foi escrito para pessoas que estão começando a trabalhar com análise de dados em saúde e ainda não conhecem os modelos DLNM. Não é necessário memorizar todos os termos técnicos: cada conceito aparece acompanhado de uma explicação simples e de um exemplo no código.
-:::
-
-::: {.callout-tip}
-## O que faremos
-
-1. Conhecer a pergunta e as fontes dos dados;
-2. Conferir e explorar a base;
-3. Preparar as variáveis usadas no modelo;
-4. Testar diferentes formas de representar temperatura e defasagens;
-5. Comparar os modelos;
-6. Gerar gráficos para interpretar a associação.
-:::
-
 
 ## Introdução
 
-Neste capítulo, vamos reproduzir parte da análise apresentada no artigo [Definição de marcadores térmicos associados à mortalidade para um sistema de alerta de calor extremo em Belo Horizonte, Minas Gerais, Brasil](https://doi.org/10.1590/1980-549720260048.2){target="_blank"}.
+Neste capítulo, vamos reproduzir parte da análise apresentada no artigo ["Definição de marcadores térmicos associados à mortalidade para um sistema de alerta de calor extremo em Belo Horizonte, Minas Gerais, Brasil"](https://doi.org/10.1590/1980-549720260048.2){target="_blank"}.
 
 
 
-## 1. Métodos
+## Métodos
 
 
 ### Área de estudo
@@ -49,12 +32,12 @@ Os dados meteorológicos são provenientes da rede de monitoramento do Instituto
 
 
 
-## 2. Análises estatísticas
+## Análises estatísticas
 
 Antes de ajustar o modelo, vamos conhecer os dados. Depois, construiremos aos poucos os elementos necessários para a análise.
 
 
-### 2.1 Pacotes
+### Pacotes
 
 Para realizar a análise, utilizaremos diferentes pacotes do R. Pacotes são conjuntos de funções, objetos e recursos desenvolvidos para realizar tarefas específicas.
 
@@ -100,7 +83,7 @@ pacman::p_load(
 ```
 
 
-### 2.2 Importação dos dados
+### Importação dos dados
 
 A função `read_dta()` do pacote `haven` permite importar arquivos no formato `.dta`, utilizado pelo Stata. O arquivo está armazenado na pasta `dados` do projeto.
 
@@ -116,7 +99,7 @@ dados_brutos <- read_dta("dados/clima_obitos.dta")
 ```
 
 
-### 2.3 Análise descritiva
+### Análise descritiva
 
 A análise descritiva é a primeira conferência da base. Ela ajuda a responder perguntas simples: quais variáveis existem, quais valores aparecem, quantos dias foram registrados e há dados ausentes?
 
@@ -165,7 +148,7 @@ dados_brutos |>
 ```
 
 
-### 2.4 Visualização dos dados
+### Visualização dos dados
 
 Os gráficos transformam números em padrões mais fáceis de enxergar. Nesta seção, veremos a quantidade de óbitos ao longo do tempo, a distribuição das temperaturas e a associação entre as variáveis.
 
@@ -481,12 +464,12 @@ grafico_correlacao
 
 
 
-## 3. Preparação para o modelo
+## Preparação para o modelo
 
 Agora vamos criar os objetos que o modelo precisa. Esta parte pode parecer mais técnica, mas a ideia central é simples: preparar uma forma adequada de representar tempo, temperatura e o possível atraso entre exposição e desfecho.
 
 
-### 3.1 Estrato (strata)
+### Estrato (strata)
 
 A partir desta etapa, vamos criar uma nova versão da base chamada `dados_modelo`. A base `dados_brutos` será mantida sem alterações, enquanto `dados_modelo` será utilizada para adicionar variáveis necessárias ao modelo.
 
@@ -513,7 +496,7 @@ dados_modelo <- dados_brutos |>
 ```
 
 
-### 3.2 Splines e nós (*knots*)
+### Splines e nós (*knots*)
 
 Para estudar a relação entre temperatura e mortalidade, não vamos assumir que ela seja uma linha reta. Por exemplo, o risco pode ser diferente em temperaturas baixas, moderadas e altas.
 
@@ -588,7 +571,7 @@ knots_max
 ```
 
 
-### 3.3 Nós de fronteira (*boundary knots*)
+### Nós de fronteira (*boundary knots*)
 
 Além dos **nós internos (*knots*)**, precisamos definir os **nós de fronteira (*boundary knots*)**. Eles determinam os limites do intervalo em que a spline poderá apresentar um comportamento flexível.
 
@@ -800,7 +783,7 @@ grafico_splines
 ```
 
 
-### 3.4 Defasagens (*lags*)
+### Defasagens (*lags*)
 
 Em estudos sobre os efeitos da temperatura na saúde, o efeito da exposição pode não ocorrer apenas no mesmo dia. Uma temperatura elevada pode estar associada a alterações na mortalidade nos dias seguintes.
 
@@ -837,7 +820,7 @@ lags
 ```
 
 
-### 3.5 Nós para as curvas de defasagem
+### Nós para as curvas de defasagem
 
 Além de modelar de forma não linear a relação entre temperatura e mortalidade, também precisamos representar como esse efeito pode variar ao longo dos dias de defasagem.
 
@@ -1033,12 +1016,12 @@ grafico_lags_knots
 
 
 
-## 4. Modelo DLNM
+## Modelo DLNM
 
 Até aqui, descrevemos separadamente a curva da temperatura e a curva do tempo de defasagem. O DLNM combina as duas para responder à pergunta completa: como a associação muda conforme a temperatura e conforme passam os dias?
 
 
-### 4.1 *Cross-basis*: combinação de temperatura e defasagem
+### *Cross-basis*: combinação de temperatura e defasagem
 
 Agora vamos combinar as duas dimensões que estamos estudando: a **temperatura** e o **tempo de defasagem (*lag*)**.
 
@@ -1121,7 +1104,7 @@ for (temp_name in names(temperaturas)) {
 ```
 
 
-### 4.2 Ajuste dos modelos
+### Ajuste dos modelos
 
 Depois de criar os **cross-basis**, vamos utilizá-los nos modelos estatísticos para investigar a associação entre temperatura e mortalidade. Como estamos testando várias escolhas, cada combinação gera um modelo diferente.
 
@@ -1179,10 +1162,10 @@ summary(
 
 
 
-## 5. Escolha da especificação
+## Escolha da especificação
 
 
-### 5.1 Comparação dos modelos
+### Comparação dos modelos
 
 Até aqui, criamos diferentes modelos variando os **nós da temperatura**, os **períodos de defasagem** e a forma de distribuição dos **nós das defasagens**. Agora vamos comparar essas diferentes especificações para identificar quais apresentam melhor ajuste aos dados.
 
@@ -1311,7 +1294,7 @@ openxlsx::write.xlsx(
 ```
 
 
-### 5.2 Modelo selecionado e predições
+### Modelo selecionado e predições
 
 Até aqui, ajustamos diferentes especificações do modelo, variando os nós da temperatura, os períodos de defasagem e a forma de distribuição dos nós das defasagens. A comparação pelo **QAIC** permitiu avaliar o ajuste dessas diferentes especificações e selecionar o modelo utilizado nas etapas seguintes.
 
