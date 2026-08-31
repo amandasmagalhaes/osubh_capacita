@@ -1,15 +1,15 @@
-### PRIMEIRO SCRIPT EM R ####
+### PRIMEIRO SCRIPT EM R ----
 
 # Este arquivo apresenta alguns dos principais comandos
 # para quem está começando a programar em R.
 
-### Comentários ####
+### Comentários ----
 
 # O símbolo # inicia um comentário.
 # Tudo o que vem depois dele na mesma linha é ignorado pelo R.
 # Comentários são úteis para explicar o que o código faz.
 
-### Operações básicas ####
+### Operações básicas ----
 
 # O R também pode ser utilizado como uma calculadora.
 # Soma
@@ -27,7 +27,7 @@
 (10 + 5) * 2
 
 
-### Objetos e atribuição de valores ####
+### Objetos e atribuição de valores ----
 
 # O operador <- atribui um valor a um objeto.
 # Objetos são utilizados para armazenar informações.
@@ -50,7 +50,7 @@ ano_nascimento
 ls()
 
 
-### Tipos de dados ####
+### Tipos de dados ----
 
 # Existem diferentes tipos de dados em R.
 # numeric: números
@@ -69,7 +69,7 @@ maior_de_idade
 class(maior_de_idade)
 
 
-### Vetores ####
+### Vetores ----
 
 # Um vetor armazena vários valores do mesmo tipo.
 # A função c() (combine) reúne vários valores em um único vetor.
@@ -121,7 +121,7 @@ sd(notas)
 summary(notas)
 
 
-### Valores ausentes (NA) ####
+### Valores ausentes (NA) ----
 
 # NA representa um valor ausente (missing value).
 notas_com_na <- c(8.5, 6.0, NA, 7.5, 8.0)
@@ -133,7 +133,7 @@ is.na(notas_com_na)
 mean(notas_com_na, na.rm = TRUE)
 
 
-### Funções ####
+### Funções ----
 
 # Funções executam tarefas e podem receber valores como argumentos.
 # O R possui funções prontas, como mean(), e também permite criar funções.
@@ -152,7 +152,7 @@ verificar_situacao(8.5)
 verificar_situacao(6.0)
 
 
-### Data frames (tabelas de dados) ####
+### Data frames (tabelas de dados) ----
 
 # Até agora trabalhamos com vetores.
 # Agora vamos reunir diferentes vetores em uma única tabela.
@@ -194,7 +194,7 @@ alunos[alunos$nota >= 7, ]
 alunos[alunos$idade < 21, ]
 
 
-### Gráfico básico ####
+### Gráfico básico ----
 
 # O R permite criar diferentes tipos de gráficos.
 
