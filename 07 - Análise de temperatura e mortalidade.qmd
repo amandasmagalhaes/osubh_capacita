@@ -1,6 +1,6 @@
 ---
 title: "Análise da associação entre temperatura e mortalidade utilizando modelos de defasagem distribuída não linear (DLNM)"
-date: today
+date: "2026-08-31"
 ---
 
 
@@ -112,6 +112,8 @@ summary(dados_brutos)
 
 O `|>` é o operador **pipe**. Ele permite passar o resultado de uma etapa diretamente para a próxima função, facilitando a leitura e a organização do código. Geralmente, cada etapa é colocada em uma nova linha para tornar o código mais fácil de ler.
 
+A função `count()` conta o número de registros para cada categoria da variável indicada. Já a função `arrange()` organiza os resultados de acordo com uma ou mais variáveis. Por padrão, a ordenação é crescente.
+
 ```{r}
 #| label: Registros por ano
 #| code-summary: Registros por ano
@@ -157,6 +159,8 @@ O **gráfico de dispersão** é utilizado para visualizar a relação entre duas
 ```{r}
 #| label: Óbitos ao longo dos anos
 #| code-summary: Óbitos ao longo dos anos
+#| fig-width: 10
+#| fig-height: 7
 
 # Criar o gráfico
 grafico_obitos_anos <- ggplot(
@@ -208,6 +212,8 @@ O **histograma** é um gráfico utilizado para visualizar a distribuição de um
 ```{r}
 #| label: Distribuição da temperatura média
 #| code-summary: Distribuição da temperatura média
+#| fig-width: 10
+#| fig-height: 7
 
 # Criar o gráfico
 grafico_temp_media <- ggplot(
@@ -245,6 +251,8 @@ grafico_temp_media
 ```{r}
 #| label: Distribuição da temperatura máxima
 #| code-summary: Distribuição da temperatura máxima
+#| fig-width: 10
+#| fig-height: 7
 
 grafico_temp_max <- ggplot(
   dados_brutos,
@@ -294,6 +302,8 @@ Neste caso, cada caixa representa um tipo de temperatura: mínima, média e máx
 ```{r}
 #| label: Distribuição das temperaturas
 #| code-summary: Distribuição das temperaturas
+#| fig-width: 10
+#| fig-height: 7
 
 # Selecionar as variáveis de temperatura e transformar a base
 dados_temp <- dados_brutos |>
@@ -366,6 +376,8 @@ A matriz de correlação permite visualizar simultaneamente as associações ent
 ```{r}
 #| label: Matriz de correlação
 #| code-summary: Matriz de correlação
+#| fig-width: 10
+#| fig-height: 7
 
 # Selecionar as variáveis e remover as colunas que não serão utilizadas
 dados_correlacao <- dados_brutos |>
