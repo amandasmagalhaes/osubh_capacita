@@ -887,21 +887,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular os knots para a temperatura máxima</span></span>
-<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>knots_max <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
-<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>  percentis_knots,</span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>  \(x) {</span>
-<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">quantile</span>(</span>
-<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>      dados_modelo<span class="sc">$</span>temp_max,</span>
-<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">/</span> <span class="dv">100</span>,</span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar os knots calculados</span></span>
-<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>knots_media</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>knots_media</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$knots_10_75_90
@@ -926,7 +912,18 @@ $knots_50_90
 </div>
 <details class="code-fold">
 <summary>Nós para temperatura</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knots_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular os knots para a temperatura máxima</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>knots_max <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  percentis_knots,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  \(x) {</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">quantile</span>(</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      dados_modelo<span class="sc">$</span>temp_max,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">/</span> <span class="dv">100</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>knots_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$knots_10_75_90
@@ -954,7 +951,7 @@ $knots_50_90
 <section id="nós-de-fronteira-boundary-knots" class="level3">
 <h3 class="anchored" data-anchor-id="nós-de-fronteira-boundary-knots">Nós de fronteira (<em>boundary knots</em>)</h3>
 <p>Além dos <strong>nós internos (<em>knots</em>)</strong>, precisamos definir os <strong>nós de fronteira (<em>boundary knots</em>)</strong>. Eles determinam os limites do intervalo em que a spline poderá apresentar um comportamento flexível.</p>
-<p>Neste estudo, vamos definir os nós de fronteira como os <strong>percentis 1 e 99 da temperatura</strong>. Isso significa que o limite inferior será o valor de temperatura abaixo do qual estão 1% das observações, e o limite superior será o valor acima do qual estão 1% das observações.</p>
+<p>Neste estudo, vamos definir os nós de fronteira como os percentis 1 e 99 da temperatura. Isso significa que o limite inferior será o valor de temperatura abaixo do qual estão 1% das observações, e o limite superior será o valor acima do qual estão 1% das observações.</p>
 <p>Dentro desses limites, a spline pode representar a relação não linear entre temperatura e mortalidade. Fora deles, a <strong>spline cúbica natural</strong> é restrita a um comportamento linear. Essa estratégia reduz a influência de valores extremos e pouco frequentes na forma da curva.</p>
 <p>Assim, temos três conceitos diferentes: os <strong>nós internos</strong>, que permitem mudanças no comportamento da curva; os <strong>nós de fronteira</strong>, que definem os limites do intervalo da spline; e a <strong>spline cúbica natural</strong>, que faz com que a curva assuma um comportamento linear nas regiões mais externas, além desses limites. Essa restrição evita que a curva fique excessivamente flexível nas extremidades, onde geralmente há menos observações e maior possibilidade de variações influenciadas por valores extremos.</p>
 <div class="cell">
@@ -1439,7 +1436,7 @@ $lag_5_knots_3_eq
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação das defasagens e dos nós-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Comparação das defasagens e dos nós-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>

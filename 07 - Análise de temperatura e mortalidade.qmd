@@ -569,6 +569,7 @@ knots_media <- lapply(
     )
   }
 )
+knots_media
 
 # Calcular os knots para a temperatura máxima
 knots_max <- lapply(
@@ -581,9 +582,6 @@ knots_max <- lapply(
     )
   }
 )
-
-# Visualizar os knots calculados
-knots_media
 knots_max
 ```
 
@@ -592,7 +590,7 @@ knots_max
 
 Além dos **nós internos (*knots*)**, precisamos definir os **nós de fronteira (*boundary knots*)**. Eles determinam os limites do intervalo em que a spline poderá apresentar um comportamento flexível.
 
-Neste estudo, vamos definir os nós de fronteira como os **percentis 1 e 99 da temperatura**. Isso significa que o limite inferior será o valor de temperatura abaixo do qual estão 1% das observações, e o limite superior será o valor acima do qual estão 1% das observações.
+Neste estudo, vamos definir os nós de fronteira como os percentis 1 e 99 da temperatura. Isso significa que o limite inferior será o valor de temperatura abaixo do qual estão 1% das observações, e o limite superior será o valor acima do qual estão 1% das observações.
 
 Dentro desses limites, a spline pode representar a relação não linear entre temperatura e mortalidade. Fora deles, a **spline cúbica natural** é restrita a um comportamento linear. Essa estratégia reduz a influência de valores extremos e pouco frequentes na forma da curva.
 
@@ -887,6 +885,8 @@ Assim, à medida que o período de defasagem aumenta, as duas funções apresent
 ```{r}
 #| label: Comparação das defasagens e dos nós
 #| code-summary: Comparação das defasagens e dos nós
+#| fig-width: 10
+#| fig-height: 7
 
 # Criar dataframe com os nós logarítmicos
 dados_knots_log <- bind_rows(
