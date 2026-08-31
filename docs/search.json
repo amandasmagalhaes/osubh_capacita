@@ -544,7 +544,7 @@
     "href": "08 - GitHub Pages.html",
     "title": "GitHub Pages",
     "section": "",
-    "text": "Pages\nO GitHub Pages publica um site estático diretamente a partir de um repositório do GitHub. É uma forma simples de compartilhar um site ou um projeto feito com Quarto. Mais informações em como publicar um projeto Quarto no GitHub Pages\nO Quarto gera os arquivos do site na pasta docs/, que será publicada pelo GitHub Pages.",
+    "text": "Pages\nO GitHub Pages publica um site estático diretamente a partir de um repositório do GitHub. É uma forma simples de compartilhar um site ou um projeto feito com Quarto.\nO Quarto gera os arquivos do site na pasta docs/, que será publicada pelo GitHub Pages.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>GitHub Pages</span>"
     ]
@@ -554,7 +554,7 @@
     "href": "08 - GitHub Pages.html#publicar-um-projeto-quarto",
     "title": "GitHub Pages",
     "section": "Publicar um projeto Quarto",
-    "text": "Publicar um projeto Quarto\n\nRenderize o projeto no Positron, clicando em Render, ou no terminal:\nVerifique se a pasta docs/ foi criada ou atualizada.\nSalve e envie os arquivos para o GitHub:\nNo GitHub, abra o repositório e acesse Settings &gt; Pages.\nEm Build and deployment, selecione Deploy from a branch. Escolha a branch main e a pasta /docs. Clique em Save.\nDepois de alguns instantes, o GitHub exibirá o endereço do site nessa mesma página.\n\n\n\n\n\n\n\nDica\n\n\n\nSempre que fizer alterações, renderize novamente o projeto e repita o commit e o push. O GitHub Pages atualizará o site a partir da nova versão da pasta docs/.",
+    "text": "Publicar um projeto Quarto\n\nRenderize o projeto no Positron, clicando em Render.\nVerifique se a pasta docs/ foi criada ou atualizada.\nSalve e envie os arquivos para o GitHub.\nNo GitHub, abra o repositório e acesse Settings &gt; Pages.\nEm Build and deployment, selecione Deploy from a branch. Escolha a branch main e a pasta /docs. Clique em Save.\nDepois de alguns instantes, o GitHub exibirá o endereço do site nessa mesma página.\n\n\n\n\n\n\n\nDica\n\n\n\nSempre que fizer alterações, renderize novamente o projeto e repita o commit e o push. O GitHub Pages atualizará o site a partir da nova versão da pasta docs/.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>GitHub Pages</span>"
     ]
