@@ -1,6 +1,6 @@
 ---
 title: "Introdução em R"
-date: today
+date: "2026-08-31"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Software Positron"
-date: today
+date: "2026-08-31"
 ---
 
 
