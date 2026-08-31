@@ -1,6 +1,6 @@
 ---
 title: "Arquivo Quarto"
-date: today
+date: "2026-08-31"
 ---
 
 

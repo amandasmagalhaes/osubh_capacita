@@ -324,7 +324,7 @@
     "href": "05 - Boas práticas de programação.html#pense-na-reprodução-da-análise",
     "title": "Boas práticas de programação",
     "section": "8. Pense na reprodução da análise",
-    "text": "8. Pense na reprodução da análise\nUma análise reproduzível é aquela que pode ser executada novamente e produzir resultados equivalentes, seguindo as mesmas condições.\nAlguns cuidados ajudam nesse processo:\n\nNão altere manualmente o arquivo de dados original;\nRegistre a origem e a data dos dados;\nSalve os resultados intermediários importantes;\nRegistre os pacotes utilizados;\nMantenha a ordem de execução dos scripts clara;\nSalve o código e as decisões junto com o projeto;\nUse set.seed() quando houver sorteio ou simulação aleatória.\n\nPor exemplo:\n\n\nCódigo\n# Torna o sorteio reproduzível.\nset.seed(123)\namostra &lt;- sample(1:100, size = 5)\namostra\n\n\n[1] 31 79 51 14 67",
+    "text": "8. Pense na reprodução da análise\nUma análise reproduzível é aquela que pode ser executada novamente e produzir resultados equivalentes, seguindo as mesmas condições.\nAlguns cuidados ajudam nesse processo:\n\nNão altere manualmente o arquivo de dados original;\nRegistre a origem e a data dos dados;\nSalve os resultados intermediários importantes;\nRegistre os pacotes utilizados;\nMantenha a ordem de execução dos scripts clara;\nSalve o código e as decisões junto com o projeto;\nUse set.seed() quando houver sorteio ou simulação aleatória.\n\nPor exemplo:\n\n\nCódigo\n# Torna o sorteio reproduzível\nset.seed(123)\namostra &lt;- sample(1:100, size = 5)\namostra\n\n\n[1] 31 79 51 14 67",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]

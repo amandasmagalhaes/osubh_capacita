@@ -265,7 +265,7 @@ Alguns cuidados ajudam nesse processo:
 Por exemplo:
 
 ```{r}
-# Torna o sorteio reproduzível.
+# Torna o sorteio reproduzível
 set.seed(123)
 amostra <- sample(1:100, size = 5)
 amostra
