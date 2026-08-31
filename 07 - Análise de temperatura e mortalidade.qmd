@@ -1040,7 +1040,7 @@ grafico_lags_knots
 
 Agora vamos combinar as duas dimensões que estamos estudando: a **temperatura** e o **tempo de defasagem (*lag*)**.
 
-No contexto dos **modelos de defasagem distribuída não linear (*Distributed Lag Non-Linear Models* – DLNM)**, essa combinação é chamada de **cross-basis**. Ela permite representar simultaneamente duas características da associação entre temperatura e mortalidade: como a associação varia de acordo com a **temperatura** e como o efeito pode se distribuir ao longo dos **dias de defasagem** após a exposição.
+No contexto dos **modelos de defasagem distribuída não linear (*Distributed Lag Non-Linear Models* – DLNM)**, essa combinação é chamada de **cross-basis**. Ela permite representar simultaneamente duas características da associação entre temperatura e mortalidade: como a associação varia de acordo com a temperatura e como o efeito pode se distribuir ao longo dos dias de defasagem após a exposição.
 
 Para a temperatura, utilizaremos uma spline cúbica natural, com os nós definidos anteriormente e os nós de fronteira nos percentis 1 e 99. Para a defasagem, também utilizaremos uma spline cúbica natural, com os nós definidos por `logknots()` ou `equalknots()`.
 
