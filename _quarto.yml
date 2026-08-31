@@ -17,6 +17,7 @@ book:
     - 05 - Boas práticas de programação.qmd
     - 06 - Quarto.qmd
     - 07 - Análise de temperatura e mortalidade.qmd
+    - 08 - GitHub Pages.qmd
 
 format:
   html:

@@ -19,5 +19,6 @@ Atualmente, o material está organizado da seguinte forma:
 | `05 - Boas práticas de programação.qmd` | Recomendações para organização e escrita de código. |
 | `06 - Quarto.qmd` | Introdução à criação de documentos com Quarto. |
 | `07 - Análise de temperatura e mortalidade.qmd` | Análise da associação entre temperatura e mortalidade utilizando DLNM. |
+| `08 - GitHub Pages.qmd` | Introdução à publicação de projetos Quarto no GitHub Pages. |
 
 Novos capítulos serão adicionados conforme a evolução dos encontros.

@@ -1,0 +1,25 @@
+---
+title: "GitHub Pages"
+date: "2026-08-31"
+---
+
+
+## Pages
+
+O [GitHub Pages](https://pages.github.com/){target="_blank"} publica um site estático diretamente a partir de um repositório do GitHub. É uma forma simples de compartilhar um site ou um projeto feito com Quarto. Mais informações em [como publicar um projeto Quarto no GitHub Pages](https://quarto.org/docs/publishing/github-pages.html){target="_blank"} 
+
+O Quarto gera os arquivos do site na pasta `docs/`, que será publicada pelo GitHub Pages.
+
+
+## Publicar um projeto Quarto
+
+1. Renderize o projeto no Positron, clicando em **Render**, ou no terminal:
+2. Verifique se a pasta `docs/` foi criada ou atualizada.
+3. Salve e envie os arquivos para o GitHub:
+4. No GitHub, abra o repositório e acesse **Settings** > **Pages**.
+5. Em **Build and deployment**, selecione **Deploy from a branch**. Escolha a branch `main` e a pasta `/docs`. Clique em **Save**.
+6. Depois de alguns instantes, o GitHub exibirá o endereço do site nessa mesma página.
+
+::: {.callout-tip}
+Sempre que fizer alterações, renderize novamente o projeto e repita o `commit` e o `push`. O GitHub Pages atualizará o site a partir da nova versão da pasta `docs/`.
+:::
