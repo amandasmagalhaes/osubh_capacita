@@ -5,7 +5,7 @@ Este repositório reúne os materiais desenvolvidos para os encontros do **Grupo
 A versão online está disponível em: <https://amandasmagalhaes.github.io/osubh_capacita/>
 
 
-## Estrutura do material
+## Estrutura
 
 Atualmente, o material está organizado da seguinte forma:
 
