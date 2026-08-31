@@ -94,7 +94,7 @@
     "href": "01 - R.html#rstudio",
     "title": "Software R",
     "section": "RStudio",
-    "text": "RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.\nPara utilizá-lo, é necessário que o software R esteja instalado no computador.\nÉ um dos ambientes mais utilizados pela comunidade científica e pode ser baixado gratuitamente.\nNeste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.",
+    "text": "RStudio\nO RStudio é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.\nPara utilizá-lo, é necessário que o software R esteja instalado no computador.\nÉ um dos ambientes mais utilizados pela comunidade científica e pode ser baixado gratuitamente.\nEntretanto, em nossos encontros, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]

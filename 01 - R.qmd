@@ -14,7 +14,7 @@ O [R](https://www.r-project.org/about.html){target="_blank"} é uma linguagem de
 - Criação de gráficos de alta qualidade para publicações científicas;
 - Desenvolvimento de scripts e funções para automatizar análises.
 
-Uma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa. 
+Uma das principais vantagens do R é sua extensibilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (**Comprehensive R Archive Network**), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa. 
 
 O R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.
 
@@ -31,10 +31,10 @@ O R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a t
 
 ## RStudio
 
-O [RStudio](https://docs.posit.co/ide/user/){target="_blank"} é um ambiente de desenvolvimento integrado (IDE – Integrated Development Environment) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.
+O [RStudio](https://docs.posit.co/ide/user/){target="_blank"} é um ambiente de desenvolvimento integrado (**IDE – Integrated Development Environment**) para programação em R, com uma interface gráfica intuitiva. Ele reúne, em uma única janela, o editor de scripts, o console, o ambiente de trabalho, gráficos, arquivos e pacotes.
 
 Para utilizá-lo, é necessário que o software R esteja instalado no computador.
 
 É um dos ambientes mais utilizados pela comunidade científica e pode ser [baixado gratuitamente](https://posit.co/downloads){target="_blank"}.
 
-Neste encontro, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.
+Entretanto, em nossos encontros, utilizaremos o Positron, o novo ambiente de desenvolvimento da Posit, apresentado na próxima seção.
