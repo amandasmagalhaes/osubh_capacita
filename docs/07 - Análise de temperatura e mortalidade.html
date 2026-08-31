@@ -1448,7 +1448,7 @@ $lag_5_knots_3_eq
 <section id="cross-basis-combinação-de-temperatura-e-defasagem" class="level3">
 <h3 class="anchored" data-anchor-id="cross-basis-combinação-de-temperatura-e-defasagem"><em>Cross-basis</em>: combinação de temperatura e defasagem</h3>
 <p>Agora vamos combinar as duas dimensões que estamos estudando: a <strong>temperatura</strong> e o <strong>tempo de defasagem (<em>lag</em>)</strong>.</p>
-<p>No contexto dos <strong>modelos de defasagem distribuída não linear (<em>Distributed Lag Non-Linear Models</em> – DLNM)</strong>, essa combinação é chamada de <strong>cross-basis</strong>. Ela permite representar simultaneamente duas características da associação entre temperatura e mortalidade: como a associação varia de acordo com a <strong>temperatura</strong> e como o efeito pode se distribuir ao longo dos <strong>dias de defasagem</strong> após a exposição.</p>
+<p>No contexto dos <strong>modelos de defasagem distribuída não linear (<em>Distributed Lag Non-Linear Models</em> – DLNM)</strong>, essa combinação é chamada de <strong>cross-basis</strong>. Ela permite representar simultaneamente duas características da associação entre temperatura e mortalidade: como a associação varia de acordo com a temperatura e como o efeito pode se distribuir ao longo dos dias de defasagem após a exposição.</p>
 <p>Para a temperatura, utilizaremos uma spline cúbica natural, com os nós definidos anteriormente e os nós de fronteira nos percentis 1 e 99. Para a defasagem, também utilizaremos uma spline cúbica natural, com os nós definidos por <code>logknots()</code> ou <code>equalknots()</code>.</p>
 <p>A função <code>crossbasis()</code> do pacote <code>dlnm</code> combina essas duas dimensões em uma estrutura que poderá ser incluída posteriormente no modelo estatístico.</p>
 <p>O argumento <code>argvar</code> define como a <strong>temperatura</strong> será modelada, enquanto <code>arglag</code> define como as <strong>defasagens (<em>lags</em>)</strong> serão modeladas. O argumento <code>fun = "ns"</code> indica que será utilizada uma spline cúbica natural.</p>
@@ -1474,7 +1474,7 @@ $lag_5_knots_3_eq
 <span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar os cross-basis para cada temperatura, período de lag e distribuição dos knots dos lags.</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar os cross-basis para cada temperatura, período de lag e distribuição dos knots dos lags</span></span>
 <span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (temp_name <span class="cf">in</span> <span class="fu">names</span>(temperaturas)) {</span>
 <span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>  temp_info <span class="ot">&lt;-</span> temperaturas[[temp_name]]</span>
 <span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (knots_name <span class="cf">in</span> <span class="fu">names</span>(temp_info<span class="sc">$</span>knots)) {</span>
@@ -1524,11 +1524,11 @@ $lag_5_knots_3_eq
 <section id="ajuste-dos-modelos" class="level3">
 <h3 class="anchored" data-anchor-id="ajuste-dos-modelos">Ajuste dos modelos</h3>
 <p>Depois de criar os <strong>cross-basis</strong>, vamos utilizá-los nos modelos estatísticos para investigar a associação entre temperatura e mortalidade. Como estamos testando várias escolhas, cada combinação gera um modelo diferente.</p>
-<p>Neste estudo, utilizaremos um <strong>CP-DLNM</strong> (<em>Conditional Poisson Distributed Lag Non-Linear Model</em>, ou modelo de Poisson condicional com defasagem distribuída não linear). O termo <strong>condicional</strong> está relacionado à utilização da variável <code>strata</code>, criada anteriormente a partir da combinação de ano, mês e dia da semana. Essa estratégia permite controlar a sazonalidade e a variação associada aos dias da semana, comparando os dias dentro dos mesmos estratos.</p>
-<p>Cada linha da base representa um dia da série temporal, e o número de óbitos observados nesse dia é a variável de desfecho. Como se trata de uma variável de contagem, utilizaremos um modelo <strong>quasi-Poisson</strong>, que permite considerar a <strong>superdispersão</strong>, situação em que a variabilidade observada no número de óbitos é maior do que a esperada pelo modelo de Poisson.</p>
+<p>Neste estudo, utilizaremos um <strong>CP-DLNM (<em>Conditional Poisson Distributed Lag Non-Linear Model</em>, ou modelo de Poisson condicional com defasagem distribuída não linear)</strong>. O termo condicional está relacionado à utilização da variável <code>strata</code>, criada anteriormente a partir da combinação de ano, mês e dia da semana. Essa estratégia permite controlar a sazonalidade e a variação associada aos dias da semana, comparando os dias dentro dos mesmos estratos.</p>
+<p>Cada linha da base representa um dia da série temporal, e o número de óbitos observados nesse dia é a variável de desfecho. Como se trata de uma variável de contagem, utilizaremos um modelo <strong>quasi-Poisson</strong>, que permite considerar a superdispersão, situação em que a variabilidade observada no número de óbitos é maior do que a esperada pelo modelo de Poisson.</p>
 <p>O ajuste dos modelos será realizado com a função <code>gnm()</code> do pacote <strong>gnm</strong>, utilizada para ajustar modelos lineares generalizados e modelos com estruturas mais complexas. No nosso caso, o <code>gnm()</code> permite incluir o <strong>cross-basis</strong> como variável explicativa e utilizar <code>strata</code> no argumento <code>eliminate</code>, controlando os efeitos associados aos estratos sem precisar estimar um coeficiente separado para cada estrato.</p>
-<p>Como estamos avaliando diferentes combinações de <strong>nós</strong>, <strong>períodos de defasagem</strong> e formas de distribuição dos nós das defasagens, serão ajustados vários modelos. Os modelos serão armazenados em listas separadas para a temperatura média e para a temperatura máxima, facilitando sua organização e posterior comparação.</p>
-<p>Ao utilizar <code>summary()</code> em um modelo, o R apresenta informações sobre o ajuste, como os <strong>resíduos de deviance</strong>, os <strong>coeficientes estimados</strong>, seus erros-padrão, valores de teste e níveis de significância, além da estimativa de dispersão do modelo. Os coeficientes apresentados como <code>cbv1.1</code>, <code>cbv1.2</code>, entre outros, correspondem aos diferentes componentes do <strong>cross-basis</strong> e não devem ser interpretados isoladamente. A interpretação da associação entre temperatura e mortalidade será feita posteriormente a partir dos resultados derivados do modelo.</p>
+<p>Como estamos avaliando diferentes combinações de nós, períodos de defasagem e formas de distribuição dos nós das defasagens, serão ajustados vários modelos. Os modelos serão armazenados em listas separadas para a temperatura média e para a temperatura máxima, facilitando sua organização e posterior comparação.</p>
+<p>Ao utilizar <code>summary()</code> em um modelo, o R apresenta informações sobre o ajuste, como os resíduos de deviance, os coeficientes estimados, seus erros-padrão, valores de teste e níveis de significância, além da estimativa de dispersão do modelo. Os coeficientes apresentados como <code>cbv1.1</code>, <code>cbv1.2</code>, entre outros, correspondem aos diferentes componentes do <strong>cross-basis</strong> e não devem ser interpretados isoladamente. A interpretação da associação entre temperatura e mortalidade será feita posteriormente a partir dos resultados derivados do modelo.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Ajuste dos modelos</summary>
@@ -1614,11 +1614,11 @@ Number of iterations: 2</code></pre>
 <h2 class="anchored" data-anchor-id="escolha-da-especificação">Escolha da especificação</h2>
 <section id="comparação-dos-modelos" class="level3">
 <h3 class="anchored" data-anchor-id="comparação-dos-modelos">Comparação dos modelos</h3>
-<p>Até aqui, criamos diferentes modelos variando os <strong>nós da temperatura</strong>, os <strong>períodos de defasagem</strong> e a forma de distribuição dos <strong>nós das defasagens</strong>. Agora vamos comparar essas diferentes especificações para identificar quais apresentam melhor ajuste aos dados.</p>
-<p>Como estamos utilizando modelos <strong>quasi-Poisson</strong>, utilizaremos o <strong>QAIC (Quasi-likelihood Akaike Information Criterion)</strong>, um critério de informação adequado para comparar modelos que consideram a superdispersão.</p>
+<p>Até aqui, criamos diferentes modelos variando os nós da temperatura, os períodos de defasagem e a forma de distribuição dos nós das defasagens. Agora vamos comparar essas diferentes especificações para identificar quais apresentam melhor ajuste aos dados.</p>
+<p>Como estamos utilizando modelos quasi-Poisson, utilizaremos o <strong>QAIC (Quasi-likelihood Akaike Information Criterion)</strong>, um critério de informação adequado para comparar modelos que consideram a superdispersão.</p>
 <p>O QAIC considera tanto o ajuste do modelo aos dados quanto sua complexidade. De forma geral, <strong>valores menores de QAIC indicam modelos preferíveis entre as especificações comparadas</strong>, pois representam um melhor equilíbrio entre ajuste e complexidade.</p>
 <p>Assim, vamos utilizar o QAIC para comparar todas as combinações de nós, períodos de defasagem e formas de distribuição dos nós das defasagens. O QAIC ajuda a escolher uma especificação, mas não substitui a avaliação científica da pergunta, da qualidade dos dados e da plausibilidade do modelo.</p>
-<p>A referência utilizada para o uso do Q-AIC na seleção da especificação do modelo é: https://doi.org/10.1186/1476-069X-11-63</p>
+<p>A referência utilizada para o uso do Q-AIC na seleção da especificação do modelo é: https://doi.org/10.1186/1476-069X-11-63(https://doi.org/10.1186/1476-069X-11-63){target=“_blank”}</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Comparação dos modelos</summary>
@@ -1737,29 +1737,29 @@ Number of iterations: 2</code></pre>
 </section>
 <section id="modelo-selecionado-e-predições" class="level3">
 <h3 class="anchored" data-anchor-id="modelo-selecionado-e-predições">Modelo selecionado e predições</h3>
-<p>Até aqui, ajustamos diferentes especificações do modelo, variando os nós da temperatura, os períodos de defasagem e a forma de distribuição dos nós das defasagens. A comparação pelo <strong>QAIC</strong> permitiu avaliar o ajuste dessas diferentes especificações e selecionar o modelo utilizado nas etapas seguintes.</p>
+<p>Até aqui, ajustamos diferentes especificações do modelo, variando os nós da temperatura, os períodos de defasagem e a forma de distribuição dos nós das defasagens. A comparação pelo QAIC permitiu avaliar o ajuste dessas diferentes especificações e selecionar o modelo utilizado nas etapas seguintes.</p>
 <p>Nesta análise, vamos trabalhar com o modelo <strong><code>temp_max_knots_50_90_lag_21_equally</code></strong>, que utiliza a temperatura máxima, nós nos percentis 50 e 90, um período de 21 dias de defasagem e nós igualmente espaçados na dimensão das defasagens. Essa especificação foi selecionada com base no QAIC, enquanto a utilização da temperatura máxima segue a estratégia apresentada no artigo que estamos reproduzindo.</p>
 <p>A partir desse modelo, vamos utilizar a função <code>crosspred()</code> do pacote <code>dlnm</code> para gerar as associações estimadas entre temperatura e mortalidade. Os resultados serão expressos como risco relativo (RR), que compara o risco estimado de mortalidade para uma determinada temperatura com o risco correspondente à temperatura utilizada como referência. Um RR igual a 1 indica o mesmo risco da temperatura de referência; valores maiores que 1 indicam maior risco e valores menores que 1, menor risco.</p>
-<p>Nesta etapa, a predição será utilizada para identificar a temperatura associada ao menor risco relativo estimado, que será posteriormente utilizada como <strong>temperatura de mortalidade mínima (MMT)</strong>. O modelo também permite estimar o <strong>efeito cumulativo</strong>, que representa a associação acumulada ao longo dos 21 dias de defasagem.</p>
+<p>Nesta etapa, a predição será utilizada para identificar a temperatura associada ao menor risco relativo estimado, que será posteriormente utilizada como <strong>temperatura de mortalidade mínima (TMM)</strong>. O modelo também permite estimar o <strong>efeito cumulativo</strong>, que representa a associação acumulada ao longo dos 21 dias de defasagem.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Como interpretar a MMT
+<span class="screen-reader-only">Nota</span>Como interpretar a TMM
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A MMT é uma estimativa produzida pelo modelo, e não necessariamente uma temperatura “segura” ou uma temperatura que elimine o risco. Ela representa o ponto de menor risco relativo estimado dentro da curva e pode variar conforme os dados, o período estudado e a especificação do modelo.</p>
+<p>A TMM é uma estimativa produzida pelo modelo, e não necessariamente uma temperatura “segura” ou uma temperatura que elimine o risco. Ela representa o ponto de menor risco relativo estimado dentro da curva e pode variar conforme os dados, o período estudado e a especificação do modelo.</p>
 </div>
 </div>
 <section id="preparando-a-curva-cumulativa" class="level4">
 <h4 class="anchored" data-anchor-id="preparando-a-curva-cumulativa">Preparando a curva cumulativa</h4>
-<p>Antes de identificar a MMT, precisamos recuperar o modelo selecionado e calcular a curva cumulativa. Nesta curva, cada temperatura é comparada inicialmente com a mediana da temperatura máxima.</p>
+<p>Antes de identificar a TMM, precisamos recuperar o modelo selecionado e calcular a curva cumulativa. Nesta curva, cada temperatura é comparada inicialmente com a mediana da temperatura máxima.</p>
 <div class="cell">
 <details class="code-fold">
-<summary>Curva cumulativa usada para estimar a MMT</summary>
+<summary>Curva cumulativa usada para estimar a TMM</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nome do modelo selecionado</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>modelo_selecionado <span class="ot">&lt;-</span> <span class="st">"temp_max_knots_50_90_lag_21_equally"</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1783,8 +1783,8 @@ Number of iterations: 2</code></pre>
 </details>
 </div>
 </section>
-<section id="identificando-a-mmt" class="level4">
-<h4 class="anchored" data-anchor-id="identificando-a-mmt">Identificando a MMT</h4>
+<section id="identificando-a-tmm" class="level4">
+<h4 class="anchored" data-anchor-id="identificando-a-tmm">Identificando a TMM</h4>
 <p>A função <code>which.min()</code> localiza a posição do menor risco relativo estimado em <code>red_max$RRfit</code>. Usamos essa posição para recuperar a temperatura correspondente em <code>red_max$predvar</code>.</p>
 <div class="cell">
 <details class="code-fold">
@@ -1795,7 +1795,7 @@ Number of iterations: 2</code></pre>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar a temperatura correspondente a essa posição</span></span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>mmt_max <span class="ot">&lt;-</span> red_max<span class="sc">$</span>predvar[indice_mmt]</span>
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar a MMT</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar a TMM</span></span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>mmt_max</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -1803,13 +1803,13 @@ Number of iterations: 2</code></pre>
 </div>
 </div>
 </section>
-<section id="recalculando-a-curva-com-a-mmt-como-referência" class="level4">
-<h4 class="anchored" data-anchor-id="recalculando-a-curva-com-a-mmt-como-referência">Recalculando a curva com a MMT como referência</h4>
-<p>Com a MMT identificada, usamos novamente <code>crossreduce()</code>. A única mudança importante é o argumento <code>cen = mmt_max</code>, que define a temperatura de mortalidade mínima como referência da curva.</p>
+<section id="recalculando-a-curva-com-a-tmm-como-referência" class="level4">
+<h4 class="anchored" data-anchor-id="recalculando-a-curva-com-a-tmm-como-referência">Recalculando a curva com a TMM como referência</h4>
+<p>Com a TMM identificada, usamos novamente <code>crossreduce()</code>. A única mudança importante é o argumento <code>cen = mmt_max</code>, que define a temperatura de mortalidade mínima como referência da curva.</p>
 <div class="cell">
 <details class="code-fold">
-<summary>Curva cumulativa temperatura–mortalidade centralizada na MMT</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recalcular a curva cumulativa usando a MMT como referência.</span></span>
+<summary>Curva cumulativa temperatura–mortalidade centralizada na TMM</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recalcular a curva cumulativa usando a TMM como referência.</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Os objetos `cb` e `mod` foram criados no bloco anterior.</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>red_max_mmt <span class="ot">&lt;-</span> <span class="fu">crossreduce</span>(</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  cb,</span>
@@ -1825,13 +1825,14 @@ Number of iterations: 2</code></pre>
 </details>
 </div>
 </section>
-<section id="visualizando-a-curva-centralizada-na-mmt" class="level4">
-<h4 class="anchored" data-anchor-id="visualizando-a-curva-centralizada-na-mmt">Visualizando a curva centralizada na MMT</h4>
-<p>No gráfico abaixo, a linha azul indica a MMT, as linhas verdes indicam os nós usados para a temperatura e as linhas vermelhas indicam os percentis 95, 98 e 99. Esses percentis ajudam a marcar temperaturas muito altas na distribuição observada.</p>
+<section id="visualizando-a-curva-centralizada-na-tmm" class="level4">
+<h4 class="anchored" data-anchor-id="visualizando-a-curva-centralizada-na-tmm">Visualizando a curva centralizada na TMM</h4>
+<p>No gráfico abaixo, a linha azul indica a TMM, as linhas verdes indicam os nós usados para a temperatura e as linhas vermelhas indicam os percentis 95, 98 e 99. Esses percentis ajudam a marcar temperaturas muito altas na distribuição observada.</p>
+<p>A modelagem via DLNM confirmou a relação não linear e o formato em “U” da curva de risco. Acima da TMM (P59), o RR de mortalidade apresentou crescimento acentuado em percentis elevados: RR 1,09 (IC95% 1,04–1,14) no P95, atingindo RR 1,26 (IC95% 1,13–1,41) no P99, considerando o efeito cumulativo de 0 a 21 dias.</p>
 <div class="cell">
 <details class="code-fold">
-<summary>Curva cumulativa com MMT</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar a curva cumulativa centralizada na MMT</span></span>
+<summary>Curva cumulativa com TMM</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar a curva cumulativa centralizada na TMM</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>red_name <span class="ot">&lt;-</span> <span class="st">"temp_max_knots_50_90_lag_21_equally"</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> red_max_mmt</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1891,7 +1892,7 @@ Number of iterations: 2</code></pre>
 <span id="cb40-58"><a href="#cb40-58" aria-hidden="true" tabindex="-1"></a>  <span class="at">at =</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="fl">3.0</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
 <span id="cb40-59"><a href="#cb40-59" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb40-60"><a href="#cb40-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Marcar a MMT, os nós e os percentis altos</span></span>
+<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Marcar a TMM, os nós e os percentis altos</span></span>
 <span id="cb40-62"><a href="#cb40-62" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mmt_max, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#253C9C"</span>, <span class="at">lwd =</span> <span class="fl">2.5</span>)</span>
 <span id="cb40-63"><a href="#cb40-63" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> knots_vals, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"#35b779"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
 <span id="cb40-64"><a href="#cb40-64" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> perc_vals, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">"#D64933"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
@@ -1900,7 +1901,7 @@ Number of iterations: 2</code></pre>
 <span id="cb40-67"><a href="#cb40-67" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
 <span id="cb40-68"><a href="#cb40-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="st">"bottomleft"</span>,</span>
 <span id="cb40-69"><a href="#cb40-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">legend =</span> <span class="fu">c</span>(</span>
-<span id="cb40-70"><a href="#cb40-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"MMT:"</span>, mmt_text, <span class="st">"°C"</span>),</span>
+<span id="cb40-70"><a href="#cb40-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"TMM:"</span>, mmt_text, <span class="st">"°C"</span>),</span>
 <span id="cb40-71"><a href="#cb40-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Nós:"</span>, knots_text),</span>
 <span id="cb40-72"><a href="#cb40-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Percentis:"</span>, perc_text)</span>
 <span id="cb40-73"><a href="#cb40-73" aria-hidden="true" tabindex="-1"></a>  ),</span>
@@ -1916,14 +1917,14 @@ Number of iterations: 2</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Curva cumulativa com MMT-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="07---Análise-de-temperatura-e-mortalidade_files/figure-html/Curva cumulativa com TMM-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <details class="code-fold">
-<summary>Salvar curva cumulativa com MMT</summary>
+<summary>Salvar curva cumulativa com TMM</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir o arquivo de saída</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"figuras"</span>,</span>
