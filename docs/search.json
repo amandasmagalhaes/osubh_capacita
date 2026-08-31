@@ -274,7 +274,7 @@
     "href": "05 - Boas práticas de programação.html#divida-o-trabalho-em-etapas",
     "title": "Boas práticas de programação",
     "section": "3. Divida o trabalho em etapas",
-    "text": "3. Divida o trabalho em etapas\nUm script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.\n\n\nCódigo\n### Configuração ----\n\n### Importação dos dados ----\n\n### Organização dos dados ----\n\n### Análise ----\n\n### Tabelas e gráficos ----\n\n### Exportação dos resultados ----\n\n\nEm projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.",
+    "text": "3. Divida o trabalho em etapas\nUm script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.\n### Configuração ----\n\n### Importação dos dados ----\n\n### Organização dos dados ----\n\n### Análise ----\n\n### Tabelas e gráficos ----\n\n### Exportação dos resultados ----\nEm projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -284,7 +284,7 @@
     "href": "05 - Boas práticas de programação.html#documente-o-projeto",
     "title": "Boas práticas de programação",
     "section": "4. Documente o projeto",
-    "text": "4. Documente o projeto\n\nO arquivo README\nO README.md é a porta de entrada do projeto. Ele deve explicar, de forma breve:\n\nQual é o objetivo da análise;\nQuem desenvolveu o projeto;\nQuais dados são utilizados;\nComo as pastas estão organizadas;\nQual é a ordem de execução dos scripts;\nQuais pacotes precisam ser instalados;\nOnde encontrar os principais resultados.\n\n\n\nComentários no código\nComentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:\n\n\nCódigo\n# Calcular a média apenas entre as observações com nota informada.\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\n\nComentários que apenas repetem o código ajudam pouco:\n\n\nCódigo\n# Calcular a média\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\n\n\nUse comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.",
+    "text": "4. Documente o projeto\n\nO arquivo README\nO README.md é a porta de entrada do projeto. Ele deve explicar, de forma breve:\n\nQual é o objetivo da análise;\nQuem desenvolveu o projeto;\nQuais dados são utilizados;\nComo as pastas estão organizadas;\nQual é a ordem de execução dos scripts;\nQuais pacotes precisam ser instalados;\nOnde encontrar os principais resultados.\n\n\n\nComentários no código\nComentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:\n# Calcular a média apenas entre as observações com nota informada\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\nComentários que apenas repetem o código ajudam pouco:\n# Calcular a média\nmedia_nota &lt;- mean(alunos$nota, na.rm = TRUE)\nUse comentários para explicar o porquê de uma decisão quando isso não for óbvio no próprio código.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -294,7 +294,7 @@
     "href": "05 - Boas práticas de programação.html#priorize-clareza",
     "title": "Boas práticas de programação",
     "section": "5. Priorize clareza",
-    "text": "5. Priorize clareza\nPrefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.\n\n\nCódigo\n# Separar o filtro em uma etapa que pode ser conferida.\ndados_validos &lt;- alunos[!is.na(alunos$nota), ]\n\nmedia_nota &lt;- mean(dados_validos$nota)\nmedia_nota\n\n\n[1] 7.633333\n\n\nAo criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.",
+    "text": "5. Priorize clareza\nPrefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.\n\n\nCódigo\n# Separar o filtro em uma etapa que pode ser conferida\ndados_validos &lt;- alunos[!is.na(alunos$nota), ]\n\nmedia_nota &lt;- mean(dados_validos$nota)\nmedia_nota\n\n\n[1] 7.633333\n\n\nAo criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -304,7 +304,7 @@
     "href": "05 - Boas práticas de programação.html#evite-repetir-código-sem-necessidade",
     "title": "Boas práticas de programação",
     "section": "6. Evite repetir código sem necessidade",
-    "text": "6. Evite repetir código sem necessidade\nCopiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma tarefa for realizada para diferentes valores, considere usar uma função ou uma repetição.\n\n\nCódigo\ncalcular_media &lt;- function(valores) {\n  mean(valores, na.rm = TRUE)\n}\n\ncalcular_media(alunos$nota)\n\n\n[1] 7.633333\n\n\nCódigo\ncalcular_media(alunos$idade)\n\n\n[1] 21.4\n\n\nPor outro lado, não é necessário criar uma função para cada linha. A função deve esconder uma tarefa repetida sem esconder o significado da análise.",
+    "text": "6. Evite repetir código sem necessidade\nCopiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma tarefa for realizada para diferentes valores, considere usar uma função ou uma repetição.\n\n\nCódigo\ncalcular_media &lt;- function(valores) {\n  mean(valores, na.rm = TRUE)\n}\n\n\n\n\nCódigo\ncalcular_media(alunos$nota)\n\n\n[1] 7.633333\n\n\nCódigo\ncalcular_media(alunos$idade)\n\n\n[1] 21.4\n\n\nPor outro lado, não é necessário criar uma função para cada linha. A função deve esconder uma tarefa repetida sem esconder o significado da análise.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -314,7 +314,7 @@
     "href": "05 - Boas práticas de programação.html#evite-caminhos-fixos-e-valores-desnecessariamente-codificados",
     "title": "Boas práticas de programação",
     "section": "7. Evite caminhos fixos e valores desnecessariamente codificados",
-    "text": "7. Evite caminhos fixos e valores desnecessariamente codificados\nUm caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:\n# Evite compartilhar caminhos específicos do seu computador.\nread.csv(\"/Users/nome/Documentos/meu-projeto/data/dados.csv\")\nPrefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:\ncaminho_dados &lt;- file.path(\"data\", \"raw\", \"dados.csv\")\ndados &lt;- read.csv(caminho_dados)\nTambém evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:\n\n\nCódigo\nnota_minima &lt;- 7\nalunos_aprovados &lt;- alunos[!is.na(alunos$nota) & alunos$nota &gt;= nota_minima, ]\n\n\nIsso facilita atualizar a análise e deixa a decisão mais visível.",
+    "text": "7. Evite caminhos fixos e valores desnecessariamente codificados\nUm caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:\n# Evite compartilhar caminhos específicos do seu computador\nread.csv(\"/Users/nome/Documentos/meu-projeto/dados/dados.csv\")\nPrefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:\ncaminho_dados &lt;- file.path(\"dados\", \"brutos\", \"dados.csv\")\ndados &lt;- read.csv(caminho_dados)\nTambém evite repetir o mesmo número ou texto em vários lugares do script. Quando um valor for uma decisão importante da análise, dê um nome a ele:\n\n\nCódigo\nnota_minima &lt;- 7\nalunos_aprovados &lt;- alunos[!is.na(alunos$nota) & alunos$nota &gt;= nota_minima, ]\n\n\nIsso facilita atualizar a análise e deixa a decisão mais visível.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]

@@ -138,7 +138,7 @@ A numeração ajuda a indicar a ordem esperada de execução.
 
 Um script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.
 
-```{r}
+```bash
 ### Configuração ----
 
 ### Importação dos dados ----
@@ -173,14 +173,14 @@ O `README.md` é a porta de entrada do projeto. Ele deve explicar, de forma brev
 
 Comentários devem explicar o objetivo ou uma decisão importante. Não é necessário escrever um comentário para cada linha:
 
-```{r}
-# Calcular a média apenas entre as observações com nota informada.
+```bash
+# Calcular a média apenas entre as observações com nota informada
 media_nota <- mean(alunos$nota, na.rm = TRUE)
 ```
 
 Comentários que apenas repetem o código ajudam pouco:
 
-```{r}
+```bash
 # Calcular a média
 media_nota <- mean(alunos$nota, na.rm = TRUE)
 ```
@@ -193,7 +193,7 @@ Use comentários para explicar o porquê de uma decisão quando isso não for ó
 Prefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.
 
 ```{r}
-# Separar o filtro em uma etapa que pode ser conferida.
+# Separar o filtro em uma etapa que pode ser conferida
 dados_validos <- alunos[!is.na(alunos$nota), ]
 
 media_nota <- mean(dados_validos$nota)
@@ -211,7 +211,9 @@ Copiar e colar o mesmo bloco várias vezes aumenta a chance de erro. Se a mesma 
 calcular_media <- function(valores) {
   mean(valores, na.rm = TRUE)
 }
+```
 
+```{r}
 calcular_media(alunos$nota)
 calcular_media(alunos$idade)
 ```
@@ -224,14 +226,14 @@ Por outro lado, não é necessário criar uma função para cada linha. A funç�
 Um caminho como o exemplo abaixo normalmente só funciona no computador de quem o escreveu:
 
 ```bash
-# Evite compartilhar caminhos específicos do seu computador.
-read.csv("/Users/nome/Documentos/meu-projeto/data/dados.csv")
+# Evite compartilhar caminhos específicos do seu computador
+read.csv("/Users/nome/Documentos/meu-projeto/dados/dados.csv")
 ```
 
 Prefira caminhos relativos à pasta do projeto e mantenha a estrutura de pastas organizada:
 
 ```bash
-caminho_dados <- file.path("data", "raw", "dados.csv")
+caminho_dados <- file.path("dados", "brutos", "dados.csv")
 dados <- read.csv(caminho_dados)
 ```
 
