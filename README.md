@@ -1,10 +1,9 @@
 # OSUBH Capacita
 
-Material do **Grupo de Estudos e Capacitação do Observatório de Saúde Urbana de Belo Horizonte (OSUBH)**.
+Este repositório reúne os materiais desenvolvidos para os encontros do **Grupo de Estudos e Capacitação do Observatório de Saúde Urbana de Belo Horizonte (OSUBH)**.
 
-Este repositório reúne os materiais desenvolvidos para os encontros de capacitação promovidos pelo OSUBH.
+A versão online está disponível em: <https://amandasmagalhaes.github.io/osubh_capacita/>
 
-A versão online do material está disponível em: <https://amandasmagalhaes.github.io/osubh_capacita/>
 
 ## Estrutura do material
 
@@ -19,5 +18,6 @@ Atualmente, o material está organizado da seguinte forma:
 | `04 - GitHub.qmd` | Introdução ao Git e GitHub. |
 | `05 - Boas práticas de programação.qmd` | Recomendações para organização e escrita de código. |
 | `06 - Quarto.qmd` | Introdução à criação de documentos com Quarto. |
+| `07 - Análise de temperatura e mortalidade.qmd` | Análise da associação entre temperatura e mortalidade utilizando DLNM. |
 
 Novos capítulos serão adicionados conforme a evolução dos encontros.
