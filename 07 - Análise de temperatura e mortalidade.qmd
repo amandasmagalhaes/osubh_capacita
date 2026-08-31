@@ -1007,7 +1007,7 @@ grafico_lags_knots <- ggplot() +
     nrow = 1
   ) +
   # Tema visual
-  theme_minimal(base_size = 14) +
+  theme_minimal(base_size = 10) +
   theme(
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
@@ -1034,8 +1034,6 @@ grafico_lags_knots
 
 
 ## Modelo DLNM
-
-Até aqui, descrevemos separadamente a curva da temperatura e a curva do tempo de defasagem. O DLNM combina as duas para responder à pergunta completa: como a associação muda conforme a temperatura e conforme passam os dias?
 
 
 ### *Cross-basis*: combinação de temperatura e defasagem
