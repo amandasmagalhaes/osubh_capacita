@@ -1,6 +1,6 @@
 ---
 title: "Boas práticas de programação"
-date: today
+date: "2026-08-31"
 ---
 
 
@@ -72,34 +72,36 @@ Uma estrutura simples pode ser suficiente para começar:
 meu_projeto/
 ├── README.md
 ├── scripts/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── results/
-│   ├── tables/
-│   └── figures/
-└── docs/
+├── dados/
+│   ├── brutos/
+│   └── processados/
+├── resultados/
+│   ├── tabelas/
+│   └── figuras/
+└── documentos/
 ```
 
 Uma sugestão para cada pasta:
 
 - `README.md`: apresenta o projeto e explica como executá-lo;
 - `scripts/`: contém os scripts e documentos da análise;
-- `data/raw/`: guarda os dados originais, sem alterações;
-- `data/processed/`: guarda os dados preparados para a análise;
-- `results/`: guarda tabelas, gráficos e outros resultados finais;
-- `docs/`: guarda documentos de apoio e explicações adicionais.
+- `dados/brutos/`: guarda os dados originais, sem alterações;
+- `dados/processados/`: guarda os dados preparados para a análise;
+- `resultados/`: guarda tabelas, gráficos e outros resultados finais;
+- `documentos/`: guarda documentos de apoio e explicações adicionais.
 
 Os nomes das pastas podem variar. O mais importante é que a organização seja intuitiva e seja mantida durante todo o projeto.
 
-> **Atenção:** dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.
+::: {.callout-important}
+Dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.
+::: 
 
 
 ## 2. Use nomes consistentes
 
 Nomes claros ajudam a entender o código sem precisar consultar cada linha.
 
-```{r}
+```bash
 # Nomes claros
 idade_media <- mean(alunos$idade)
 dados_processados <- alunos[!is.na(alunos$nota), ]
@@ -115,7 +117,7 @@ Algumas recomendações simples:
 
 - Use nomes que indiquem o conteúdo do objeto;
 - Escolha um padrão e mantenha-o em todo o projeto;
-- Prefira letras minúsculas e _ para separar palavras;
+- Prefira letras minúsculas e "_" para separar palavras;
 - Evite nomes como x, objeto_final_final e teste2;
 - Evite espaços e acentos em nomes de arquivos e objetos.
 
@@ -137,17 +139,17 @@ A numeração ajuda a indicar a ordem esperada de execução.
 Um script muito longo e sem organização é difícil de acompanhar. Podemos pensar nele como um capítulo de um livro: cada seção deve desenvolver uma ideia principal.
 
 ```{r}
-### Configuração ####
+### Configuração ----
 
-### Importação dos dados ####
+### Importação dos dados ----
 
-### Organização dos dados ####
+### Organização dos dados ----
 
-### Análise ####
+### Análise ----
 
-### Tabelas e gráficos ####
+### Tabelas e gráficos ----
 
-### Exportação dos resultados ####
+### Exportação dos resultados ----
 ```
 
 Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.

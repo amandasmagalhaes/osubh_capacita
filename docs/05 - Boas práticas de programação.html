@@ -306,38 +306,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre class="text"><code>meu_projeto/
 ├── README.md
 ├── scripts/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── results/
-│   ├── tables/
-│   └── figures/
-└── docs/</code></pre>
+├── dados/
+│   ├── brutos/
+│   └── processados/
+├── resultados/
+│   ├── tabelas/
+│   └── figuras/
+└── documentos/</code></pre>
 <p>Uma sugestão para cada pasta:</p>
 <ul>
 <li><code>README.md</code>: apresenta o projeto e explica como executá-lo;</li>
 <li><code>scripts/</code>: contém os scripts e documentos da análise;</li>
-<li><code>data/raw/</code>: guarda os dados originais, sem alterações;</li>
-<li><code>data/processed/</code>: guarda os dados preparados para a análise;</li>
-<li><code>results/</code>: guarda tabelas, gráficos e outros resultados finais;</li>
-<li><code>docs/</code>: guarda documentos de apoio e explicações adicionais.</li>
+<li><code>dados/brutos/</code>: guarda os dados originais, sem alterações;</li>
+<li><code>dados/processados/</code>: guarda os dados preparados para a análise;</li>
+<li><code>resultados/</code>: guarda tabelas, gráficos e outros resultados finais;</li>
+<li><code>documentos/</code>: guarda documentos de apoio e explicações adicionais.</li>
 </ul>
 <p>Os nomes das pastas podem variar. O mais importante é que a organização seja intuitiva e seja mantida durante todo o projeto.</p>
-<blockquote class="blockquote">
-<p><strong>Atenção:</strong> dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.</p>
-</blockquote>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dados confidenciais, senhas e chaves de acesso não devem ser enviados para o GitHub. Antes de compartilhar um projeto, confira os arquivos que estão dentro da pasta.</p>
+</div>
+</div>
 </section>
 <section id="use-nomes-consistentes" class="level2">
 <h2 class="anchored" data-anchor-id="use-nomes-consistentes">2. Use nomes consistentes</h2>
 <p>Nomes claros ajudam a entender o código sem precisar consultar cada linha.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes claros</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>idade_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(alunos<span class="sc">$</span>idade)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dados_processados <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes claros</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">idade_media</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">alunos</span><span class="va">$idade</span><span class="kw">)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">dados_processados</span> <span class="op">&lt;</span>- alunos[!is.na<span class="er">(</span><span class="ex">alunos</span><span class="va">$nota</span><span class="kw">)</span><span class="ex">,</span> ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes pouco informativos</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">a</span><span class="va">$b</span><span class="kw">)</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">df2</span> <span class="op">&lt;</span>- df[df<span class="va">$c</span> <span class="op">&gt;</span> 0, ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -345,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Use nomes que indiquem o conteúdo do objeto;</li>
 <li>Escolha um padrão e mantenha-o em todo o projeto;</li>
-<li>Prefira letras minúsculas e _ para separar palavras;</li>
+<li>Prefira letras minúsculas e “_” para separar palavras;</li>
 <li>Evite nomes como x, objeto_final_final e teste2;</li>
 <li>Evite espaços e acentos em nomes de arquivos e objetos.</li>
 </ul>
@@ -363,17 +368,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Configuração ####</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Configuração ----</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Importação dos dados ####</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Importação dos dados ----</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">### Organização dos dados ####</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">### Organização dos dados ----</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">### Análise ####</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">### Análise ----</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Tabelas e gráficos ####</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Tabelas e gráficos ----</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Exportação dos resultados ####</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Exportação dos resultados ----</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>Em projetos maiores, cada etapa pode ficar em um arquivo separado. Por exemplo, um script pode importar os dados, outro pode prepará-los e outro pode gerar os resultados. Essa separação facilita encontrar erros e executar apenas a etapa necessária.</p>
