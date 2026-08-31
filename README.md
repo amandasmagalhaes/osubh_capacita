@@ -1,6 +1,6 @@
 # OSUBH Capacita
 
-Este repositório reúne os materiais desenvolvidos para os encontros do **Grupo de Estudos e Capacitação do [Observatório de Saúde Urbana de Belo Horizonte (OSUBH)](osubh.medicina.ufmg.br){target="_blank"}**.
+Este repositório reúne os materiais desenvolvidos para os encontros do **Grupo de Estudos e Capacitação do [Observatório de Saúde Urbana de Belo Horizonte (OSUBH)]**(osubh.medicina.ufmg.br){target="_blank"}.
 
 A versão online está disponível em: <https://amandasmagalhaes.github.io/osubh_capacita/>
 
