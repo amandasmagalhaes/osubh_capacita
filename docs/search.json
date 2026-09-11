@@ -74,7 +74,7 @@
     "href": "01 - R.html",
     "title": "Software R",
     "section": "",
-    "text": "R\nO R é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:\nUma das principais vantagens do R é sua versatilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.\nO R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.\nPlaylist sugerida: Estatística Aplicada no R",
+    "text": "R\nO R é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:\nUma das principais vantagens do R é sua versatilidade. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (Comprehensive R Archive Network), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa.\nO R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]
@@ -84,7 +84,7 @@
     "href": "01 - R.html#r",
     "title": "Software R",
     "section": "",
-    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\n\nInstalação\n\nAcesse a página de download do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente correspondente ao seu sistema.\nExecute o instalador e siga as instruções padrão de instalação.",
+    "text": "Importação, organização e manipulação de dados;\nAnálises estatísticas;\nModelagem estatística (linear, não linear, regressão, séries temporais, classificação, clustering, entre outras);\nCriação de gráficos de alta qualidade;\nDesenvolvimento de scripts e funções para automatizar análises.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\n\nPlaylist sugerida: Estatística Aplicada no R.\n\n\n\nInstalação\n\nAcesse a página de download do R (CRAN).\nSelecione o sistema operacional do seu computador (Windows, macOS ou Linux).\nBaixe a versão mais recente correspondente ao seu sistema.\nExecute o instalador e siga as instruções padrão de instalação.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Software R</span>"
     ]
