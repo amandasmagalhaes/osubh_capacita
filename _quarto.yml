@@ -26,6 +26,13 @@ format:
     toc: true
     number-sections: false
     code-fold: true
+    include-in-header:
+      text: |
+        <style>
+          p {
+            text-align: justify;
+          }
+        </style>
 
   pdf:
     documentclass: scrreprt

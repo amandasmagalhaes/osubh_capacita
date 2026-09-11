@@ -1,6 +1,6 @@
 ---
 title: "Software R"
-date: "2026-07-11"
+date: "2026-09-11"
 ---
 
 
