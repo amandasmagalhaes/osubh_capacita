@@ -16,11 +16,13 @@ O [R](https://www.r-project.org/about.html){target="_blank"} é uma linguagem de
 - Criação de gráficos de alta qualidade;
 - Desenvolvimento de scripts e funções para automatizar análises.
 
+{{< video https://www.youtube.com/watch?v=x4S9rIJHqxU >}}
+
 Uma das principais vantagens do R é sua **versatilidade**. A comunidade científica desenvolve continuamente milhares de pacotes, disponibilizados por meio do CRAN (*Comprehensive R Archive Network*), o repositório oficial de pacotes do R, que ampliam suas funcionalidades para diferentes áreas de pesquisa. 
 
 O R está disponível gratuitamente para Windows, macOS e Linux, favorecendo a transparência, a reprodutibilidade das análises e a colaboração entre pesquisadores.
 
-{{< video https://www.youtube.com/watch?v=x4S9rIJHqxU >}}
+[Estatística Aplicada no R](https://youtube.com/playlist?list=PLOw62cBQ5j9VE9X4cCCfFMjW_hhEAJUhU){target="_blank"} 
 
 
 ### Instalação
