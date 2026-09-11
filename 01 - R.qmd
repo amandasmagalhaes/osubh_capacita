@@ -1,10 +1,12 @@
 ---
 title: "Software R"
-date: "2026-08-31"
+date: "2026-07-11"
 ---
 
 
 ## R
+
+![](figuras/programming_languages.jpeg){width="100%" fig-align="center"}
 
 O [R](https://www.r-project.org/about.html){target="_blank"} é uma linguagem de programação e um ambiente de software de código aberto desenvolvido para computação estatística, análise de dados e visualização gráfica. O R reúne, em um único ambiente, ferramentas para:
 
