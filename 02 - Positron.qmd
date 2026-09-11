@@ -23,6 +23,7 @@ Utilizaremos o Positron por representar a nova geração de ambientes de desenvo
 
 {{< video https://youtu.be/4Ir_HX4riHw?si=TGy3NQgDQqnmJtWw >}}
 
+
 ### Instalação
 
 1. Acesse a página de download do [Positron](https://positron.posit.co/download.html){target="_blank"}.
@@ -49,23 +50,43 @@ Para configurar:
 
 ```json
 {
+    // Reconhece renv.lock como arquivo JSON
     "files.associations": {
         "renv.lock": "json"
     },
+
+    // Tema
     "workbench.colorTheme": "Default Positron Dark",
+
+    // Git
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
+
+    // Sugestões do Assistant em notebooks
     "positron.assistant.notebook.ghostCellSuggestions.enabled": true,
+
+    // Oculta o monitor de recursos
     "console.showResourceMonitor": false,
+
+    // Formatação automática para R
     "[r]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Posit.air-vscode"
     },
+
+    // Formatação automática para Python
     "[python]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
+
+    // Formata ao salvar
     "editor.formatOnSave": true,
-    "security.workspace.trust.untrustedFiles": "open"
+
+    // Quebra linhas longas visualmente
+    "editor.wordWrap": "on",
+
+    // Mostra espaços e tabs de forma discreta
+    "editor.renderWhitespace": "boundary"
 }
 ```
