@@ -144,7 +144,7 @@
     "href": "04 - GitHub.html",
     "title": "GitHub",
     "section": "",
-    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:\nEvite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
+    "text": "Git, GitHub e Positron\nO GitHub é uma plataforma online para armazenar e compartilhar projetos, acompanhar alterações e colaborar com outras pessoas.\nAntes de utilizá-lo, é importante diferenciar três ferramentas que trabalham em conjunto:",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -154,7 +154,7 @@
     "href": "04 - GitHub.html#git-github-e-positron",
     "title": "GitHub",
     "section": "",
-    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento onde criamos e editamos arquivos e utilizamos os recursos do Git.",
+    "text": "Ferramenta\nPara que serve\n\n\n\n\nGit\nSistema de controle de versão que registra o histórico das alterações em um projeto.\n\n\nGitHub\nPlataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos.\n\n\nPositron\nAmbiente de desenvolvimento onde criamos e editamos arquivos e utilizamos os recursos do Git.\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\nEvite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
