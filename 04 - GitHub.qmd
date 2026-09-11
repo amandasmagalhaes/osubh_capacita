@@ -1,6 +1,6 @@
 ---
 title: "GitHub"
-date: "2026-08-31"
+date: "2026-09-11"
 ---
 
 
@@ -16,7 +16,9 @@ Antes de utilizá-lo, é importante diferenciar três ferramentas que trabalham 
 | **GitHub** | Plataforma online que hospeda repositórios Git e permite compartilhar e sincronizar projetos. |
 | **Positron** | Ambiente de desenvolvimento onde criamos e editamos arquivos e utilizamos os recursos do Git. |
 
+::: {.callout-important}
 Evite enviar senhas, chaves de acesso ou outras informações sensíveis para o repositório. Antes de realizar um commit, revise os arquivos modificados para garantir que apenas as alterações desejadas serão registradas.
+:::
 
 {{< video https://www.youtube.com/watch?v=pBy1zgt0XPc >}}
 

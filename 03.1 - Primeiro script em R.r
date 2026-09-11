@@ -133,6 +133,21 @@ is.na(notas_com_na)
 mean(notas_com_na, na.rm = TRUE)
 
 
+### Operadores e estruturas de controle ----
+
+# Operadores de comparação:
+# ==  igual
+# !=  diferente
+# >   maior que
+# <   menor que
+# >=  maior ou igual
+# <=  menor ou igual
+
+# Operadores lógicos:
+# &   E
+# |   OU
+# !   NÃO
+
 ### Funções ----
 
 # Funções executam tarefas e podem receber valores como argumentos.
@@ -150,6 +165,24 @@ verificar_situacao <- function(nota) {
 # Para usar a função, fornecemos uma nota como argumento.
 verificar_situacao(8.5)
 verificar_situacao(6.0)
+
+
+### Estruturas de controle de fluxo ----
+
+# if: executa o código se a condição for TRUE
+# else: executa o código se a condição for FALSE
+
+# while: repete o código enquanto a condição for TRUE
+i <- 3
+while (i <= length(nomes)) {
+  print(nomes[i])
+  i <- i + 1
+}
+
+# for: repete o código para cada elemento de uma sequência
+for (nome in nomes) {
+  print(nome)
+}
 
 
 ### Data frames (tabelas de dados) ----
