@@ -174,7 +174,7 @@
     "href": "04 - GitHub.html#instalar-o-git",
     "title": "GitHub",
     "section": "Instalar o Git",
-    "text": "Instalar o Git\nNo Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.\n\nConfigurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
+    "text": "Instalar o Git\nNo Windows, normalmente é necessário instalar o Git separadamente. No macOS e em algumas distribuições Linux, ele pode já estar disponível. Caso o Git já esteja instalado, esta etapa pode ser ignorada.\nAcesse a página oficial de instalação do Git e selecione o sistema operacional do seu computador:\n\nWindows\nmacOS\nLinux\n\nApós a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:\ngit --version\nSe uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
@@ -557,6 +557,26 @@
     "text": "Publicar um projeto Quarto\n\nRenderize o projeto no Positron, clicando em Render.\nVerifique se a pasta docs/ foi criada ou atualizada.\nSalve e envie os arquivos para o GitHub.\nNo GitHub, abra o repositório e acesse Settings &gt; Pages.\nEm Build and deployment, selecione Deploy from a branch. Escolha a branch main e a pasta /docs. Clique em Save.\nDepois de alguns instantes, o GitHub exibirá o endereço do site nessa mesma página.\n\n\n\n\n\n\n\nDica\n\n\n\nSempre que fizer alterações, renderize novamente o projeto e repita o commit e o push. O GitHub Pages atualizará o site a partir da nova versão da pasta docs/.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>GitHub Pages</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#fazer-login-no-github-pelo-positron",
+    "href": "04 - GitHub.html#fazer-login-no-github-pelo-positron",
+    "title": "GitHub",
+    "section": "Fazer login no GitHub pelo Positron",
+    "text": "Fazer login no GitHub pelo Positron\nPara utilizar o GitHub diretamente pelo Positron, é necessário autenticar sua conta do GitHub.\nNo Positron, localize a opção Accounts, Sign in with GitHub to use GitHub Pull Requests e siga as instruções apresentadas para entrar na sua conta e autorizar o acesso.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "04 - GitHub.html#configurar-seu-nome-e-e-mail",
+    "href": "04 - GitHub.html#configurar-seu-nome-e-e-mail",
+    "title": "GitHub",
+    "section": "Configurar seu nome e e-mail",
+    "text": "Configurar seu nome e e-mail\nEssa configuração é realizada apenas uma vez em cada computador.\nO nome e o e-mail informados serão utilizados pelo Git para identificar o autor dos commits.\nUtilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.\nAbra o terminal integrado do Positron e execute os comandos abaixo:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"seu-email@exemplo.com\"\nPara verificar se a configuração foi realizada corretamente, execute:\ngit config --global --list\nSe tudo estiver correto, serão exibidas informações semelhantes a:\nuser.name=Seu Nome\nuser.email=seu-email@exemplo.com",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>GitHub</span>"
     ]
   }
 ]

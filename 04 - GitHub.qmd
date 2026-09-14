@@ -57,9 +57,18 @@ git --version
 Se uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.
 
 
-### Configurar seu nome e e-mail
+## Fazer login no GitHub pelo Positron
 
-Essa configuração é realizada apenas uma vez em cada computador.
+Para utilizar o GitHub diretamente pelo Positron, é necessário autenticar sua conta do GitHub.
+
+No Positron, localize a opção **Accounts**, **Sign in with GitHub to use GitHub Pull Requests**  e siga as instruções apresentadas para entrar na sua conta e autorizar o acesso.
+
+
+## Configurar seu nome e e-mail
+
+Essa configuração é realizada apenas uma vez em cada computador. 
+
+O nome e o e-mail informados serão utilizados pelo Git para identificar o autor dos commits.
 
 Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.
 

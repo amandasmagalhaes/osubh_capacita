@@ -207,10 +207,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#git-github-e-positron" id="toc-git-github-e-positron" class="nav-link active" data-scroll-target="#git-github-e-positron">Git, GitHub e Positron</a></li>
   <li><a href="#criar-uma-conta-no-github" id="toc-criar-uma-conta-no-github" class="nav-link" data-scroll-target="#criar-uma-conta-no-github">Criar uma conta no GitHub</a></li>
-  <li><a href="#instalar-o-git" id="toc-instalar-o-git" class="nav-link" data-scroll-target="#instalar-o-git">Instalar o Git</a>
-  <ul class="collapse">
+  <li><a href="#instalar-o-git" id="toc-instalar-o-git" class="nav-link" data-scroll-target="#instalar-o-git">Instalar o Git</a></li>
+  <li><a href="#fazer-login-no-github-pelo-positron" id="toc-fazer-login-no-github-pelo-positron" class="nav-link" data-scroll-target="#fazer-login-no-github-pelo-positron">Fazer login no GitHub pelo Positron</a></li>
   <li><a href="#configurar-seu-nome-e-e-mail" id="toc-configurar-seu-nome-e-e-mail" class="nav-link" data-scroll-target="#configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</a></li>
-  </ul></li>
   <li><a href="#criar-um-repositório-no-github" id="toc-criar-um-repositório-no-github" class="nav-link" data-scroll-target="#criar-um-repositório-no-github">Criar um repositório no GitHub</a>
   <ul class="collapse">
   <li><a href="#arquivos-criados-automaticamente" id="toc-arquivos-criados-automaticamente" class="nav-link" data-scroll-target="#arquivos-criados-automaticamente">Arquivos criados automaticamente</a></li>
@@ -329,9 +328,16 @@ Dica
 <p>Após a instalação (ou para verificar se o Git já está disponível), abra o terminal integrado do Positron e execute:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Se uma mensagem semelhante a git version 2.x.x for exibida, significa que o Git está instalado e pronto para uso.</p>
-<section id="configurar-seu-nome-e-e-mail" class="level3">
-<h3 class="anchored" data-anchor-id="configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</h3>
+</section>
+<section id="fazer-login-no-github-pelo-positron" class="level2">
+<h2 class="anchored" data-anchor-id="fazer-login-no-github-pelo-positron">Fazer login no GitHub pelo Positron</h2>
+<p>Para utilizar o GitHub diretamente pelo Positron, é necessário autenticar sua conta do GitHub.</p>
+<p>No Positron, localize a opção <strong>Accounts</strong>, <strong>Sign in with GitHub to use GitHub Pull Requests</strong> e siga as instruções apresentadas para entrar na sua conta e autorizar o acesso.</p>
+</section>
+<section id="configurar-seu-nome-e-e-mail" class="level2">
+<h2 class="anchored" data-anchor-id="configurar-seu-nome-e-e-mail">Configurar seu nome e e-mail</h2>
 <p>Essa configuração é realizada apenas uma vez em cada computador.</p>
+<p>O nome e o e-mail informados serão utilizados pelo Git para identificar o autor dos commits.</p>
 <p>Utilize o seu nome completo e o mesmo endereço de e-mail cadastrado e confirmado no GitHub.</p>
 <p>Abra o terminal integrado do Positron e execute os comandos abaixo:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
@@ -341,7 +347,6 @@ Dica
 <p>Se tudo estiver correto, serão exibidas informações semelhantes a:</p>
 <pre class="text"><code>user.name=Seu Nome
 user.email=seu-email@exemplo.com</code></pre>
-</section>
 </section>
 <section id="criar-um-repositório-no-github" class="level2">
 <h2 class="anchored" data-anchor-id="criar-um-repositório-no-github">Criar um repositório no GitHub</h2>
