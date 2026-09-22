@@ -1,6 +1,6 @@
 ---
 title: "Boas práticas de programação"
-date: "2026-08-31"
+date: "2026-09-22"
 ---
 
 
@@ -103,7 +103,7 @@ Nomes claros ajudam a entender o código sem precisar consultar cada linha.
 
 ```bash
 # Nomes claros
-idade_media <- mean(alunos$idade)
+media_idade <- mean(alunos$idade)
 dados_processados <- alunos[!is.na(alunos$nota), ]
 ```
 
@@ -194,9 +194,9 @@ Prefira uma solução simples e legível a uma solução muito compacta, mas dif
 
 ```{r}
 # Separar o filtro em uma etapa que pode ser conferida
-dados_validos <- alunos[!is.na(alunos$nota), ]
+dados_processados <- alunos[!is.na(alunos$nota), ]
 
-media_nota <- mean(dados_validos$nota)
+media_nota <- mean(dados_processados$nota)
 media_nota
 ```
 
