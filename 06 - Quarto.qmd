@@ -1,6 +1,6 @@
 ---
 title: "Arquivo Quarto"
-date: "2026-08-31"
+date: "2026-09-28"
 ---
 
 
@@ -15,7 +15,7 @@ O arquivo utilizado pelo Quarto possui a extensão `.qmd`, que significa *Quarto
 Um documento Quarto combina diferentes elementos.
 
 ## Cabeçalho YAML
-O cabeçalho YAML define o título e outras configurações específicas do documento. Ele fica no início do arquivo, entre duas linhas com três hífens:
+O cabeçalho YAML (formato de serialização de dados legível por humanos e focado em organização) define o título e outras configurações específicas do documento. Ele fica no início do arquivo, entre duas linhas com três hífens:
 
 ```yaml
 ---
