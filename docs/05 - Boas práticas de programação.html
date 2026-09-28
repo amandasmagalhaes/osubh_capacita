@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">31 de agosto de 2026</p>
+      <p class="date">22 de setembro de 2026</p>
     </div>
   </div>
   
@@ -351,7 +351,7 @@ Importante
 <h2 class="anchored" data-anchor-id="use-nomes-consistentes">2. Use nomes consistentes</h2>
 <p>Nomes claros ajudam a entender o código sem precisar consultar cada linha.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes claros</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">idade_media</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">alunos</span><span class="va">$idade</span><span class="kw">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">media_idade</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">alunos</span><span class="va">$idade</span><span class="kw">)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">dados_processados</span> <span class="op">&lt;</span>- alunos[!is.na<span class="er">(</span><span class="ex">alunos</span><span class="va">$nota</span><span class="kw">)</span><span class="ex">,</span> ]</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes pouco informativos</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x</span> <span class="op">&lt;</span>- mean<span class="er">(</span><span class="ex">a</span><span class="va">$b</span><span class="kw">)</span></span>
@@ -421,9 +421,9 @@ Importante
 <details class="code-fold">
 <summary>Código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separar o filtro em uma etapa que pode ser conferida</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dados_validos <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dados_processados <span class="ot">&lt;-</span> alunos[<span class="sc">!</span><span class="fu">is.na</span>(alunos<span class="sc">$</span>nota), ]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados_validos<span class="sc">$</span>nota)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>media_nota <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados_processados<span class="sc">$</span>nota)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>media_nota</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">

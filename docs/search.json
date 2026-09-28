@@ -264,7 +264,7 @@
     "href": "05 - Boas práticas de programação.html#use-nomes-consistentes",
     "title": "Boas práticas de programação",
     "section": "2. Use nomes consistentes",
-    "text": "2. Use nomes consistentes\nNomes claros ajudam a entender o código sem precisar consultar cada linha.\n# Nomes claros\nidade_media &lt;- mean(alunos$idade)\ndados_processados &lt;- alunos[!is.na(alunos$nota), ]\n# Nomes pouco informativos\nx &lt;- mean(a$b)\ndf2 &lt;- df[df$c &gt; 0, ]\nAlgumas recomendações simples:\n\nUse nomes que indiquem o conteúdo do objeto;\nEscolha um padrão e mantenha-o em todo o projeto;\nPrefira letras minúsculas e “_” para separar palavras;\nEvite nomes como x, objeto_final_final e teste2;\nEvite espaços e acentos em nomes de arquivos e objetos.\n\nTambém é importante escolher um padrão para nomes de arquivos. Por exemplo:\n00_importar_dados.R\n01_preparar_dados.R\n02_analisar_dados.R\n03_criar_tabelas.R\n04_criar_graficos.R\nA numeração ajuda a indicar a ordem esperada de execução.",
+    "text": "2. Use nomes consistentes\nNomes claros ajudam a entender o código sem precisar consultar cada linha.\n# Nomes claros\nmedia_idade &lt;- mean(alunos$idade)\ndados_processados &lt;- alunos[!is.na(alunos$nota), ]\n# Nomes pouco informativos\nx &lt;- mean(a$b)\ndf2 &lt;- df[df$c &gt; 0, ]\nAlgumas recomendações simples:\n\nUse nomes que indiquem o conteúdo do objeto;\nEscolha um padrão e mantenha-o em todo o projeto;\nPrefira letras minúsculas e “_” para separar palavras;\nEvite nomes como x, objeto_final_final e teste2;\nEvite espaços e acentos em nomes de arquivos e objetos.\n\nTambém é importante escolher um padrão para nomes de arquivos. Por exemplo:\n00_importar_dados.R\n01_preparar_dados.R\n02_analisar_dados.R\n03_criar_tabelas.R\n04_criar_graficos.R\nA numeração ajuda a indicar a ordem esperada de execução.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
@@ -294,7 +294,7 @@
     "href": "05 - Boas práticas de programação.html#priorize-clareza",
     "title": "Boas práticas de programação",
     "section": "5. Priorize clareza",
-    "text": "5. Priorize clareza\nPrefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.\n\n\nCódigo\n# Separar o filtro em uma etapa que pode ser conferida\ndados_validos &lt;- alunos[!is.na(alunos$nota), ]\n\nmedia_nota &lt;- mean(dados_validos$nota)\nmedia_nota\n\n\n[1] 7.633333\n\n\nAo criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.",
+    "text": "5. Priorize clareza\nPrefira uma solução simples e legível a uma solução muito compacta, mas difícil de entender. Separe comandos que representam etapas diferentes e use objetos com nomes significativos.\n\n\nCódigo\n# Separar o filtro em uma etapa que pode ser conferida\ndados_processados &lt;- alunos[!is.na(alunos$nota), ]\n\nmedia_nota &lt;- mean(dados_processados$nota)\nmedia_nota\n\n\n[1] 7.633333\n\n\nAo criar uma tabela, gráfico ou modelo, é útil manter o objeto que originou o resultado. Assim, podemos revisar cada etapa em vez de executar uma expressão muito longa de uma só vez.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Boas práticas de programação</span>"
     ]
