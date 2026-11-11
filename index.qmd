@@ -91,3 +91,44 @@ cronograma |>
 - [Google Drive](https://drive.google.com/drive/folders/1jLRcQ0hC7HYuVq41OOcvnYejVXcEgdSF?usp=sharing){target="_blank"}
 
 - [GitHub](https://github.com/amandasmagalhaes/osubh_capacita){target="_blank"}
+
+
+## Dicas para apresentadores do Journal Club[^1]
+
+### Objetivos do Journal Club
+
+1. Promover a compreensão das principais controvérsias na área;
+2. Explorar métodos e suas aplicações em áreas científicas específicas;
+3. Compreender temas relacionados às diversas disciplinas envolvidas na saúde urbana;
+4. Desenvolver habilidades de comunicação e pensamento crítico;
+5. Compreender o processo de revisão por pares na publicação científica.
+
+### Três etapas para uma discussão dinâmica e produtiva no Journal Club
+
+1. **SELECIONE um artigo:** Escolha um artigo e envie para aprovação do(a) coordenador(a) do *Journal Club* com antecedência mínima de duas semanas antes da sua apresentação. Considere artigos sobre temas gerais de seu interesse que possam estimular a discussão com o grupo. O(a) coordenador(a) do *Journal Club* também poderá auxiliá-lo(a) nessa seleção, ou ainda, sugerir um artigo.
+
+   ::: {.callout-note}
+   Considere também quais temas já foram discutidos. 
+   
+   **Maior variedade = Melhor**
+   :::
+
+2. **LEIA o artigo:** Utilize seus conhecimentos e sua experiência prévia; faça uma leitura crítica. Considere a hipótese, o delineamento do estudo, as fontes de viés, a escolha dos métodos e a apresentação dos resultados. Como os leitores podem interpretar os números apresentados? Os resultados são inovadores? Os resultados são reproduzíveis? A discussão interpreta os resultados de forma adequada, especialmente no contexto do conhecimento científico existente? De que maneira o estudo amplia ou modifica nossa compreensão atual sobre o tema? Quais são algumas das limitações e dos pontos fortes do estudo? Existem limitações que não foram discutidas no artigo? Quais são as implicações dos achados? Foram publicadas cartas ao editor da revista em resposta a essa publicação? Houve cobertura da mídia sobre o estudo? Prepare perguntas específicas para discussão, caso haja uma diminuição na participação do grupo.
+
+3. **APRESENTE o artigo:**
+
+   - Apresente-se ao grupo e explique por que escolheu esse artigo.
+   - Descreva brevemente o artigo, em poucas frases, e contextualize-o em relação ao estado atual da literatura científica sobre o tema.
+   - Não leia trechos diretamente do artigo. Em vez disso, explique o conteúdo com suas próprias palavras e direcione o grupo para as seções relevantes da discussão. Não utilize slides.
+   - Faça uma breve síntese dos métodos. Em vez de descrever os métodos utilizados para gerar os dados, conduza a discussão a partir das tabelas e figuras do artigo. Lembre-se de que este é um *Journal Club* realizado em formato híbrido; portanto, esteja preparado(a) para compartilhar sua tela com o PDF do artigo, a fim de apontar figuras e tabelas.
+   - Fique à vontade para consultar o material suplementar, os editoriais ou os questionários utilizados no estudo. Nesse caso, esteja preparado(a) para compartilhá-los na tela.
+
+   ::: {.callout-tip}
+   Lembre-se: Todos os participantes já leram o artigo. Portanto, faça uma breve contextualização e passe diretamente à apresentação dos resultados e à discussão.
+
+   **Mais discussão em grupo = Melhor**
+   :::
+
+Lembre-se: O grupo reúne participantes com diferentes formações, níveis de experiência e habilidades, provenientes de diversas disciplinas. As melhores discussões são aquelas que se concentram em métodos gerais e em questões relacionadas ao delineamento dos estudos, que possam ter implicações abrangentes para futuras pesquisas em diferentes áreas do conhecimento.
+
+[^1]: Fonte: Adaptado da [JHSPH Welch Center Journal Club](https://publichealth.jhu.edu/sites/default/files/2023-07/tips-for-presenters.pdf){target="_blank"} e do UHC Journal Club Guidelines.
