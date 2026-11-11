@@ -93,9 +93,9 @@ cronograma |>
 - [GitHub](https://github.com/amandasmagalhaes/osubh_capacita){target="_blank"}
 
 
-## Dicas para apresentadores do Journal Club[^1]
+## Dicas para apresentadores do *Journal Club*[^1]
 
-### Objetivos do Journal Club
+### Objetivos do *Journal Club*
 
 1. Promover a compreensão das principais controvérsias na área;
 2. Explorar métodos e suas aplicações em áreas científicas específicas;
@@ -131,4 +131,4 @@ cronograma |>
 
 Lembre-se: O grupo reúne participantes com diferentes formações, níveis de experiência e habilidades, provenientes de diversas disciplinas. As melhores discussões são aquelas que se concentram em métodos gerais e em questões relacionadas ao delineamento dos estudos, que possam ter implicações abrangentes para futuras pesquisas em diferentes áreas do conhecimento.
 
-[^1]: Fonte: Adaptado da [JHSPH Welch Center Journal Club](https://publichealth.jhu.edu/sites/default/files/2023-07/tips-for-presenters.pdf){target="_blank"} e do UHC Journal Club Guidelines.
+[^1]: Adaptado da [JHSPH Welch Center Journal Club](https://publichealth.jhu.edu/sites/default/files/2023-07/tips-for-presenters.pdf){target="_blank"} e do UHC Journal Club Guidelines.
